@@ -1,0 +1,250 @@
+/* 
+ * PR Classes - Refined Courses Page Styles
+ * Clean, minimal design aligning with the home page aesthetic
+ */
+
+/* Page Header - Simple and elegant */
+.page-header {
+    background-color: #4267B2;
+    border-bottom: none;
+}
+
+.breadcrumb-item + .breadcrumb-item::before {
+    color: rgba(255, 255, 255, 0.5);
+}
+
+/* Category Tabs - Clean and minimal */
+.category-tabs {
+    margin-bottom: 1.5rem;
+}
+
+.nav-pills {
+    display: inline-flex;
+}
+
+.nav-pills .nav-link {
+    color: #6c757d;
+    font-weight: 500;
+    padding: 0.5rem 1.5rem;
+    border-radius: 50px;
+    background-color: #f8f9fa;
+    transition: all 0.2s ease;
+    margin: 0 0.25rem;
+}
+
+.nav-pills .nav-link:hover {
+    background-color: #e9ecef;
+    color: #4267B2;
+}
+
+.nav-pills .nav-link.active {
+    background-color: #4267B2;
+    color: white;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+}
+
+/* Category Description - Simple text */
+.category-description {
+    max-width: 700px;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+/* Discount Banner - Clean and subtle */
+.discount-banner {
+    margin: 1.5rem 0;
+}
+
+.discount-banner .badge {
+    font-weight: 500;
+    font-size: 0.85rem;
+    letter-spacing: 0.02em;
+}
+
+/* Course Cards - Refined, minimal design */
+.course-card {
+    border: 1px solid rgba(0, 0, 0, 0.08);
+    border-radius: 8px;
+    overflow: hidden;
+    transition: all 0.3s ease;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.03);
+}
+
+.course-card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 8px 15px rgba(0, 0, 0, 0.08);
+}
+
+.card-header {
+    background-color: transparent;
+    border-bottom: 1px solid rgba(0, 0, 0, 0.05);
+    padding: 1.25rem 1.25rem 0.75rem;
+    position: relative;
+}
+
+.card-header .card-title {
+    font-weight: 600;
+    font-size: 1.1rem;
+    color: #333;
+}
+
+.status-badge {
+    position: absolute;
+    top: 1.25rem;
+    right: 1.25rem;
+    padding: 0.35rem 0.75rem;
+    font-size: 0.7rem;
+    border-radius: 20px;
+    font-weight: 500;
+}
+
+.card-body {
+    padding: 1.25rem;
+}
+
+.card-text {
+    color: #666;
+    font-size: 0.95rem;
+    line-height: 1.6;
+}
+
+/* Course Schedule - Subtle styling */
+.course-schedule {
+    margin-bottom: 1rem;
+    border-left: 2px solid rgba(66, 103, 178, 0.2);
+    padding-left: 0.75rem;
+}
+
+.course-schedule .fw-medium {
+    color: #4267B2;
+    font-size: 0.95rem;
+    margin-bottom: 0.5rem;
+}
+
+.schedule-details {
+    color: #666;
+    font-size: 0.9rem;
+    line-height: 1.5;
+}
+
+/* Price Section - Clean display */
+.price-section {
+    margin-top: 1rem;
+    padding-top: 1rem;
+    border-top: 1px solid rgba(0, 0, 0, 0.05);
+}
+
+.price-section .text-muted {
+    font-size: 0.9rem;
+}
+
+.price-section .text-primary {
+    color: #4267B2 !important;
+}
+
+/* Card Footer - Simple actions */
+.card-footer {
+    background-color: transparent;
+    border-top: none;
+    padding: 0 1.25rem 1.25rem;
+}
+
+/* Button Styles - Clean and minimal */
+.btn {
+    border-radius: 50px;
+    font-weight: 500;
+    padding: 0.5rem 1rem;
+    font-size: 0.875rem;
+    transition: all 0.2s ease;
+}
+
+.btn-primary {
+    background-color: #4267B2;
+    border-color: #4267B2;
+}
+
+.btn-primary:hover {
+    background-color: #375694;
+    border-color: #375694;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+}
+
+.btn-outline-secondary {
+    color: #6c757d;
+    border-color: #dee2e6;
+}
+
+.btn-outline-secondary:hover {
+    background-color: #f8f9fa;
+    color: #495057;
+    border-color: #dee2e6;
+}
+
+.btn-outline-primary {
+    color: #4267B2;
+    border-color: #4267B2;
+}
+
+.btn-outline-primary:hover {
+    background-color: #4267B2;
+    color: white;
+}
+
+.btn-outline-success {
+    color: #28a745;
+    border-color: #28a745;
+}
+
+.btn-outline-success:hover {
+    background-color: #28a745;
+    color: white;
+}
+
+.btn-light {
+    background-color: white;
+    border-color: #e9ecef;
+    color: #4267B2;
+}
+
+.btn-light:hover {
+    background-color: #f8f9fa;
+    border-color: #dae0e5;
+}
+
+/* CTA Section - Simple and clean */
+.cta-section {
+    background-color: #f8f9fa;
+    padding: 2rem 0;
+    margin-top: 1rem;
+    border-top: 1px solid rgba(0, 0, 0, 0.05);
+}
+
+.cta-section p {
+    color: #495057;
+}
+
+/* Responsive Adjustments */
+@media (max-width: 767px) {
+    .card-footer .d-flex {
+        flex-wrap: wrap;
+        gap: 0.5rem;
+    }
+    
+    .status-badge {
+        position: static;
+        display: inline-block;
+        margin-top: 0.5rem;
+        margin-left: 0;
+    }
+    
+    .card-header {
+        padding-bottom: 1rem;
+    }
+}
+
+@media (max-width: 575px) {
+    .nav-pills .nav-link {
+        padding: 0.4rem 1rem;
+        font-size: 0.85rem;
+    }
+}

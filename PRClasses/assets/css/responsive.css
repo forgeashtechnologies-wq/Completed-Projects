@@ -1,0 +1,622 @@
+/* PR Classes - Responsive Styles */
+
+/* ===== Extra Large Devices (1200px and up) ===== */
+@media (min-width: 1200px) {
+  .container {
+      max-width: 1140px;
+  }
+}
+
+/* ===== Large Devices (992px and up) ===== */
+@media (min-width: 992px) and (max-width: 1199px) {
+  .container {
+      max-width: 960px;
+  }
+  
+  /* Hero Section */
+  .carousel-caption h1 {
+      font-size: 2.25rem;
+  }
+  
+  .carousel-caption p {
+      font-size: 1.125rem;
+  }
+}
+
+/* ===== Medium Devices (768px to 991px) ===== */
+@media (min-width: 768px) and (max-width: 991px) {
+  .container {
+      max-width: 720px;
+  }
+  
+  /* Typography */
+  h1, .h1 {
+      font-size: 2rem;
+  }
+  
+  h2, .h2 {
+      font-size: 1.75rem;
+  }
+  
+  /* Hero Section */
+  .hero-section, .carousel-item {
+      height: 400px;
+  }
+  
+  .carousel-caption h1 {
+      font-size: 1.75rem;
+  }
+  
+  .carousel-caption p {
+      font-size: 1rem;
+      margin-bottom: 1.5rem;
+  }
+  
+  /* Courses Section */
+  .price-section .original-price,
+  .price-section .discount-price {
+      display: block;
+  }
+  
+  .price-section .discount-badge {
+      margin-left: 0;
+      margin-top: 0.25rem;
+      display: inline-block;
+  }
+  
+  /* Testimonials */
+  .testimonial-rating {
+      font-size: 0.875rem;
+  }
+}
+
+/* ===== Small Devices (576px to 767px) ===== */
+@media (min-width: 576px) and (max-width: 767px) {
+  .container {
+      max-width: 540px;
+  }
+  
+  /* Typography */
+  h1, .h1 {
+      font-size: 1.75rem;
+  }
+  
+  h2, .h2 {
+      font-size: 1.5rem;
+  }
+  
+  h3, .h3 {
+      font-size: 1.25rem;
+  }
+  
+  /* Buttons */
+  .btn {
+      padding: 0.625rem 1.25rem;
+  }
+  
+  .btn-lg {
+      padding: 0.75rem 1.5rem;
+      font-size: 1rem;
+  }
+  
+  /* Header */
+  .navbar-brand {
+      font-size: 1.25rem;
+  }
+  
+  .logo-icon {
+      width: 35px;
+      height: 35px;
+      font-size: 1rem;
+  }
+  
+  /* Hero Section */
+  .hero-section, .carousel-item {
+      height: 350px;
+  }
+  
+  .carousel-caption h1 {
+      font-size: 1.5rem;
+      margin-bottom: 1rem;
+  }
+  
+  .carousel-caption p {
+      font-size: 0.875rem;
+      margin-bottom: 1.25rem;
+  }
+  
+  /* About Section */
+  .about-section {
+      padding: 3rem 0;
+  }
+  
+  /* Courses Section */
+  .featured-courses {
+      padding: 3rem 0;
+  }
+  
+  /* Footer */
+  .footer {
+      padding: 3rem 0 1.5rem;
+  }
+  
+  .footer h4 {
+      margin-bottom: 1rem;
+  }
+  
+  /* Contact Form */
+  .form-group {
+      margin-bottom: 1rem;
+  }
+}
+
+/* ===== Extra Small Devices (less than 576px) ===== */
+@media (max-width: 575px) {
+  /* Typography */
+  h1, .h1 {
+      font-size: 1.5rem;
+  }
+  
+  h2, .h2 {
+      font-size: 1.375rem;
+  }
+  
+  h3, .h3 {
+      font-size: 1.25rem;
+  }
+  
+  p {
+      font-size: 0.875rem;
+  }
+  
+  /* Buttons */
+  .btn {
+      padding: 0.5rem 1rem;
+      font-size: 0.875rem;
+  }
+  
+  .btn-lg {
+      padding: 0.625rem 1.25rem;
+      font-size: 0.9375rem;
+  }
+  
+  /* Header */
+  .top-bar {
+      display: none; /* Hide top bar on mobile */
+  }
+  
+  .navbar-brand {
+      font-size: 1.125rem;
+  }
+  
+  .logo-icon {
+      width: 32px;
+      height: 32px;
+      font-size: 0.875rem;
+  }
+  
+  /* Hero Section */
+  .hero-section, .carousel-item {
+      height: 300px;
+  }
+  
+  .carousel-caption h1 {
+      font-size: 1.375rem;
+      margin-bottom: 0.75rem;
+  }
+  
+  .carousel-caption p {
+      font-size: 0.8125rem;
+      margin-bottom: 1rem;
+  }
+  
+  /* Section Spacing */
+  .about-section,
+  .featured-courses,
+  .testimonials,
+  .why-choose-us,
+  .cta-section {
+      padding: 2.5rem 0;
+  }
+  
+  .section-heading {
+      margin-bottom: 2rem;
+  }
+  
+  .section-heading h2 {
+      font-size: 1.375rem;
+  }
+  
+  /* Course Cards */
+  .card-header {
+      padding: 0.75rem 1rem;
+  }
+  
+  .card-body,
+  .card-footer {
+      padding: 1rem;
+  }
+  
+  /* Testimonials */
+  .testimonial-card {
+      padding: 1rem;
+  }
+  
+  .testimonial-img,
+  .testimonial-placeholder {
+      width: 45px;
+      height: 45px;
+  }
+  
+  /* Footer */
+  .footer {
+      padding: 2.5rem 0 1rem;
+      text-align: center;
+  }
+  
+  .footer h4 {
+      margin-bottom: 1rem;
+      padding-bottom: 0.5rem;
+  }
+  
+  .footer h4::after {
+      left: 50%;
+      transform: translateX(-50%);
+  }
+  
+  .social-icons {
+      justify-content: center;
+      margin-bottom: 1.5rem;
+  }
+  
+  /* Page Header */
+  .page-header {
+      padding: 2rem 0;
+  }
+  
+  /* Floating WhatsApp */
+  .floating-whatsapp {
+      width: 50px;
+      height: 50px;
+      font-size: 20px;
+      bottom: 20px;
+      right: 20px;
+  }
+  
+  /* Form Elements */
+  .form-control, .form-select {
+      padding: 0.625rem 0.875rem;
+      font-size: 0.875rem;
+  }
+  
+  .form-label {
+      font-size: 0.875rem;
+  }
+  
+  /* Fix for collapsed nav items */
+  .navbar-collapse {
+      max-height: 80vh;
+      overflow-y: auto;
+  }
+  
+  /* Fix buttons in the same line */
+  .btn + .btn {
+      margin-top: 0.5rem;
+      margin-left: 0 !important;
+  }
+  
+  .d-flex.justify-content-between {
+      flex-direction: column;
+  }
+  
+  .d-flex.justify-content-between .btn {
+      margin-bottom: 0.5rem;
+      width: 100%;
+  }
+  
+  .d-flex.justify-content-between .btn:last-child {
+      margin-bottom: 0;
+  }
+}
+
+/* ===== Specific Tablet + Mobile Fixes ===== */
+@media (max-width: 991px) {
+  /* Navigation */
+  .nav-item {
+      padding: 0.25rem 0;
+  }
+  
+  .dropdown-menu {
+      border: none;
+      background-color: rgba(66, 103, 178, 0.05);
+      box-shadow: none;
+      padding: 0.5rem 0 0.5rem 1rem;
+  }
+  
+  .dropdown-item {
+      padding: 0.5rem 1rem;
+  }
+  
+  /* Features Grid */
+  .feature-box {
+      margin-bottom: 1.5rem;
+  }
+  
+  /* CTA Section */
+  .cta-section .text-lg-end {
+      text-align: center !important;
+      margin-top: 1rem;
+  }
+  
+  /* Testimonials */
+  .testimonial-card {
+      margin-bottom: 1.5rem;
+  }
+  
+  /* Course Cards */
+  .card {
+      margin-bottom: 1.5rem;
+  }
+  
+  /* Fix for multi-column layouts */
+  .row > [class*="col-"]:last-child .card,
+  .row > [class*="col-"]:last-child .testimonial-card,
+  .row > [class*="col-"]:last-child .feature-box {
+      margin-bottom: 0;
+  }
+}
+
+/* ===== Specific Desktop-only Styles ===== */
+@media (min-width: 992px) {
+  /* Dropdown hover effect on desktop */
+  .dropdown:hover .dropdown-menu {
+      display: block;
+  }
+}
+
+/* ===== Print Styles ===== */
+@media print {
+  .navbar,
+  .footer,
+  .floating-whatsapp,
+  .btn,
+  form,
+  .cta-section {
+      display: none !important;
+  }
+  
+  .container {
+      width: 100%;
+      max-width: 100%;
+  }
+  
+  body {
+      font-size: 12pt;
+      line-height: 1.4;
+      color: #000;
+      background: #fff;
+  }
+  
+  a {
+      color: #000;
+      text-decoration: underline;
+  }
+  
+  h1, h2, h3, h4, h5, h6 {
+      page-break-after: avoid;
+      page-break-inside: avoid;
+  }
+  
+  img {
+      max-width: 100% !important;
+      page-break-inside: avoid;
+  }
+  
+  .card, 
+  .testimonial-card, 
+  .feature-box,
+  .mission-vision-card {
+      border: 1px solid #ddd;
+      box-shadow: none !important;
+      break-inside: avoid;
+  }
+  
+  .page-header {
+      background-color: #fff !important;
+      color: #000 !important;
+      text-align: center;
+      margin-bottom: 20pt;
+  }
+  
+  .page-header h1 {
+      font-size: 24pt;
+  }
+  
+  .hero-section {
+      display: none;
+  }
+}
+
+/* ===== Accessibility Improvements ===== */
+/* Focus styles for better keyboard navigation */
+a:focus,
+button:focus,
+input:focus,
+select:focus,
+textarea:focus,
+.btn:focus,
+.form-control:focus,
+.form-select:focus {
+  outline: 3px solid rgba(66, 103, 178, 0.5);
+  outline-offset: 2px;
+}
+
+/* High contrast mode support */
+@media (forced-colors: active) {
+  .btn-primary,
+  .btn-secondary,
+  .btn-success {
+      border: 2px solid transparent;
+  }
+  
+  .card,
+  .testimonial-card,
+  .feature-box {
+      border: 1px solid;
+  }
+}
+
+/* Reduced motion preferences */
+@media (prefers-reduced-motion: reduce) {
+  * {
+      animation-duration: 0.01ms !important;
+      animation-iteration-count: 1 !important;
+      transition-duration: 0.01ms !important;
+      scroll-behavior: auto !important;
+  }
+  
+  .carousel-item {
+      transition: none;
+  }
+}
+
+/* Responsive Styles */
+@media (max-width: 768px) {
+    .hero-section {
+        height: 300px;
+    }
+    .hero-text h1 {
+        font-size: 2.5rem;
+    }
+    .hero-buttons .btn {
+        width: 100%;
+        margin-bottom: 10px;
+    }
+}
+
+@media (max-width: 576px) {
+    .hero-text h1 {
+        font-size: 2rem;
+    }
+}
+
+/* Mobile-specific fixes for Contact Page */
+@media (max-width: 575px) {
+  /* Better font scaling */
+  .section-heading {
+    font-size: 1.5rem;
+    text-align: center;
+    width: 100%;
+  }
+  
+  .section-desc {
+    font-size: 0.9375rem;
+    text-align: center;
+  }
+  
+  /* Improve contact items on very small screens */
+  .contact-item {
+    margin-bottom: 2rem;
+  }
+  
+  .icon-circle {
+    width: 55px;
+    height: 55px;
+  }
+  
+  .icon-circle i {
+    font-size: 1.125rem;
+  }
+  
+  .info-title {
+    font-size: 1rem;
+    margin-bottom: 0.125rem;
+  }
+  
+  .info-text {
+    font-size: 0.875rem;
+  }
+  
+  /* Improve social links on mobile */
+  .social-links {
+    flex-direction: column;
+    width: 100%;
+    gap: 0.75rem;
+  }
+  
+  .social-link-pill {
+    width: 100%;
+    padding: 0.625rem 1rem;
+    justify-content: flex-start;
+  }
+  
+  .social-link-pill i {
+    width: 30px;
+    text-align: center;
+  }
+  
+  /* Fix container spacing */
+  .contact-section {
+    padding: 2rem 0;
+  }
+  
+  .section-block {
+    margin-bottom: 2rem;
+  }
+  
+  /* Ensure text doesn't overflow */
+  .container {
+    overflow-x: hidden;
+  }
+  
+  /* Fix for word wrapping in contact info */
+  .contact-info {
+    width: 100%;
+    word-wrap: break-word;
+  }
+}
+
+/* Landscape mode fixes for phones */
+@media (max-width: 767px) and (orientation: landscape) {
+  .contact-item {
+    flex-direction: row;
+    text-align: left;
+    align-items: center;
+  }
+  
+  .icon-circle {
+    margin-right: 1rem;
+    margin-bottom: 0;
+  }
+  
+  .social-links {
+    flex-direction: row;
+    flex-wrap: wrap;
+  }
+  
+  .social-link-pill {
+    width: calc(50% - 0.5rem);
+  }
+}
+
+/* Improve focus states for accessibility */
+.social-link-pill:focus {
+  outline: 3px solid rgba(95, 108, 175, 0.5);
+  outline-offset: 2px;
+}
+
+/* Fix for Safari mobile */
+@supports (-webkit-touch-callout: none) {
+  .contact-item {
+    display: flex;
+    flex-wrap: wrap;
+  }
+  
+  .contact-info {
+    width: 100%;
+  }
+  
+  .social-link-pill {
+    display: inline-flex;
+  }
+}

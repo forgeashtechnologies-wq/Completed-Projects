@@ -1,0 +1,102 @@
+/* QR Code Floater Styles */
+
+.qr-code-floater {
+    position: fixed;
+    bottom: 90px; /* Position above the WhatsApp floater */
+    right: 20px;
+    z-index: 998; /* Below WhatsApp floater */
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    background-color: white;
+    border-radius: 12px;
+    box-shadow: 0 6px 20px rgba(0, 0, 0, 0.2);
+    padding: 15px;
+    transition: all 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+    transform: translateY(100px) scale(0.95);
+    opacity: 0;
+    visibility: hidden;
+    max-width: 140px;
+    border: 1px solid rgba(0, 0, 0, 0.08);
+}
+
+
+.qr-code-floater.visible {
+    transform: translateY(0) scale(1);
+    opacity: 1;
+    visibility: visible;
+    box-shadow: 0 8px 25px rgba(0, 0, 0, 0.25);
+}
+
+.qr-code-floater img {
+    width: 100px;
+    height: 100px;
+    border-radius: 8px;
+    margin-bottom: 8px;
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+    border: 1px solid rgba(0, 0, 0, 0.05);
+    transition: transform 0.3s ease;
+}
+
+.qr-code-floater p {
+    font-size: 13px;
+    text-align: center;
+    margin: 5px 0 0;
+    color: #333;
+    font-weight: 600;
+    line-height: 1.3;
+    letter-spacing: 0.2px;
+    text-transform: uppercase;
+    font-family: 'Poppins', sans-serif;
+}
+
+.qr-code-floater .close-btn {
+    position: absolute;
+    top: -10px;
+    right: -10px;
+    width: 24px;
+    height: 24px;
+    background-color: #f44336;
+    color: white;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 14px;
+    cursor: pointer;
+    box-shadow: 0 3px 8px rgba(0, 0, 0, 0.25);
+    transition: all 0.2s ease;
+    border: 2px solid white;
+}
+
+.qr-code-floater .close-btn:hover {
+    background-color: #d32f2f;
+    transform: scale(1.1);
+}
+
+/* Responsive styles */
+@media (max-width: 768px) {
+    .qr-code-floater {
+        bottom: 80px;
+        right: 15px;
+        max-width: 110px;
+        padding: 12px;
+    }
+    
+    .qr-code-floater img {
+        width: 85px;
+        height: 85px;
+        margin-bottom: 6px;
+    }
+    
+    .qr-code-floater p {
+        font-size: 11px;
+        letter-spacing: 0.1px;
+    }
+    
+    .qr-code-floater .close-btn {
+        width: 22px;
+        height: 22px;
+        font-size: 12px;
+    }
+}

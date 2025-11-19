@@ -1,0 +1,702 @@
+/* UI Component Styles for CMA Training Website */
+
+/* Buttons */
+.btn {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  padding: 12px 28px;
+  border-radius: 50px;
+  font-weight: 600;
+  font-size: 16px;
+  transition: all 0.3s ease;
+  cursor: pointer;
+  position: relative;
+  overflow: hidden;
+  border: none;
+  z-index: 1;
+  background-color: var(--primary);
+  color: white;
+}
+
+.btn::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  z-index: -1;
+  transition: all 0.5s ease;
+  opacity: 0;
+  background: var(--accent);
+}
+
+.btn:hover::before {
+  opacity: 0.15;
+}
+
+.btn:hover {
+  transform: translateY(-3px);
+  box-shadow: 0 10px 20px rgba(0, 0, 0, 0.1);
+}
+
+.btn-primary {
+  background-color: var(--primary);
+  color: white;
+}
+
+.btn-accent {
+  background-color: var(--accent);
+  color: var(--text-dark);
+}
+
+.btn-secondary {
+  background-color: var(--secondary);
+  color: white;
+}
+
+.btn-outline {
+  background: transparent;
+  color: var(--primary);
+  border: 2px solid var(--primary);
+}
+
+.btn-outline:hover {
+  background: rgba(103, 58, 183, 0.1);
+}
+
+.btn-whatsapp {
+  background-color: #25D366;
+  color: white;
+  display: inline-flex;
+  align-items: center;
+  gap: 10px;
+}
+
+.btn-whatsapp:hover {
+  background-color: #128C7E;
+}
+
+/* Floating WhatsApp Button */
+.floating-whatsapp {
+  position: fixed;
+  bottom: 20px;
+  right: 20px;
+  z-index: 999;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 60px;
+  height: 60px;
+  background-color: #25D366;
+  border-radius: 50%;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.15);
+  transition: all 0.3s ease;
+  animation: pulse 2s infinite;
+}
+
+.floating-whatsapp:hover {
+  transform: scale(1.1);
+  box-shadow: 0 6px 15px rgba(0, 0, 0, 0.2);
+  animation: none;
+}
+
+.floating-whatsapp img {
+  width: 30px;
+  height: 30px;
+  filter: brightness(0) invert(1);
+}
+
+@keyframes pulse {
+  0% {
+    box-shadow: 0 0 0 0 rgba(37, 211, 102, 0.5);
+  }
+  70% {
+    box-shadow: 0 0 0 10px rgba(37, 211, 102, 0);
+  }
+  100% {
+    box-shadow: 0 0 0 0 rgba(37, 211, 102, 0);
+  }
+}
+
+.btn-full {
+  width: 100%;
+}
+
+/* Cards */
+.card {
+  background-color: var(--bg-white);
+  border-radius: var(--border-radius);
+  overflow: hidden;
+  box-shadow: var(--shadow);
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.card:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 15px 30px rgba(0, 0, 0, 0.1);
+}
+
+.card-header {
+  padding: 20px;
+  border-bottom: 1px solid rgba(0, 0, 0, 0.05);
+}
+
+.card-body {
+  padding: 20px;
+}
+
+.card-footer {
+  padding: 20px;
+  border-top: 1px solid rgba(0, 0, 0, 0.05);
+}
+
+/* Course Cards */
+.course-card {
+  background-color: var(--bg-white);
+  border-radius: var(--border-radius);
+  overflow: hidden;
+  box-shadow: var(--shadow);
+  transition: transform 0.3s ease;
+  display: flex;
+  flex-direction: column;
+  height: 100%;
+}
+
+/* Course Cards */
+.course-card {
+  background-color: var(--bg-white);
+  border-radius: var(--border-radius);
+  overflow: hidden;
+  box-shadow: var(--shadow);
+  transition: transform 0.3s ease;
+  display: flex;
+  flex-direction: column;
+  height: 100%;
+}
+
+.course-card:hover {
+  transform: translateY(-10px);
+}
+
+.course-header {
+  background: var(--primary);
+  color: white;
+  padding: 30px;
+  text-align: center;
+}
+
+.course-header h3 {
+  font-size: 24px;
+  margin-bottom: 10px;
+}
+
+.course-body {
+  padding: 30px;
+  flex-grow: 1;
+  display: flex;
+  flex-direction: column;
+}
+
+.course-detail {
+  display: flex;
+  align-items: center;
+  margin-bottom: 15px;
+  color: var(--text-light);
+}
+
+.course-detail i {
+  margin-right: 10px;
+  color: var(--primary);
+  min-width: 20px;
+  text-align: center;
+}
+
+.course-content {
+  margin-top: 20px;
+}
+
+.course-content ul {
+  list-style-type: none;
+  padding-left: 5px;
+}
+
+.course-content li {
+  position: relative;
+  padding-left: 25px;
+  margin-bottom: 10px;
+}
+
+.course-content li:before {
+  content: "✓";
+  color: var(--primary);
+  position: absolute;
+  left: 0;
+}
+
+.course-price {
+  text-align: center;
+  padding: 20px 0;
+  border-top: 1px solid #E5E7EB;
+  margin-top: auto;
+}
+
+.original-price {
+  text-decoration: line-through;
+  color: var(--text-light);
+  font-size: 18px;
+}
+
+.discounted-price {
+  font-size: 28px;
+  font-weight: 700;
+  background: linear-gradient(135deg, var(--primary), var(--accent));
+  -webkit-background-clip: text;
+  background-clip: text;
+  color: transparent;
+}
+
+.early-bird {
+  display: inline-block;
+  background-color: var(--accent);
+  color: var(--text-dark);
+  font-weight: 600;
+  font-size: 14px;
+  padding: 5px 10px;
+  border-radius: 20px;
+  margin-top: 5px;
+}
+
+/* Testimonial Cards */
+.testimonial-card {
+  background-color: var(--bg-light);
+  border-radius: var(--border-radius);
+  padding: 30px;
+  box-shadow: var(--shadow);
+  transition: transform 0.3s ease;
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+}
+
+.testimonial-card:hover {
+  transform: translateY(-5px);
+}
+
+.quote-mark {
+  font-size: 50px;
+  line-height: 1;
+  color: var(--primary);
+  opacity: 0.2;
+  margin-bottom: 10px;
+}
+
+.testimonial-text {
+  font-style: italic;
+  color: var(--text-light);
+  margin-bottom: 20px;
+  flex-grow: 1;
+}
+
+.testimonial-author {
+  display: flex;
+  align-items: center;
+}
+
+.author-avatar {
+  width: 50px;
+  height: 50px;
+  border-radius: 50%;
+  overflow: hidden;
+  margin-right: 15px;
+  background-color: #E5E7EB;
+}
+
+.author-avatar img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+.author-details {
+  line-height: 1.3;
+}
+
+.author-name {
+  font-weight: 600;
+  color: var(--text-dark);
+}
+
+.reg-number {
+  font-size: 14px;
+  color: var(--text-light);
+}
+
+.course-taken {
+  font-size: 12px;
+  color: var(--primary);
+  margin-top: 3px;
+}
+
+/* Forms */
+.form-group {
+  margin-bottom: 20px;
+}
+
+.form-group label {
+  display: block;
+  margin-bottom: 8px;
+  font-weight: 500;
+}
+
+.form-control {
+  width: 100%;
+  padding: 14px 18px;
+  border: 1px solid #E5E7EB;
+  border-radius: 8px;
+  font-size: 16px;
+  transition: all 0.3s ease;
+}
+
+.form-control:focus {
+  outline: none;
+  border-color: var(--primary);
+  box-shadow: 0 0 0 3px rgba(103, 58, 183, 0.1);
+}
+
+textarea.form-control {
+  min-height: 120px;
+  resize: vertical;
+}
+
+/* Badge */
+.badge {
+  display: inline-block;
+  padding: 5px 12px;
+  border-radius: 20px;
+  font-size: 14px;
+  font-weight: 600;
+}
+
+.badge-primary {
+  background-color: var(--primary);
+  color: white;
+}
+
+.badge-accent {
+  background-color: var(--accent);
+  color: var(--text-dark);
+}
+
+.badge-secondary {
+  background-color: var(--secondary);
+  color: white;
+}
+
+/* Tab Navigation */
+.tabs {
+  display: flex;
+  gap: 5px;
+  background-color: var(--bg-white);
+  padding: 5px;
+  border-radius: 50px;
+  box-shadow: var(--shadow);
+  overflow-x: auto;
+  scrollbar-width: none;
+  margin-bottom: 30px;
+}
+
+.tabs::-webkit-scrollbar {
+  display: none;
+}
+
+.tab-btn {
+  flex: 1;
+  padding: 15px 25px;
+  background: none;
+  border: none;
+  border-radius: 50px;
+  cursor: pointer;
+  font-weight: 600;
+  font-size: 16px;
+  color: var(--text-light);
+  transition: all 0.3s ease;
+  white-space: nowrap;
+}
+
+.tab-btn.active {
+  background: var(--primary);
+  color: white;
+  box-shadow: 0 5px 15px rgba(103, 58, 183, 0.4);
+}
+
+/* Alerts */
+.alert {
+  padding: 15px 20px;
+  border-radius: var(--border-radius);
+  margin-bottom: 20px;
+  border-left: 4px solid;
+}
+
+.alert-success {
+  background-color: #D1FAE5;
+  border-color: #10B981;
+  color: #065F46;
+}
+
+.alert-warning {
+  background-color: #FEF3C7;
+  border-color: #F59E0B;
+  color: #92400E;
+}
+
+.alert-danger {
+  background-color: #FEE2E2;
+  border-color: #EF4444;
+  color: #B91C1C;
+}
+
+.alert-info {
+  background-color: #DBEAFE;
+  border-color: #3B82F6;
+  color: #1E40AF;
+}
+
+/* Limited Seats Alert */
+.limited-seats {
+  font-size: 24px;
+  font-weight: bold;
+  color: var(--primary);
+  text-align: center;
+  margin: 20px 0;
+}
+
+/* Fixed Testimonial Styles */
+.testimonials-section {
+  padding: 80px 0;
+  background-color: var(--bg-light);
+}
+
+.testimonials-slider {
+  position: relative;
+  max-width: 900px;
+  margin: 0 auto 40px;
+  overflow: hidden;
+}
+
+.testimonials-track {
+  display: flex;
+  transition: transform 0.5s ease;
+}
+
+.testimonial-card {
+  min-width: 100%;
+  background-color: white;
+  border-radius: var(--border-radius);
+  padding: 30px;
+  box-shadow: var(--shadow);
+  transition: all 0.3s ease;
+  position: relative;
+}
+
+.testimonial-card:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 15px 30px rgba(0,0,0,0.1);
+}
+
+.quote-mark {
+  font-size: 50px;
+  line-height: 1;
+  color: var(--primary);
+  opacity: 0.2;
+  position: absolute;
+  top: 20px;
+  left: 30px;
+}
+
+.testimonial-text {
+  margin-top: 15px;
+  margin-bottom: 25px;
+}
+
+.testimonial-text p {
+  font-style: italic;
+  color: var(--text-dark);
+  font-size: 18px;
+  line-height: 1.6;
+}
+
+.testimonial-author {
+  display: flex;
+  align-items: center;
+}
+
+.author-avatar {
+  width: 60px;
+  height: 60px;
+  border-radius: 50%;
+  overflow: hidden;
+  margin-right: 15px;
+  border: 3px solid var(--primary);
+}
+
+.author-avatar img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+.author-details {
+  line-height: 1.4;
+}
+
+.author-name {
+  font-weight: 700;
+  color: var(--text-dark);
+  font-size: 18px;
+}
+
+.reg-number {
+  font-size: 14px;
+  color: var(--text-light);
+}
+
+.course-taken {
+  font-size: 14px;
+  color: var(--primary);
+  font-weight: 500;
+}
+
+/* Fixed Testimonial Dots - Horizontal Layout */
+.testimonial-dots {
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  align-items: center;
+  gap: 12px;
+  margin-top: 25px;
+  padding: 10px 0;
+  width: 100%;
+  flex-wrap: nowrap;
+}
+
+.testimonial-dot {
+  width: 14px;
+  height: 14px;
+  border-radius: 50%;
+  background-color: #ddd;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  display: inline-block; 
+  flex: 0 0 auto;
+}
+
+.testimonial-dot.active {
+  background-color: var(--primary);
+  transform: scale(1.2);
+}
+
+/* Remove any vertical float or positioning */
+.testimonial-dots:after {
+  content: "";
+  display: table;
+  clear: both;
+}
+
+/* Override any responsive styles */
+@media (max-width: 768px) {
+  .testimonial-dots {
+    flex-direction: row;
+    flex-wrap: nowrap;
+    justify-content: center;
+  }
+  
+  .testimonial-dot {
+    width: 12px;
+    height: 12px;
+    margin: 0 5px;
+  }
+}
+
+/* Form styling */
+.testimonial-history {
+  text-align: center;
+  margin-top: 30px;
+}
+
+#testimonials .card {
+  max-width: 700px;
+  margin: 40px auto;
+  padding: 30px;
+}
+
+#testimonial-form .form-group {
+  margin-bottom: 20px;
+}
+
+#testimonial-form label {
+  display: block;
+  margin-bottom: 8px;
+  font-weight: 600;
+}
+
+#testimonial-form input,
+#testimonial-form select,
+#testimonial-form textarea {
+  width: 100%;
+  padding: 12px;
+  border: 1px solid #ddd;
+  border-radius: var(--border-radius);
+  font-family: inherit;
+  font-size: 16px;
+}
+
+#testimonial-form textarea {
+  resize: vertical;
+  min-height: 120px;
+}
+
+#testimonial-success-message {
+  background-color: #d4edda;
+  color: #155724;
+  padding: 15px;
+  border-radius: var(--border-radius);
+  margin-top: 20px;
+  display: none;
+  align-items: center;
+  gap: 10px;
+}
+
+#testimonial-success-message.show {
+  display: flex;
+}
+
+#testimonial-success-message i {
+  font-size: 20px;
+}
+
+/* Delete button for testimonials */
+.delete-testimonial {
+  position: absolute;
+  top: 10px;
+  right: 10px;
+  background: none;
+  border: none;
+  color: #ff6b6b;
+  cursor: pointer;
+  font-size: 16px;
+  padding: 5px;
+  transition: all 0.3s ease;
+  z-index: 10;
+}
+
+.delete-testimonial:hover {
+  transform: scale(1.2);
+}
+
+/* Export button */
+.export-testimonials {
+  display: block;
+  margin: 20px auto;
+}

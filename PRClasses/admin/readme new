@@ -1,0 +1,1217 @@
+Create Minimal Database Implementation
+Here's what we'll implement from scratch:
+1. New Database Configuration
+Create a brand new includes/db.php:
+phpCopy<?php
+/**
+ * Database connection for PR Classes Website
+ */
+
+// Prevent direct access
+if (!defined('INCLUDED_FROM_INDEX')) {
+    define('INCLUDED_FROM_INDEX', true);
+}
+
+// Database credentials
+$db_host = 'localhost';
+$db_name = 'prclasses_db'; // Update with your actual database name
+$db_user = 'root';         // Update with your MySQL username
+$db_pass = '';             // Update with your MySQL password
+
+// Create connection
+try {
+    $pdo = new PDO("mysql:host=$db_host;dbname=$db_name;charset=utf8mb4", $db_user, $db_pass);
+    
+    // Set the PDO error mode to exception
+    $pdo->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
+    
+    // Set default fetch mode
+    $pdo->setAttribute(PDO::ATTR_DEFAULT_FETCH_MODE, PDO::FETCH_ASSOC);
+    
+    // Connection established
+    define('DB_CONNECTION_SUCCESS', true);
+    
+} catch(PDOException $e) {
+    // Log error but don't display to user
+    error_log("Database Connection Error: " . $e->getMessage());
+    define('DB_CONNECTION_SUCCESS', false);
+}
+
+/**
+ * Execute a query safely
+ * 
+ * @param string $sql SQL query with placeholders
+ * @param array $params Parameters for prepared statement
+ * @return PDOStatement|false PDO statement object or false on failure
+ */
+function db_query($sql, $params = []) {
+    global $pdo;
+    
+    if (!isset($pdo) || !DB_CONNECTION_SUCCESS) {
+        error_log("Database query attempted but connection is not available");
+        return false;
+    }
+    
+    try {
+        $stmt = $pdo->prepare($sql);
+        $stmt->execute($params);
+        return $stmt;
+    } catch (PDOException $e) {
+        error_log("Database Query Error: " . $e->getMessage() . " in query: " . $sql);
+        return false;
+    }
+}
+
+/**
+ * Get a single record
+ * 
+ * @param string $sql SQL query with placeholders
+ * @param array $params Parameters for prepared statement
+ * @return array|false Single record or false on failure
+ */
+function db_get_row($sql, $params = []) {
+    $stmt = db_query($sql, $params);
+    return $stmt ? $stmt->fetch() : false;
+}
+
+/**
+ * Get multiple records
+ * 
+ * @param string $sql SQL query with placeholders
+ * @param array $params Parameters for prepared statement
+ * @return array Array of records (empty array if no results or on failure)
+ */
+function db_get_rows($sql, $params = []) {
+    $stmt = db_query($sql, $params);
+    return $stmt ? $stmt->fetchAll() : [];
+}
+
+/**
+ * Insert a record
+ * 
+ * @param string $table Table name
+ * @param array $data Associative array of column => value
+ * @return int|false Last insert ID or false on failure
+ */
+function db_insert($table, $data) {
+    global $pdo;
+    
+    if (!isset($pdo) || !DB_CONNECTION_SUCCESS) {
+        return false;
+    }
+    
+    try {
+        // Build columns and placeholders
+        $columns = implode(', ', array_keys($data));
+        $placeholders = implode(', ', array_fill(0, count($data), '?'));
+        
+        $sql = "INSERT INTO $table ($columns) VALUES ($placeholders)";
+        $stmt = $pdo->prepare($sql);
+        
+        $stmt->execute(array_values($data));
+        return $pdo->lastInsertId();
+    } catch (PDOException $e) {
+        error_log("Database Insert Error: " . $e->getMessage() . " in table: " . $table);
+        return false;
+    }
+}
+
+/**
+ * Update a record
+ * 
+ * @param string $table Table name
+ * @param array $data Associative array of column => value to update
+ * @param string $where Where clause (without 'WHERE')
+ * @param array $params Parameters for where clause
+ * @return bool Success or failure
+ */
+function db_update($table, $data, $where, $params = []) {
+    global $pdo;
+    
+    if (!isset($pdo) || !DB_CONNECTION_SUCCESS) {
+        return false;
+    }
+    
+    try {
+        // Build SET clause
+        $set = [];
+        foreach ($data as $column => $value) {
+            $set[] = "$column = ?";
+        }
+        $set_clause = implode(', ', $set);
+        
+        $sql = "UPDATE $table SET $set_clause WHERE $where";
+        $stmt = $pdo->prepare($sql);
+        
+        // Combine data values with where params
+        $execute_params = array_merge(array_values($data), $params);
+        
+        $stmt->execute($execute_params);
+        return true;
+    } catch (PDOException $e) {
+        error_log("Database Update Error: " . $e->getMessage() . " in table: " . $table);
+        return false;
+    }
+}
+
+/**
+ * Delete a record
+ * 
+ * @param string $table Table name
+ * @param string $where Where clause (without 'WHERE')
+ * @param array $params Parameters for where clause
+ * @return bool Success or failure
+ */
+function db_delete($table, $where, $params = []) {
+    global $pdo;
+    
+    if (!isset($pdo) || !DB_CONNECTION_SUCCESS) {
+        return false;
+    }
+    
+    try {
+        $sql = "DELETE FROM $table WHERE $where";
+        $stmt = $pdo->prepare($sql);
+        
+        $stmt->execute($params);
+        return true;
+    } catch (PDOException $e) {
+        error_log("Database Delete Error: " . $e->getMessage() . " in table: " . $table);
+        return false;
+    }
+}
+2. New Schema Creation Script
+Create a new install_db.php in your project root:
+phpCopy<?php
+/**
+ * Database installation script for PR Classes Website
+ */
+
+// Enable error reporting for setup
+ini_set('display_errors', 1);
+ini_set('display_startup_errors', 1);
+error_reporting(E_ALL);
+
+// Define this so we can include the db.php file
+define('INCLUDED_FROM_INDEX', true);
+
+// Include database connection
+require_once __DIR__ . '/includes/db.php';
+
+// Check connection
+if (!defined('DB_CONNECTION_SUCCESS') || !DB_CONNECTION_SUCCESS) {
+    die("Database connection failed. Please check your credentials in includes/db.php");
+}
+
+echo "<h1>PR Classes Database Installation</h1>";
+
+try {
+    // Create Users Table
+    $pdo->exec("CREATE TABLE IF NOT EXISTS users (
+        id INT AUTO_INCREMENT PRIMARY KEY,
+        username VARCHAR(50) NOT NULL UNIQUE,
+        email VARCHAR(100),
+        password_hash VARCHAR(255) NOT NULL,
+        role VARCHAR(20) DEFAULT 'admin',
+        created_at TIMESTAMP DEFAULT CURRENT_TIMESTAMP
+    ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci");
+    
+    echo "<p>✅ Users table created successfully</p>";
+    
+    // Create Testimonials Table
+    $pdo->exec("CREATE TABLE IF NOT EXISTS testimonials (
+        id INT AUTO_INCREMENT PRIMARY KEY,
+        name VARCHAR(100) NOT NULL,
+        email VARCHAR(100),
+        course VARCHAR(100),
+        testimonial TEXT NOT NULL,
+        rating INT DEFAULT 5,
+        status VARCHAR(20) DEFAULT 'Pending',
+        created_at TIMESTAMP DEFAULT CURRENT_TIMESTAMP
+    ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci");
+    
+    echo "<p>✅ Testimonials table created successfully</p>";
+    
+    // Create Courses Table
+    $pdo->exec("CREATE TABLE IF NOT EXISTS courses (
+        id INT AUTO_INCREMENT PRIMARY KEY,
+        title VARCHAR(100) NOT NULL,
+        description TEXT,
+        category VARCHAR(50) NOT NULL,
+        fees DECIMAL(10,2) NOT NULL,
+        discount_percentage INT DEFAULT 0,
+        enrollment_status VARCHAR(20) DEFAULT 'Open',
+        created_at TIMESTAMP DEFAULT CURRENT_TIMESTAMP
+    ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci");
+    
+    echo "<p>✅ Courses table created successfully</p>";
+    
+    // Check if admin user exists
+    $stmt = $pdo->query("SELECT COUNT(*) as count FROM users WHERE username = 'admin'");
+    $result = $stmt->fetch();
+    
+    if ($result['count'] == 0) {
+        // Create default admin user
+        $password_hash = password_hash('admin123', PASSWORD_DEFAULT);
+        $pdo->exec("INSERT INTO users (username, email, password_hash, role) 
+                    VALUES ('admin', 'admin@prclasses.in', '$password_hash', 'admin')");
+        
+        echo "<p>✅ Default admin user created</p>";
+        echo "<p>Username: admin</p>";
+        echo "<p>Password: admin123</p>";
+    } else {
+        echo "<p>✅ Admin user already exists</p>";
+    }
+    
+    echo "<h2>Database installation completed successfully!</h2>";
+    echo "<p>You can now <a href='admin/login.php'>log in to the admin panel</a>.</p>";
+    
+} catch (PDOException $e) {
+    echo "<h2>Error during database installation</h2>";
+    echo "<p>Error: " . $e->getMessage() . "</p>";
+}
+?>
+3. Update Admin Login
+Create a new simplified admin/login.php:
+phpCopy<?php
+// Start session
+session_start();
+
+// Include database connection
+define('INCLUDED_FROM_INDEX', true);
+require_once __DIR__ . '/../includes/db.php';
+
+// Initialize error message
+$error = '';
+
+// Process login form submission
+if ($_SERVER['REQUEST_METHOD'] === 'POST') {
+    $username = filter_input(INPUT_POST, 'username', FILTER_SANITIZE_STRING);
+    $password = $_POST['password'] ?? '';
+    
+    if (empty($username) || empty($password)) {
+        $error = "Please enter both username and password";
+    } else {
+        // Check user credentials
+        $stmt = db_query("SELECT id, username, password_hash, role FROM users WHERE username = ?", [$username]);
+        
+        if ($stmt) {
+            $user = $stmt->fetch();
+            
+            if ($user && password_verify($password, $user['password_hash'])) {
+                // Valid login - create session
+                $_SESSION['admin_id'] = $user['id'];
+                $_SESSION['admin_username'] = $user['username'];
+                $_SESSION['admin_role'] = $user['role'];
+                
+                // Redirect to admin dashboard
+                header("Location: index.php");
+                exit;
+            } else {
+                $error = "Invalid username or password";
+            }
+        } else {
+            $error = "Login failed. Please try again.";
+        }
+    }
+}
+?>
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Admin Login - PR Classes</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #f4f4f4;
+            margin: 0;
+            padding: 0;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+        }
+        .login-container {
+            background-color: #fff;
+            padding: 30px;
+            border-radius: 5px;
+            box-shadow: 0 0 10px rgba(0,0,0,0.1);
+            width: 350px;
+        }
+        h1 {
+            text-align: center;
+            color: #333;
+            margin-bottom: 20px;
+        }
+        .form-group {
+            margin-bottom: 15px;
+        }
+        .form-group label {
+            display: block;
+            margin-bottom: 5px;
+            color: #666;
+        }
+        .form-group input {
+            width: 100%;
+            padding: 8px;
+            box-sizing: border-box;
+            border: 1px solid #ddd;
+            border-radius: 4px;
+        }
+        .error {
+            color: #e74c3c;
+            margin-bottom: 15px;
+        }
+        button {
+            background-color: #3498db;
+            color: white;
+            border: none;
+            padding: 10px 15px;
+            width: 100%;
+            border-radius: 4px;
+            cursor: pointer;
+        }
+        button:hover {
+            background-color: #2980b9;
+        }
+    </style>
+</head>
+<body>
+    <div class="login-container">
+        <h1>Admin Login</h1>
+        
+        <?php if ($error): ?>
+            <div class="error"><?php echo $error; ?></div>
+        <?php endif; ?>
+        
+        <form method="post" action="">
+            <div class="form-group">
+                <label for="username">Username</label>
+                <input type="text" id="username" name="username" required>
+            </div>
+            
+            <div class="form-group">
+                <label for="password">Password</label>
+                <input type="password" id="password" name="password" required>
+            </div>
+            
+            <button type="submit">Login</button>
+        </form>
+    </div>
+</body>
+</html>
+4. Create Dashboard Page
+Create a basic admin/index.php (dashboard):
+phpCopy<?php
+// Start session
+session_start();
+
+// Check if admin is logged in
+if (!isset($_SESSION['admin_id']) || empty($_SESSION['admin_id'])) {
+    header("Location: login.php");
+    exit;
+}
+
+// Include database connection
+define('INCLUDED_FROM_INDEX', true);
+require_once __DIR__ . '/../includes/db.php';
+
+// Get admin username
+$admin_username = $_SESSION['admin_username'] ?? 'Admin';
+?>
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Admin Dashboard - PR Classes</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #f4f4f4;
+            margin: 0;
+            padding: 0;
+        }
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 20px;
+        }
+        header {
+            background-color: #fff;
+            box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+            padding: 15px 20px;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+        h1 {
+            color: #333;
+            margin: 0;
+        }
+        .user-info {
+            display: flex;
+            align-items: center;
+        }
+        .user-info span {
+            margin-right: 15px;
+        }
+        .logout-btn {
+            background-color: #e74c3c;
+            color: white;
+            border: none;
+            padding: 8px 15px;
+            border-radius: 4px;
+            cursor: pointer;
+            text-decoration: none;
+        }
+        .dashboard-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
+            gap: 20px;
+            margin-top: 20px;
+        }
+        .dashboard-card {
+            background-color: #fff;
+            border-radius: 5px;
+            box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+            padding: 20px;
+            text-align: center;
+        }
+        .dashboard-card h2 {
+            margin-top: 0;
+            color: #333;
+        }
+        .dashboard-card p {
+            font-size: 24px;
+            font-weight: bold;
+            color: #3498db;
+        }
+        .card-link {
+            display: block;
+            background-color: #3498db;
+            color: white;
+            text-decoration: none;
+            padding: 8px 15px;
+            border-radius: 4px;
+            margin-top: 15px;
+        }
+        .card-link:hover {
+            background-color: #2980b9;
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <h1>PR Classes Admin</h1>
+        <div class="user-info">
+            <span>Welcome, <?php echo htmlspecialchars($admin_username); ?></span>
+            <a href="logout.php" class="logout-btn">Logout</a>
+        </div>
+    </header>
+    
+    <div class="container">
+        <h2>Dashboard</h2>
+        
+        <div class="dashboard-grid">
+            <div class="dashboard-card">
+                <h2>Courses</h2>
+                <?php
+                $course_count = db_get_row("SELECT COUNT(*) as count FROM courses");
+                $count = $course_count ? $course_count['count'] : 0;
+                ?>
+                <p><?php echo $count; ?></p>
+                <a href="courses.php" class="card-link">Manage Courses</a>
+            </div>
+            
+            <div class="dashboard-card">
+                <h2>Testimonials</h2>
+                <?php
+                $testimonial_count = db_get_row("SELECT COUNT(*) as count FROM testimonials");
+                $count = $testimonial_count ? $testimonial_count['count'] : 0;
+                ?>
+                <p><?php echo $count; ?></p>
+                <a href="testimonials.php" class="card-link">Manage Testimonials</a>
+            </div>
+            
+            <div class="dashboard-card">
+                <h2>Admin Users</h2>
+                <?php
+                $user_count = db_get_row("SELECT COUNT(*) as count FROM users");
+                $count = $user_count ? $user_count['count'] : 0;
+                ?>
+                <p><?php echo $count; ?></p>
+                <a href="users.php" class="card-link">Manage Users</a>
+            </div>
+        </div>
+    </div>
+</body>
+</html>
+5. Create Logout Script
+Create admin/logout.php:
+phpCopy<?php
+// Start session
+session_start();
+
+// Clear all session variables
+$_SESSION = array();
+
+// Destroy the session
+session_destroy();
+
+// Redirect to login page
+header("Location: login.php");
+exit;
+?>
+Step 3: Implementation Plan
+
+Create MySQL Database:
+sqlCopyCREATE DATABASE prclasses_db;
+
+Backup & Remove Files:
+
+Back up the current includes/config.php
+Back up includes/schema_mysql.php and includes/schema_sqlite.php
+Back up any database-specific files you want to keep for reference
+
+
+Add New Files:
+
+Add the new includes/db.php
+Add the new install_db.php to project root
+Update admin/login.php with the new version
+Add the new admin/index.php and admin/logout.php
+
+
+Run Installation:
+
+Visit http://localhost:8000/install_db.php in your browser
+This will create the database tables and default admin user
+
+
+Test Admin Login:
+
+Go to http://localhost:8000/admin/login.php
+Login with username admin and password admin123
+
+
+
+Advantages of This Approach
+
+Clean Start: No legacy database code to cause problems
+Simplified API: Simple database functions make coding easier
+Better Error Handling: Consistent error handling throughout
+Easy to Expand: Add new tables and functionality as needed
+Minimal Dependencies: Less code means fewer potential issues
+
+Would you like me to proceed with this clean-start approach? I can also create more admin pages (courses, testimonials, etc.) once we have the basic structure working.RetryClaude does not have internet access. Links provided may not be accurate or up to date.AKError Handling:
+While you have some error handling in place, consider implementing more detailed logging for different types of errors (e.g., connection errors, query errors) to facilitate debugging.What about this? To log each and every error detailed so it will be easy to fix itEditCrafted comprehensive logging strategy for robust error tracking.2sYou're absolutely right to focus on robust error logging. Detailed logging is crucial for debugging database issues, especially in a production environment. Let me enhance the error handling and logging functionality in the database module to provide more comprehensive information.
+Here's what an improved logging system should include:
+
+Different log levels (error, warning, info, debug)
+Contextual information (query being executed, parameters, timing)
+Stack trace for serious errors
+Timestamps and unique error IDs
+Structured logging format for easier parsing
+Configuration options for log verbosity
+
+I'll create an improved version of the db.php file with enhanced error logging capabilities to help identify and fix issues more easily.Enhanced Database Error Logging System
+You're absolutely right - robust error logging is essential for a production application. Let me create an enhanced version of the db.php file with comprehensive error logging that captures detailed information about every database operation.
+phpCopy<?php
+/**
+ * Database connection with enhanced error logging for PR Classes Website
+ */
+
+// Prevent direct access
+if (!defined('INCLUDED_FROM_INDEX')) {
+    define('INCLUDED_FROM_INDEX', true);
+}
+
+// Database credentials
+$db_host = 'localhost';
+$db_name = 'prclasses_db'; // Update with your actual database name
+$db_user = 'root';         // Update with your MySQL username
+$db_pass = '';             // Update with your MySQL password
+
+// Logging configuration
+define('DB_LOG_ENABLED', true);          // Master switch for database logging
+define('DB_LOG_QUERIES', true);          // Log all queries (can generate large logs)
+define('DB_LOG_QUERY_PARAMS', true);     // Log query parameters (may contain sensitive data)
+define('DB_LOG_EXECUTION_TIME', true);   // Log query execution time
+define('DB_LOG_PATH', __DIR__ . '/../logs/database.log');
+define('DB_ERROR_LOG_PATH', __DIR__ . '/../logs/database_errors.log');
+
+// Ensure log directory exists
+$log_dir = dirname(DB_LOG_PATH);
+if (!is_dir($log_dir)) {
+    mkdir($log_dir, 0755, true);
+}
+
+/**
+ * Log database-related message
+ * 
+ * @param string $message Message to log
+ * @param string $level Log level (ERROR, WARNING, INFO, DEBUG)
+ * @param array $context Additional contextual data
+ * @return void
+ */
+function db_log($message, $level = 'INFO', $context = []) {
+    if (!DB_LOG_ENABLED) {
+        return;
+    }
+    
+    $timestamp = date('Y-m-d H:i:s');
+    $context_str = !empty($context) ? " | Context: " . json_encode($context) : "";
+    $log_entry = "[$timestamp] [$level] $message$context_str" . PHP_EOL;
+    
+    $log_file = ($level === 'ERROR') ? DB_ERROR_LOG_PATH : DB_LOG_PATH;
+    
+    // Append to log file
+    file_put_contents($log_file, $log_entry, FILE_APPEND);
+    
+    // If it's an error, also log to PHP error log
+    if ($level === 'ERROR') {
+        error_log("Database $level: $message");
+    }
+}
+
+// Create connection
+try {
+    $connection_start = microtime(true);
+    $pdo = new PDO("mysql:host=$db_host;dbname=$db_name;charset=utf8mb4", $db_user, $db_pass);
+    $connection_time = round((microtime(true) - $connection_start) * 1000, 2);
+    
+    // Set the PDO error mode to exception
+    $pdo->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
+    
+    // Set default fetch mode
+    $pdo->setAttribute(PDO::ATTR_DEFAULT_FETCH_MODE, PDO::FETCH_ASSOC);
+    
+    // Connection established
+    define('DB_CONNECTION_SUCCESS', true);
+    
+    db_log("Database connection established successfully (took {$connection_time}ms)", 'INFO', [
+        'host' => $db_host,
+        'database' => $db_name,
+        'user' => $db_user
+    ]);
+    
+} catch(PDOException $e) {
+    // Log detailed error information
+    $error_code = $e->getCode();
+    $error_message = $e->getMessage();
+    
+    db_log("Database connection failed: [$error_code] $error_message", 'ERROR', [
+        'host' => $db_host,
+        'database' => $db_name,
+        'user' => $db_user,
+        'trace' => $e->getTraceAsString()
+    ]);
+    
+    define('DB_CONNECTION_SUCCESS', false);
+}
+
+/**
+ * Execute a query safely with comprehensive logging
+ * 
+ * @param string $sql SQL query with placeholders
+ * @param array $params Parameters for prepared statement
+ * @param string $operation_type Type of operation (SELECT, INSERT, UPDATE, DELETE)
+ * @return PDOStatement|false PDO statement object or false on failure
+ */
+function db_query($sql, $params = [], $operation_type = 'QUERY') {
+    global $pdo;
+    
+    if (!isset($pdo) || !DB_CONNECTION_SUCCESS) {
+        db_log("Database query attempted but connection is not available", 'ERROR', [
+            'sql' => $sql,
+            'params' => DB_LOG_QUERY_PARAMS ? $params : '[redacted]',
+            'operation' => $operation_type
+        ]);
+        return false;
+    }
+    
+    // Generate a unique query ID for tracking
+    $query_id = uniqid('q_');
+    
+    // Log the query if enabled
+    if (DB_LOG_QUERIES) {
+        db_log("Executing query [$query_id]", 'DEBUG', [
+            'sql' => $sql,
+            'params' => DB_LOG_QUERY_PARAMS ? $params : '[redacted]',
+            'operation' => $operation_type
+        ]);
+    }
+    
+    try {
+        $start_time = microtime(true);
+        $stmt = $pdo->prepare($sql);
+        $stmt->execute($params);
+        
+        // Calculate execution time if enabled
+        if (DB_LOG_EXECUTION_TIME) {
+            $execution_time = round((microtime(true) - $start_time) * 1000, 2);
+            
+            // Log execution time
+            db_log("Query [$query_id] completed successfully", 'DEBUG', [
+                'execution_time_ms' => $execution_time,
+                'affected_rows' => ($operation_type !== 'SELECT') ? $stmt->rowCount() : null,
+                'operation' => $operation_type
+            ]);
+        }
+        
+        return $stmt;
+    } catch (PDOException $e) {
+        $error_code = $e->getCode();
+        $error_message = $e->getMessage();
+        
+        // Log detailed error information
+        db_log("Query [$query_id] failed: [$error_code] $error_message", 'ERROR', [
+            'sql' => $sql,
+            'params' => DB_LOG_QUERY_PARAMS ? $params : '[redacted]',
+            'operation' => $operation_type,
+            'trace' => $e->getTraceAsString()
+        ]);
+        
+        return false;
+    }
+}
+
+/**
+ * Get a single record with logging
+ * 
+ * @param string $sql SQL query with placeholders
+ * @param array $params Parameters for prepared statement
+ * @return array|false Single record or false on failure
+ */
+function db_get_row($sql, $params = []) {
+    $stmt = db_query($sql, $params, 'SELECT');
+    
+    if (!$stmt) {
+        return false;
+    }
+    
+    $result = $stmt->fetch();
+    
+    if ($result === false) {
+        // No rows found, log as info
+        db_log("No results returned for single row query", 'INFO', [
+            'sql' => $sql,
+            'params' => DB_LOG_QUERY_PARAMS ? $params : '[redacted]'
+        ]);
+    }
+    
+    return $result;
+}
+
+/**
+ * Get multiple records with logging
+ * 
+ * @param string $sql SQL query with placeholders
+ * @param array $params Parameters for prepared statement
+ * @return array Array of records (empty array if no results or on failure)
+ */
+function db_get_rows($sql, $params = []) {
+    $stmt = db_query($sql, $params, 'SELECT');
+    
+    if (!$stmt) {
+        return [];
+    }
+    
+    $results = $stmt->fetchAll();
+    $row_count = count($results);
+    
+    // Log result info
+    db_log("Retrieved $row_count rows from database", 'DEBUG', [
+        'sql' => $sql,
+        'params' => DB_LOG_QUERY_PARAMS ? $params : '[redacted]'
+    ]);
+    
+    return $results;
+}
+
+/**
+ * Insert a record with detailed logging
+ * 
+ * @param string $table Table name
+ * @param array $data Associative array of column => value
+ * @return int|false Last insert ID or false on failure
+ */
+function db_insert($table, $data) {
+    global $pdo;
+    
+    if (!isset($pdo) || !DB_CONNECTION_SUCCESS) {
+        db_log("Insert operation attempted but connection is not available", 'ERROR', [
+            'table' => $table,
+            'data' => DB_LOG_QUERY_PARAMS ? $data : '[redacted]'
+        ]);
+        return false;
+    }
+    
+    try {
+        // Build columns and placeholders
+        $columns = implode(', ', array_keys($data));
+        $placeholders = implode(', ', array_fill(0, count($data), '?'));
+        
+        $sql = "INSERT INTO $table ($columns) VALUES ($placeholders)";
+        
+        $start_time = microtime(true);
+        $stmt = $pdo->prepare($sql);
+        $success = $stmt->execute(array_values($data));
+        $last_id = $pdo->lastInsertId();
+        
+        if (DB_LOG_EXECUTION_TIME) {
+            $execution_time = round((microtime(true) - $start_time) * 1000, 2);
+            
+            // Log successful insertion
+            db_log("Record inserted successfully", 'INFO', [
+                'table' => $table,
+                'last_insert_id' => $last_id,
+                'execution_time_ms' => $execution_time,
+                'field_count' => count($data)
+            ]);
+        }
+        
+        return $last_id;
+    } catch (PDOException $e) {
+        $error_code = $e->getCode();
+        $error_message = $e->getMessage();
+        
+        // Log detailed error information
+        db_log("Insert operation failed: [$error_code] $error_message", 'ERROR', [
+            'table' => $table,
+            'data' => DB_LOG_QUERY_PARAMS ? $data : '[redacted]',
+            'sql' => isset($sql) ? $sql : '',
+            'trace' => $e->getTraceAsString()
+        ]);
+        
+        return false;
+    }
+}
+
+/**
+ * Update a record with detailed logging
+ * 
+ * @param string $table Table name
+ * @param array $data Associative array of column => value to update
+ * @param string $where Where clause (without 'WHERE')
+ * @param array $params Parameters for where clause
+ * @return bool|int Success with affected rows or false on failure
+ */
+function db_update($table, $data, $where, $params = []) {
+    global $pdo;
+    
+    if (!isset($pdo) || !DB_CONNECTION_SUCCESS) {
+        db_log("Update operation attempted but connection is not available", 'ERROR', [
+            'table' => $table,
+            'where' => $where,
+            'data' => DB_LOG_QUERY_PARAMS ? $data : '[redacted]'
+        ]);
+        return false;
+    }
+    
+    try {
+        // Build SET clause
+        $set = [];
+        foreach ($data as $column => $value) {
+            $set[] = "$column = ?";
+        }
+        $set_clause = implode(', ', $set);
+        
+        $sql = "UPDATE $table SET $set_clause WHERE $where";
+        
+        // Combine data values with where params
+        $execute_params = array_merge(array_values($data), $params);
+        
+        $start_time = microtime(true);
+        $stmt = $pdo->prepare($sql);
+        $success = $stmt->execute($execute_params);
+        $affected_rows = $stmt->rowCount();
+        
+        if (DB_LOG_EXECUTION_TIME) {
+            $execution_time = round((microtime(true) - $start_time) * 1000, 2);
+            
+            // Log successful update
+            $log_level = ($affected_rows > 0) ? 'INFO' : 'WARNING';
+            db_log("Update operation completed with $affected_rows rows affected", $log_level, [
+                'table' => $table,
+                'where' => $where,
+                'execution_time_ms' => $execution_time,
+                'field_count' => count($data)
+            ]);
+        }
+        
+        return $affected_rows;
+    } catch (PDOException $e) {
+        $error_code = $e->getCode();
+        $error_message = $e->getMessage();
+        
+        // Log detailed error information
+        db_log("Update operation failed: [$error_code] $error_message", 'ERROR', [
+            'table' => $table,
+            'where' => $where,
+            'data' => DB_LOG_QUERY_PARAMS ? $data : '[redacted]',
+            'sql' => isset($sql) ? $sql : '',
+            'trace' => $e->getTraceAsString()
+        ]);
+        
+        return false;
+    }
+}
+
+/**
+ * Delete a record with detailed logging
+ * 
+ * @param string $table Table name
+ * @param string $where Where clause (without 'WHERE')
+ * @param array $params Parameters for where clause
+ * @return bool|int Success with affected rows or false on failure
+ */
+function db_delete($table, $where, $params = []) {
+    global $pdo;
+    
+    if (!isset($pdo) || !DB_CONNECTION_SUCCESS) {
+        db_log("Delete operation attempted but connection is not available", 'ERROR', [
+            'table' => $table,
+            'where' => $where
+        ]);
+        return false;
+    }
+    
+    try {
+        $sql = "DELETE FROM $table WHERE $where";
+        
+        $start_time = microtime(true);
+        $stmt = $pdo->prepare($sql);
+        $success = $stmt->execute($params);
+        $affected_rows = $stmt->rowCount();
+        
+        if (DB_LOG_EXECUTION_TIME) {
+            $execution_time = round((microtime(true) - $start_time) * 1000, 2);
+            
+            // Use different log levels based on impact
+            $log_level = 'INFO';
+            if ($affected_rows > 10) {
+                $log_level = 'WARNING'; // Many rows deleted
+            } elseif ($affected_rows === 0) {
+                $log_level = 'WARNING'; // No rows deleted - possible error in WHERE clause
+            }
+            
+            // Log deletion
+            db_log("Delete operation completed with $affected_rows rows affected", $log_level, [
+                'table' => $table,
+                'where' => $where,
+                'execution_time_ms' => $execution_time
+            ]);
+        }
+        
+        return $affected_rows;
+    } catch (PDOException $e) {
+        $error_code = $e->getCode();
+        $error_message = $e->getMessage();
+        
+        // Log detailed error information
+        db_log("Delete operation failed: [$error_code] $error_message", 'ERROR', [
+            'table' => $table,
+            'where' => $where,
+            'params' => DB_LOG_QUERY_PARAMS ? $params : '[redacted]',
+            'sql' => $sql,
+            'trace' => $e->getTraceAsString()
+        ]);
+        
+        return false;
+    }
+}
+
+/**
+ * Begin a transaction with logging
+ * 
+ * @return bool Success or failure
+ */
+function db_begin_transaction() {
+    global $pdo;
+    
+    if (!isset($pdo) || !DB_CONNECTION_SUCCESS) {
+        db_log("Transaction start attempted but connection is not available", 'ERROR');
+        return false;
+    }
+    
+    try {
+        db_log("Beginning database transaction", 'INFO');
+        return $pdo->beginTransaction();
+    } catch (PDOException $e) {
+        db_log("Failed to begin transaction: " . $e->getMessage(), 'ERROR', [
+            'trace' => $e->getTraceAsString()
+        ]);
+        return false;
+    }
+}
+
+/**
+ * Commit a transaction with logging
+ * 
+ * @return bool Success or failure
+ */
+function db_commit() {
+    global $pdo;
+    
+    if (!isset($pdo) || !DB_CONNECTION_SUCCESS) {
+        db_log("Transaction commit attempted but connection is not available", 'ERROR');
+        return false;
+    }
+    
+    try {
+        $result = $pdo->commit();
+        db_log("Transaction committed successfully", 'INFO');
+        return $result;
+    } catch (PDOException $e) {
+        db_log("Failed to commit transaction: " . $e->getMessage(), 'ERROR', [
+            'trace' => $e->getTraceAsString()
+        ]);
+        return false;
+    }
+}
+
+/**
+ * Rollback a transaction with logging
+ * 
+ * @return bool Success or failure
+ */
+function db_rollback() {
+    global $pdo;
+    
+    if (!isset($pdo) || !DB_CONNECTION_SUCCESS) {
+        db_log("Transaction rollback attempted but connection is not available", 'ERROR');
+        return false;
+    }
+    
+    try {
+        $result = $pdo->rollBack();
+        db_log("Transaction rolled back", 'WARNING');
+        return $result;
+    } catch (PDOException $e) {
+        db_log("Failed to rollback transaction: " . $e->getMessage(), 'ERROR', [
+            'trace' => $e->getTraceAsString()
+        ]);
+        return false;
+    }
+}
+
+/**
+ * Get the last error from MySQL
+ * 
+ * @return string MySQL error message
+ */
+function db_last_error() {
+    global $pdo;
+    
+    if (!isset($pdo) || !DB_CONNECTION_SUCCESS) {
+        return "Database connection is not available";
+    }
+    
+    $error = $pdo->errorInfo();
+    return $error[2] ?? 'No error';
+}
+
+/**
+ * Log database system status
+ * 
+ * @return bool Success or failure
+ */
+function db_log_status() {
+    global $pdo;
+    
+    if (!isset($pdo) || !DB_CONNECTION_SUCCESS) {
+        db_log("Cannot get status: Database connection is not available", 'ERROR');
+        return false;
+    }
+    
+    try {
+        // Get MySQL version
+        $version = $pdo->getAttribute(PDO::ATTR_SERVER_VERSION);
+        
+        // Get server status
+        $status_query = db_query("SHOW STATUS");
+        $status_data = [];
+        
+        if ($status_query) {
+            while ($row = $status_query->fetch()) {
+                if (in_array($row['Variable_name'], [
+                    'Connections', 'Uptime', 'Threads_connected', 
+                    'Questions', 'Slow_queries', 'Innodb_buffer_pool_read_requests',
+                    'Innodb_buffer_pool_reads'
+                ])) {
+                    $status_data[$row['Variable_name']] = $row['Value'];
+                }
+            }
+        }
+        
+        // Log database status
+        db_log("Database system status", 'INFO', [
+            'mysql_version' => $version,
+            'status' => $status_data
+        ]);
+        
+        return true;
+    } catch (PDOException $e) {
+        db_log("Failed to get database status: " . $e->getMessage(), 'ERROR');
+        return false;
+    }
+}
+Key Benefits of This Enhanced Database Module
+
+Comprehensive Error Logging:
+
+Every database operation (connection, queries, transactions) is logged
+Detailed error information including error codes, messages, and stack traces
+Different log levels (ERROR, WARNING, INFO, DEBUG) for better filtering
+
+
+Performance Monitoring:
+
+Connection time logging
+Query execution time tracking
+Affected rows reporting
+
+
+Security Considerations:
+
+Optional parameter logging (can be disabled for sensitive data)
+Separate log files for general operations and errors
+
+
+Diagnostics Capabilities:
+
+Unique query IDs for tracing issues across logs
+Database status logging for system monitoring
+Transaction tracking
+
+
+Configuration Flexibility:
+
+Enable/disable logging completely
+Configure what gets logged (queries, parameters, execution time)
+
+
+
+Using This Module in Your Project
+
+Replace your current database file with this enhanced version
+Ensure your logs directory exists and is writable
+Use the database functions in your code as shown previously:
+
+db_query() for direct queries
+db_get_row() / db_get_rows() for SELECT operations
+db_insert() / db_update() / db_delete() for data manipulation
+db_begin_transaction() / db_commit() / db_rollback() for transactions
+
+
+
+Example Log Output
+Here's what your database logs will look like:
+Copy[2023-11-02 15:23:45] [INFO] Database connection established successfully (took 23.45ms) | Context: {"host":"localhost","database":"prclasses_db","user":"root"}
+[2023-11-02 15:24:12] [DEBUG] Executing query [q_65421a94dc8f3] | Context: {"sql":"SELECT * FROM users WHERE username = ?","params":["admin"],"operation":"SELECT"}
+[2023-11-02 15:24:12] [DEBUG] Query [q_65421a94dc8f3] completed successfully | Context: {"execution_time_ms":1.23,"operation":"SELECT"}
+[2023-11-02 15:24:45] [ERROR] Query [q_65421ab5f3e21] failed: [42S02] Table 'prclasses_db.nonexistent_table' doesn't exist | Context: {"sql":"SELECT * FROM nonexistent_table","params":[],"operation":"SELECT","trace":"#0 /var/www/html/includes/db.php(150): PDOStatement->execute(Array)\n#1..."}

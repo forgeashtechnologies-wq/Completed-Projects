@@ -1,0 +1,115 @@
+<?php
+// For testimonials (around line 50)
+// Update your testimonial insertion code to include mode:
+
+// Example fix:
+if ($_SERVER['REQUEST_METHOD'] === 'POST' && isset($_POST['submit_testimonial'])) {
+    // Process form data
+    $name = cleanInput($_POST['name'] ?? '');
+    $email = cleanInput($_POST['email'] ?? '');
+    $course = cleanInput($_POST['course'] ?? '');
+    $content = cleanInput($_POST['content'] ?? '');
+    $rating = (int)($_POST['rating'] ?? 5);
+    
+    // Add other fields as needed
+    
+    // Always include mode
+    $mode = 'public'; // or whatever default you want
+    
+    // Use the insert_testimonial function from functions.php
+    $testimonial_data = [
+        'name' => $name,
+        'email' => $email,
+        'course' => $course,
+        'content' => $content,
+        'rating' => $rating,
+        'mode' => $mode
+        // Add other fields as needed
+    ];
+    
+    insert_testimonial($testimonial_data);
+    
+    // Or if you're using direct SQL, make sure to include mode
+    /*
+    $stmt = $pdo->prepare("INSERT INTO testimonials (name, email, course, content, rating, mode) 
+                          VALUES (?, ?, ?, ?, ?, ?)");
+    $stmt->execute([$name, $email, $course, $content, $rating, $mode]);
+    */
+}
+
+// For marksheets (around line 112)
+// Update your marksheet insertion code to include mode:
+
+// Example fix:
+if ($_SERVER['REQUEST_METHOD'] === 'POST' && isset($_POST['submit_marksheet'])) {
+    // Process form data
+    $student_name = cleanInput($_POST['student_name'] ?? '');
+    $email = cleanInput($_POST['email'] ?? '');
+    $course = cleanInput($_POST['course'] ?? '');
+    // Add other fields as needed
+    
+    // Always include mode
+    $mode = 'public'; // or whatever default you want
+    
+    // Use the insert_marksheet function from functions.php
+    $marksheet_data = [
+        'student_name' => $student_name,
+        'email' => $email,
+        'course' => $course,
+        'mode' => $mode
+        // Add other fields as needed
+    ];
+    
+    insert_marksheet($marksheet_data);
+    
+    // Or if you're using direct SQL, make sure to include mode
+    /*
+    $stmt = $pdo->prepare("INSERT INTO marksheets (student_name, email, course, mode) 
+                          VALUES (?, ?, ?, ?)");
+    $stmt->execute([$student_name, $email, $course, $mode]);
+    */
+}
+
+// For videos (around line 151)
+// Update your video insertion code to include mode:
+
+// Example fix:
+if ($_SERVER['REQUEST_METHOD'] === 'POST' && isset($_POST['submit_video'])) {
+    // Process form data
+    $title = cleanInput($_POST['title'] ?? '');
+    $url = cleanInput($_POST['url'] ?? '');
+    $description = cleanInput($_POST['description'] ?? '');
+    // Add other fields as needed
+    
+    // Always include mode
+    $mode = 'public'; // or whatever default you want
+    
+    // Use the insert_video function from functions.php
+    $video_data = [
+        'title' => $title,
+        'url' => $url,
+        'description' => $description,
+        'mode' => $mode
+        // Add other fields as needed
+    ];
+    
+    insert_video($video_data);
+    
+    // Or if you're using direct SQL, make sure to include mode
+    /*
+    $stmt = $pdo->prepare("INSERT INTO videos (title, url, description, mode) 
+                          VALUES (?, ?, ?, ?)");
+    $stmt->execute([$title, $url, $description, $mode]);
+    */
+}
+
+// For REQUEST_SCHEME issues (around lines 559-561)
+// Fix this code to use the getUrlScheme() function
+
+// Example fix:
+$scheme = getUrlScheme();
+$host = $_SERVER['HTTP_HOST'];
+$path = $_SERVER['REQUEST_URI'];
+
+// Now use $scheme instead of $_SERVER['REQUEST_SCHEME']
+$full_url = "{$scheme}://{$host}{$path}";

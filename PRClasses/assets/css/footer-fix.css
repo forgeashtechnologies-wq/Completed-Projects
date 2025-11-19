@@ -1,0 +1,148 @@
+/* 
+ * PR Classes - Footer Fix Styles
+ * This file contains styles to fix conflicts between multiple CSS files
+ */
+
+/* Reset any conflicting styles from other CSS files */
+footer, .footer {
+  background-color: #1F2937 !important;
+  color: #F9FAFB !important;
+  padding: 50px 0 30px !important;
+  position: relative !important;
+}
+
+/* Ensure the footer grid layout works correctly */
+.footer-grid {
+  display: grid !important;
+  grid-template-columns: repeat(4, 1fr) !important;
+  gap: 16px !important;
+  margin-bottom: 24px !important;
+}
+
+/* Fix logo section alignment */
+.footer-logo-section {
+  grid-column: span 1 !important;
+}
+
+/* Fix social icons alignment */
+.social-icons {
+  display: flex !important;
+  gap: 10px !important;
+  margin-top: 8px !important;
+  justify-content: flex-start !important;
+}
+
+/* Fix footer columns alignment */
+.footer-column {
+  display: flex !important;
+  flex-direction: column !important;
+  align-items: flex-start !important;
+  text-align: left !important;
+}
+
+/* Fix footer links alignment */
+.footer-links {
+  list-style: none !important;
+  padding: 0 !important;
+  margin: 0 !important;
+  text-align: left !important;
+}
+
+/* Fix contact info alignment */
+.contact-info {
+  margin-top: 8px !important;
+}
+
+.contact-item {
+  margin-bottom: 8px !important;
+  display: flex !important;
+  align-items: center !important;
+  gap: 10px !important;
+}
+
+/* Fix footer bottom section */
+.footer-bottom {
+  text-align: center !important;
+  padding-top: 12px !important;
+  margin-top: 16px !important;
+  border-top: 1px solid rgba(255, 255, 255, 0.1) !important;
+}
+
+/* Fix back to top button */
+.back-to-top {
+  position: fixed !important;
+  bottom: 20px !important;
+  right: 20px !important;
+  width: 40px !important;
+  height: 40px !important;
+  background-color: var(--primary) !important;
+  color: white !important;
+  border-radius: 50% !important;
+  display: flex !important;
+  align-items: center !important;
+  justify-content: center !important;
+  cursor: pointer !important;
+  z-index: 99 !important;
+}
+
+/* Responsive fixes */
+@media (max-width: 1199px) {
+  .footer-grid {
+    grid-template-columns: repeat(2, 1fr) !important;
+    gap: 30px !important;
+  }
+  
+  .footer-logo-section {
+    grid-column: span 2 !important;
+    text-align: center !important;
+  }
+  
+  .social-icons {
+    justify-content: center !important;
+  }
+}
+
+@media (max-width: 767px) {
+  .footer-grid {
+    grid-template-columns: 1fr !important;
+    gap: 40px !important;
+  }
+  
+  .footer-column {
+    text-align: center !important;
+    align-items: center !important;
+  }
+  
+  .footer-column h3 {
+    text-align: center !important;
+  }
+  
+  .footer-column h3::after {
+    left: 50% !important;
+    transform: translateX(-50%) !important;
+  }
+  
+  .footer-links {
+    text-align: center !important;
+  }
+  
+  .contact-item {
+    justify-content: center !important;
+  }
+}
+
+@media (max-width: 576px) {
+  .footer {
+    padding: 40px 0 20px !important;
+  }
+  
+  .contact-item {
+    flex-direction: column !important;
+    text-align: center !important;
+    gap: 5px !important;
+  }
+  
+  .whatsapp-contact {
+    flex-direction: column !important;
+  }
+}

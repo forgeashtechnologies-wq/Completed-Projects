@@ -1,0 +1,44 @@
+# Secure admin directory
+# The following lines are commented out to disable HTTP Basic Authentication
+# AuthType Basic
+# AuthName "Restricted Area"
+# AuthUserFile /path/to/.htpasswd
+# Require valid-user
+
+# Enable PHP error display for debugging
+php_flag display_errors on
+php_value error_reporting E_ALL
+
+# Custom error pages
+ErrorDocument 404 /admin/error.php?code=404
+ErrorDocument 403 /admin/error.php?code=403
+ErrorDocument 500 /admin/error.php?code=500
+
+# Prevent directory listing
+Options -Indexes
+
+# Disable PHP execution in uploads directory
+<IfModule mod_rewrite.c>
+    RewriteEngine On
+    RewriteRule ^uploads/.*\.(php|phtml|php3|php4|php5|php7|pht|phar)$ - [F,L]
+</IfModule>
+
+# Prevent access to sensitive files
+<FilesMatch "^(config\.php|\.htaccess|\.htpasswd|\.env)$">
+    Order allow,deny
+    Deny from all
+</FilesMatch>
+
+# Ensure PHP files are processed properly
+<IfModule mod_rewrite.c>
+    RewriteEngine On
+    # If requested file doesn't exist, try the directory
+    RewriteCond %{REQUEST_FILENAME} !-f
+    # If requested directory doesn't exist, go to index.php
+    RewriteCond %{REQUEST_FILENAME} !-d
+    RewriteRule ^(.*)$ index.php [L]
+</IfModule>
+
+# Redirect to HTTPS if not already
+RewriteCond %{HTTPS} off
+RewriteRule ^(.*)$ https://%{HTTP_HOST}%{REQUEST_URI} [L,R=301]

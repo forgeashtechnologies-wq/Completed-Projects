@@ -1,0 +1,17 @@
+User-agent: *
+Disallow: /admin/
+Disallow: /includes/
+Disallow: /logs/
+Disallow: /vendor/
+Disallow: /backups/
+Disallow: /database/
+Disallow: /.env
+Disallow: /.htaccess
+Disallow: /composer.json
+Disallow: /composer.lock
+Disallow: /package.json
+Disallow: /package-lock.json
+Disallow: /README.md
+Disallow: /deploy.sh
+
+Sitemap: https://prclasses.in/sitemap.xml 

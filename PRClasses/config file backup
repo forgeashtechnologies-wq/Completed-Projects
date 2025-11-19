@@ -1,0 +1,210 @@
+<?php
+// Prevent multiple inclusions
+if (defined('CONFIG_INCLUDED')) {
+    return;
+}
+define('CONFIG_INCLUDED', true);
+
+// Enable error reporting for development
+ini_set('display_errors', 0); // Don't display errors to users
+ini_set('log_errors', 1); // Log errors instead
+ini_set('error_log', __DIR__ . '/../logs/php_errors.log'); // Set path for error log
+
+// Create logs directory if it doesn't exist
+if (!is_dir(__DIR__ . '/../logs')) {
+    mkdir(__DIR__ . '/../logs', 0755, true);
+}
+
+// Define DB_PATH constant first to avoid the undefined constant error
+define('DB_PATH', __DIR__ . '/../database/database.sqlite');
+
+// Check if we're in production or development environment
+$is_production = (isset($_SERVER['SERVER_NAME']) && $_SERVER['SERVER_NAME'] === 'prclasses.in');
+
+// Only try to load dotenv in development environment
+if (!$is_production && file_exists(__DIR__ . '/../vendor/autoload.php')) {
+    require __DIR__ . '/../vendor/autoload.php';
+    
+    if (file_exists(__DIR__ . '/../.env')) {
+        $dotenv = Dotenv\Dotenv::createImmutable(__DIR__ . '/..');
+        $dotenv->load();
+    }
+    
+    // Use environment variables from .env
+    $db_host = $_ENV['DB_HOST'] ?? 'localhost';
+    $db_name = $_ENV['DB_NAME'] ?? 'prclasses_db';
+    $db_user = $_ENV['DB_USER'] ?? 'root';
+    $db_pass = $_ENV['DB_PASS'] ?? '';
+} else {
+    // Hardcoded production database credentials
+    // These should be set to your actual production values
+    $db_host = 'localhost'; // Changed from 'localhost' to '127.0.0.1'
+    $db_name = 'u218412549_prclasses';
+    $db_user = 'u218412549_prclasses';
+    $db_pass = 'Admin@PRASH1'; // Added back the password value
+}
+
+// Site Configuration
+define('SITE_NAME', 'PR Classes');
+// Dynamically set the URL based on server configuration
+define('SITE_URL', (isset($_SERVER['HTTPS']) && $_SERVER['HTTPS'] === 'on' ? 'https' : 'http') . '://' . $_SERVER['HTTP_HOST'] . '/');
+
+// Start session
+if (session_status() == PHP_SESSION_NONE) {
+    session_start();
+}
+
+// Connect to MySQL database
+try {
+    $pdo = new PDO("mysql:host={$db_host};dbname={$db_name};charset=utf8mb4", $db_user, $db_pass);
+    $pdo->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
+    $pdo->setAttribute(PDO::ATTR_DEFAULT_FETCH_MODE, PDO::FETCH_ASSOC);
+} catch (PDOException $e) {
+    error_log('Database connection error: ' . $e->getMessage());
+    
+    // More detailed error logging for debugging
+    error_log('Connection details: host=' . $db_host . ', dbname=' . $db_name . ', user=' . $db_user);
+    
+    // Try to connect to SQLite as fallback
+    try {
+        if (!file_exists(dirname(DB_PATH))) {
+            mkdir(dirname(DB_PATH), 0755, true);
+        }
+        
+        $pdo = new PDO('sqlite:' . DB_PATH);
+        $pdo->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
+        $pdo->setAttribute(PDO::ATTR_DEFAULT_FETCH_MODE, PDO::FETCH_ASSOC);
+        error_log('Switched to SQLite database as fallback');
+    } catch (Exception $sqlite_e) {
+        error_log('[' . date('Y-m-d H:i:s') . '] Exception: ' . $sqlite_e->getMessage());
+        // Don't expose sensitive information in production
+        die('Database connection failed. Please try again later.');
+    }
+}
+
+// For backward compatibility with mysqli code
+class MySQLConnection {
+    private $pdo;
+    
+    public function __construct($pdo) {
+        $this->pdo = $pdo;
+    }
+    
+    public function query($sql) {
+        $stmt = $this->pdo->query($sql);
+        return new MySQLResult($stmt);
+    }
+    
+    public function prepare($sql) {
+        return $this->pdo->prepare($sql);
+    }
+    
+    public function real_escape_string($string) {
+        return str_replace("'", "''", $string); // Basic escaping for compatibility
+    }
+    
+    public function set_charset($charset) {
+        $this->pdo->exec("SET NAMES $charset");
+        return true;
+    }
+    
+    public function __get($name) {
+        if ($name === 'connect_error') {
+            return null; // No error if we got this far
+        }
+        return null;
+    }
+}
+
+class MySQLResult {
+    private $stmt;
+    public $num_rows = 0;
+    private $rows = null;
+    
+    public function __construct($stmt) {
+        $this->stmt = $stmt;
+        // Calculate num_rows immediately and store it
+        $this->rows = $this->stmt->fetchAll(PDO::FETCH_ASSOC);
+        $this->num_rows = count($this->rows);
+        // Reset the statement cursor for future fetch operations
+        $this->stmt->execute();
+    }
+    
+    public function fetch_assoc() {
+        return $this->stmt->fetch(PDO::FETCH_ASSOC);
+    }
+    
+    public function fetch_all($mode = null) {
+        return $this->rows ?: $this->stmt->fetchAll($mode ?: PDO::FETCH_ASSOC);
+    }
+    
+    public function num_rows() {
+        return $this->num_rows;
+    }
+}
+
+$conn = new MySQLConnection($pdo);
+
+// Helper Functions
+
+// Sanitize input
+if (!function_exists('sanitize')) {
+function sanitize($data) {
+    global $conn;
+    if ($data === null) {
+        return '';
+    }
+    return $conn->real_escape_string(trim($data));
+}
+
+// Generate random string
+if (!function_exists('generate_random_string')) {
+function generate_random_string($length = 10) {
+    $characters = '0123456789abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ';
+    $random_string = '';
+    for ($i = 0; $i < $length; $i++) {
+        $random_string .= $characters[rand(0, strlen($characters) - 1)];
+    }
+    return $random_string;
+}
+
+// Format date
+if (!function_exists('format_date')) {
+function format_date($date) {
+    return date('F j, Y', strtotime($date));
+}
+
+// Display success message
+if (!function_exists('display_success_message')) {
+function display_success_message($message) {
+    $_SESSION['success_message'] = $message;
+}
+
+// Display error message
+if (!function_exists('display_error_message')) {
+function display_error_message($message) {
+    $_SESSION['error_message'] = $message;
+}
+
+// Get success message
+if (!function_exists('get_success_message')) {
+function get_success_message() {
+    if (isset($_SESSION['success_message'])) {
+        $message = $_SESSION['success_message'];
+        unset($_SESSION['success_message']);
+        return $message;
+    }
+    return '';
+}
+
+// Get error message
+if (!function_exists('get_error_message')) {
+function get_error_message() {
+    if (isset($_SESSION['error_message'])) {
+        $message = $_SESSION['error_message'];
+        unset($_SESSION['error_message']);
+        return $message;
+    }
+    return '';
+}
+?>

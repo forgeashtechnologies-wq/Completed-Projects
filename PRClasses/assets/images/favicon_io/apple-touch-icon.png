@@ -1,0 +1,5 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="180" height="180" viewBox="0 0 180 180">
+  <rect width="180" height="180" fill="#ffffff"/>
+  <text x="90" y="90" font-family="Arial" font-size="56" text-anchor="middle" dominant-baseline="middle" fill="#007bff">PR</text>
+  <text x="90" y="122" font-family="Arial" font-size="19" text-anchor="middle" dominant-baseline="middle" fill="#333333">Classes</text>
+</svg>
