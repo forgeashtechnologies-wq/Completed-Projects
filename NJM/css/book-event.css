@@ -1,0 +1,485 @@
+/* Fallback for primary and secondary color RGB if not defined */
+:root {
+    --color-primary-rgb: 181, 142, 97; /* Assuming a gold/bronze tone matching the theme */
+    --color-secondary-rgb: 218, 165, 32; /* Gold color */
+}
+
+/* Booking Section Styles */
+body {
+    background-color: var(--color-background);
+}
+
+.booking-page {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    width: 100%;
+    max-width: 1600px;
+    margin: 0 auto;
+    padding: 6rem 2rem; /* Increased top padding to move content down */
+}
+
+.container {
+    width: 100%;
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 0 15px;
+}
+
+.booking-header {
+    text-align: center;
+    margin-bottom: 1rem; /* Pull the header up */
+    position: relative;
+    z-index: 10;
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.booking-header h2 {
+    font-size: 2.5rem;
+    color: var(--color-primary);
+    margin-bottom: 1rem;
+    text-align: center;
+}
+
+.booking-subtitle {
+    font-size: 1.2rem;
+    color: var(--color-text-dark);
+    text-align: center;
+    max-width: 700px;
+    line-height: 1.6;
+}
+
+.booking-intro {
+    max-width: 900px;
+    margin: 0 auto;
+    text-align: center;
+}
+
+.booking-highlights {
+    display: flex;
+    justify-content: center;
+    gap: 2rem;
+    margin-top: 2rem;
+    flex-wrap: wrap;
+}
+
+.highlight-item {
+    flex-basis: calc(33.333% - 2rem);
+    text-align: center;
+    padding: 1.5rem;
+    background-color: rgba(255, 255, 255, 0.8);
+    border-radius: 15px;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    transition: transform 0.3s ease;
+}
+
+.highlight-item:hover {
+    transform: translateY(-10px);
+    box-shadow: 0 6px 12px rgba(0, 0, 0, 0.15);
+}
+
+.highlight-icon {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-bottom: 1rem;
+}
+
+.highlight-icon i {
+    font-size: 3rem;
+    color: var(--color-secondary); 
+    background-color: rgba(var(--color-secondary-rgb), 0.1); 
+    width: 80px;
+    height: 80px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border-radius: 50%;
+    transition: transform 0.3s ease, background-color 0.3s ease;
+}
+
+.highlight-item:hover .highlight-icon i {
+    transform: scale(1.1);
+    background-color: rgba(var(--color-secondary-rgb), 0.2);
+}
+
+.booking-promise {
+    margin-top: 2rem;
+    text-align: center;
+    padding: 2rem;
+    max-width: 900px;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+.booking-promise h3 {
+    color: var(--color-primary);
+    margin-bottom: 1.5rem;
+}
+
+.booking-promise ul {
+    display: flex;
+    justify-content: center;
+    gap: 1.5rem;
+    list-style-type: none;
+    padding: 0;
+    flex-wrap: wrap;
+}
+
+.booking-promise li {
+    display: flex;
+    align-items: center;
+    color: var(--color-text-dark);
+}
+
+.booking-promise li i {
+    color: var(--color-primary);
+    margin-right: 0.5rem;
+    font-size: 1.2rem;
+}
+
+.booking-section {
+    padding: 4rem 0;
+    margin-top: 10px;
+}
+
+.booking-wrapper {
+    display: flex;
+    justify-content: center;
+    align-items: stretch;
+    gap: 3rem;
+    width: 100%;
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 2rem 0;
+}
+
+.booking-info {
+    flex: 0 0 40%;
+    display: grid;
+    grid-template-columns: 1fr;
+    gap: 1.5rem;
+    align-content: start;
+}
+
+.info-card {
+    background-color: white;
+    border-radius: 15px;
+    padding: 2rem;
+    text-align: center;
+    box-shadow: 0 8px 20px rgba(0, 0, 0, 0.06);
+    transition: all 0.4s ease;
+    position: relative;
+    overflow: hidden;
+}
+
+.info-card::after {
+    content: '';
+    position: absolute;
+    bottom: -50%;
+    left: -50%;
+    width: 200%;
+    height: 200%;
+    background: linear-gradient(
+        to right, 
+        transparent, 
+        rgba(var(--color-secondary-rgb), 0.05), 
+        transparent
+    );
+    transform: rotate(-45deg);
+    opacity: 0;
+    transition: opacity 0.4s ease;
+}
+
+.info-card:hover::after {
+    opacity: 1;
+}
+
+.info-card:hover {
+    transform: translateY(-10px);
+    box-shadow: 0 12px 25px rgba(0, 0, 0, 0.1);
+}
+
+.info-card .highlight-icon {
+    margin-bottom: 1.5rem;
+}
+
+.info-card i {
+    font-size: 3rem;
+    color: var(--color-secondary);
+    transition: transform 0.3s ease;
+}
+
+.info-card:hover i {
+    transform: scale(1.1) rotate(5deg);
+}
+
+.info-card h3 {
+    font-size: 1.1rem;
+    color: var(--color-primary);
+    margin-bottom: 0.75rem;
+    font-weight: 600;
+    transition: color 0.3s ease;
+}
+
+.info-card:hover h3 {
+    color: var(--color-secondary);
+}
+
+.info-card p {
+    line-height: 1.6;
+    font-size: 0.9rem;
+    opacity: 0.8;
+    transition: opacity 0.3s ease;
+}
+
+.info-card:hover p {
+    opacity: 1;
+}
+
+.booking-form {
+    flex: 0 0 50%;
+    background-color: white;
+    border-radius: 15px;
+    padding: 2.5rem;
+    box-shadow: 0 10px 25px rgba(0, 0, 0, 0.05);
+    max-width: 600px;
+    transition: all 0.4s ease;
+    position: relative;
+    overflow: hidden;
+}
+
+.booking-form::before {
+    content: '';
+    position: absolute;
+    top: -50%;
+    left: -50%;
+    width: 200%;
+    height: 200%;
+    background: linear-gradient(
+        45deg, 
+        transparent, 
+        rgba(var(--color-primary-rgb), 0.03), 
+        transparent
+    );
+    transform: rotate(-45deg);
+    opacity: 0;
+    transition: opacity 0.4s ease;
+}
+
+.booking-form:hover::before {
+    opacity: 1;
+}
+
+.booking-form:hover {
+    box-shadow: 0 15px 30px rgba(0, 0, 0, 0.08);
+    transform: translateY(-5px);
+}
+
+.form-group {
+    margin-bottom: 1.5rem;
+    position: relative;
+}
+
+.form-group label {
+    display: block;
+    margin-bottom: 0.5rem;
+    color: var(--color-primary);
+    font-weight: 600;
+    transition: color 0.3s ease;
+}
+
+.input-with-icon {
+    position: relative;
+}
+
+.input-with-icon i {
+    position: absolute;
+    left: 15px;
+    top: 50%;
+    transform: translateY(-50%);
+    color: var(--color-secondary);
+    transition: color 0.3s ease;
+}
+
+.input-with-icon input:focus + i,
+.input-with-icon select:focus + i {
+    color: var(--color-primary);
+}
+
+.input-with-icon input, 
+.input-with-icon select, 
+.input-with-icon textarea {
+    width: 100%;
+    padding: 12px 12px 12px 45px;
+    border: 1px solid rgba(0, 0, 0, 0.1);
+    border-radius: 8px;
+    font-size: 1rem;
+    transition: all 0.3s ease;
+}
+
+.input-with-icon input:focus, 
+.input-with-icon select:focus, 
+.input-with-icon textarea:focus {
+    border-color: var(--color-secondary);
+    box-shadow: 0 0 10px rgba(var(--color-secondary-rgb), 0.1);
+}
+
+.submit-btn {
+    width: 100%;
+    padding: 15px;
+    background-color: var(--color-secondary);
+    color: white;
+    border: none;
+    border-radius: 8px;
+    font-size: 1.1rem;
+    cursor: pointer;
+    transition: background-color 0.3s ease, transform 0.2s ease;
+}
+
+.submit-btn:hover {
+    background-color: var(--color-primary);
+    transform: translateY(-3px);
+}
+
+#whatsapp-submit {
+    background-color: var(--color-secondary);
+    color: white;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 10px;
+    position: relative;
+    overflow: hidden;
+    cursor: pointer;
+    transition: 
+        background-color 0.3s ease, 
+        transform 0.2s ease, 
+        box-shadow 0.3s ease;
+}
+
+#whatsapp-submit::before {
+    content: '';
+    position: absolute;
+    top: -50%;
+    left: -50%;
+    width: 200%;
+    height: 200%;
+    background: linear-gradient(
+        45deg, 
+        rgba(255,255,255,0.2), 
+        transparent
+    );
+    transform: rotate(45deg);
+    opacity: 0;
+    transition: opacity 0.3s ease;
+}
+
+#whatsapp-submit i {
+    position: relative;
+    z-index: 1;
+    font-size: 1.5rem;
+    transition: 
+        transform 0.3s ease,
+        color 0.3s ease;
+}
+
+#whatsapp-submit:hover {
+    background-color: var(--color-primary);
+    transform: translateY(-3px);
+    box-shadow: 0 6px 15px rgba(0, 0, 0, 0.2);
+}
+
+#whatsapp-submit:hover::before {
+    opacity: 1;
+}
+
+#whatsapp-submit:hover i {
+    transform: scale(1.1) rotate(10deg);
+}
+
+#whatsapp-submit:active {
+    transform: translateY(1px);
+    box-shadow: 0 3px 8px rgba(0, 0, 0, 0.1);
+}
+
+@media (max-width: 1024px) {
+    .booking-wrapper {
+        flex-direction: column;
+        align-items: center;
+        gap: 2rem;
+    }
+    
+    .booking-info, 
+    .booking-form {
+        flex: 0 0 100%;
+        max-width: 100%;
+    }
+    
+    .form-row {
+        flex-direction: column;
+    }
+}
+
+@media (max-width: 768px) {
+    .booking-page {
+        padding: 2rem 1rem;
+    }
+    
+    .booking-highlights {
+        flex-direction: column;
+        align-items: center;
+    }
+    
+    .highlight-item {
+        flex-basis: 100%;
+        max-width: 350px;
+    }
+    
+    .booking-promise ul {
+        flex-direction: column;
+        align-items: center;
+    }
+    
+    .booking-header {
+        margin-bottom: -1rem; /* Slightly less pull-up on mobile */
+    }
+
+    .booking-section {
+        margin-top: 20px;
+        padding: 2rem 0;
+    }
+}
+
+/* Footer Styles */
+.site-footer {
+    background-color: var(--color-background-light);
+    padding: 1.5rem;
+    text-align: center;
+}
+
+.footer-content {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    color: var(--color-text-dark);
+}
+
+.footer-content p {
+    margin-bottom: 0.5rem;
+    font-size: 0.9rem;
+}
+
+.developer-credit a {
+    color: var(--color-secondary);
+    text-decoration: none;
+    transition: color 0.3s ease;
+}
+
+.developer-credit a:hover {
+    color: var(--color-primary);
+    text-decoration: underline;
+}

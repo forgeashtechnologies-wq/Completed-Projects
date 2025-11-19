@@ -1,0 +1,28 @@
+:root {
+    /* Colors */
+    --color-primary: #4A3728;  /* Dark Brown */
+    --color-secondary: #D4AF37;  /* Gold */
+    --color-background: #FFF8E7;  /* Light Cream */
+    --color-white: #FFFFFF;
+    --color-black: #000000;
+
+    /* Gradient Colors */
+    --color-gold: #D4AF37;
+    --color-brown: #4A3728;
+
+    /* Typography */
+    --font-primary: 'Playfair Display', serif;
+    --font-secondary: 'Roboto', sans-serif;
+
+    /* Spacing */
+    --spacing-small: 0.5rem;
+    --spacing-medium: 1rem;
+    --spacing-large: 2rem;
+
+    /* Transitions */
+    --transition-smooth: all 0.3s ease-in-out;
+
+    /* Shadows and Blur */
+    --blur-light: 10px;
+    --shadow-subtle: 0 4px 6px rgba(0, 0, 0, 0.1);
+}

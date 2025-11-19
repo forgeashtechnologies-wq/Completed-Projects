@@ -1,0 +1,68 @@
+/* About Page Styles */
+.about-page {
+    background-color: var(--color-background);
+}
+
+.about-content {
+    background-color: var(--color-background);
+    padding: 4rem 0;
+}
+
+.section-header h2 {
+    color: var(--color-primary);
+    font-family: var(--font-primary);
+    margin-bottom: 2rem;
+}
+
+.about-story,
+.events-section,
+.venue-capacity-section {
+    margin-bottom: 3rem;
+}
+
+.events-grid {
+    display: flex;
+    gap: 1rem;
+    overflow-x: auto;
+    padding: 1rem 0;
+}
+
+.event-card {
+    background-color: var(--color-white);
+    border-radius: 10px;
+    padding: 1.5rem;
+    text-align: center;
+    box-shadow: var(--shadow-subtle);
+    min-width: 200px;
+    transition: transform 0.3s ease;
+}
+
+.event-card:hover {
+    transform: translateY(-5px);
+}
+
+.event-card i {
+    font-size: 2.5rem;
+    color: var(--color-secondary);
+    margin-bottom: 1rem;
+}
+
+.event-card h3 {
+    font-size: 1rem;
+    color: var(--color-primary);
+}
+
+/* Responsive Adjustments */
+@media (max-width: 768px) {
+    .about-content {
+        padding: 2rem 0;
+    }
+
+    .events-grid {
+        padding: 0.5rem 0;
+    }
+
+    .event-card {
+        min-width: 180px;
+    }
+}

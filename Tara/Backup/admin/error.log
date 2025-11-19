@@ -1,0 +1,385 @@
+[13-Nov-2024 04:20:43 UTC] PHP Notice:  session_start(): Ignoring session_start() because a session is already active in /home/u218412549/domains/tarasdental.in/public_html/admin/logout.php on line 4
+[13-Nov-2024 04:42:01 UTC] PHP Notice:  session_start(): Ignoring session_start() because a session is already active in /home/u218412549/domains/tarasdental.in/public_html/admin/logout.php on line 4
+[13-Nov-2024 04:54:51 UTC] Failed login attempt for username: admin
+[13-Nov-2024 04:54:55 UTC] Failed login attempt for username: admin
+[13-Nov-2024 04:55:37 UTC] Failed login attempt for username: admin
+[13-Nov-2024 04:56:21 UTC] Failed login attempt for username: tarasmdentistry
+[13-Nov-2024 04:56:24 UTC] Failed login attempt for username: admin
+[13-Nov-2024 04:57:00 UTC] Failed login attempt for username: admin
+[13-Nov-2024 05:04:08 UTC] Admin login successful for user: tarasmdentistry
+[13-Nov-2024 05:05:22 UTC] Admin login successful for user: tarasmdentistry
+[13-Nov-2024 05:06:03 UTC] Failed login attempt for username: tarasmdentistry
+[13-Nov-2024 05:06:06 UTC] Admin login successful for user: tarasmdentistry
+[13-Nov-2024 05:20:45 UTC] Admin login successful for user: tarasmdentistry
+[13-Nov-2024 05:23:20 UTC] Admin login successful for user: tarasmdentistry
+[13-Nov-2024 05:40:18 UTC] Failed login attempt for username: tarasmdentistry
+[13-Nov-2024 05:41:32 UTC] Failed login attempt for username: tarasmdentistry
+[13-Nov-2024 05:41:38 UTC] Failed login attempt for username: admin
+[13-Nov-2024 05:41:42 UTC] Failed login attempt for username: tarasmdentistry
+[13-Nov-2024 05:42:09 UTC] Admin login successful for user: tarasmdentistry
+[13-Nov-2024 05:43:07 UTC] Failed login attempt for username: tarasmdentistry
+[13-Nov-2024 05:47:53 UTC] Admin login successful for user: tarasmdentistry
+[13-Nov-2024 05:47:59 UTC] Admin login successful for user: tarasmdentistry
+[13-Nov-2024 05:48:13 UTC] Admin login successful for user: tarasmdentistry
+[13-Nov-2024 05:49:15 UTC] Admin login successful for user: tarasmdentistry
+[13-Nov-2024 06:43:02 UTC] Admin login successful for user: tarasmdentistry
+[13-Nov-2024 06:45:25 UTC] Admin login successful for user: tarasmdentistry
+[13-Nov-2024 06:54:06 UTC] PHP Warning:  Undefined variable $conn in /home/u218412549/domains/tarasdental.in/public_html/admin/dashboard.php on line 28
+[13-Nov-2024 06:54:06 UTC] PHP Fatal error:  Uncaught Error: Call to a member function query() on null in /home/u218412549/domains/tarasdental.in/public_html/admin/dashboard.php:28
+Stack trace:
+#0 {main}
+  thrown in /home/u218412549/domains/tarasdental.in/public_html/admin/dashboard.php on line 28
+[13-Nov-2024 06:54:07 UTC] PHP Warning:  Undefined variable $conn in /home/u218412549/domains/tarasdental.in/public_html/admin/dashboard.php on line 28
+[13-Nov-2024 06:54:07 UTC] PHP Fatal error:  Uncaught Error: Call to a member function query() on null in /home/u218412549/domains/tarasdental.in/public_html/admin/dashboard.php:28
+Stack trace:
+#0 {main}
+  thrown in /home/u218412549/domains/tarasdental.in/public_html/admin/dashboard.php on line 28
+[13-Nov-2024 06:54:08 UTC] PHP Warning:  Undefined variable $conn in /home/u218412549/domains/tarasdental.in/public_html/admin/dashboard.php on line 28
+[13-Nov-2024 06:54:08 UTC] PHP Fatal error:  Uncaught Error: Call to a member function query() on null in /home/u218412549/domains/tarasdental.in/public_html/admin/dashboard.php:28
+Stack trace:
+#0 {main}
+  thrown in /home/u218412549/domains/tarasdental.in/public_html/admin/dashboard.php on line 28
+[13-Nov-2024 06:54:08 UTC] PHP Warning:  Undefined variable $conn in /home/u218412549/domains/tarasdental.in/public_html/admin/dashboard.php on line 28
+[13-Nov-2024 06:54:08 UTC] PHP Fatal error:  Uncaught Error: Call to a member function query() on null in /home/u218412549/domains/tarasdental.in/public_html/admin/dashboard.php:28
+Stack trace:
+#0 {main}
+  thrown in /home/u218412549/domains/tarasdental.in/public_html/admin/dashboard.php on line 28
+[13-Nov-2024 06:54:08 UTC] PHP Warning:  Undefined variable $conn in /home/u218412549/domains/tarasdental.in/public_html/admin/dashboard.php on line 28
+[13-Nov-2024 06:54:08 UTC] PHP Fatal error:  Uncaught Error: Call to a member function query() on null in /home/u218412549/domains/tarasdental.in/public_html/admin/dashboard.php:28
+Stack trace:
+#0 {main}
+  thrown in /home/u218412549/domains/tarasdental.in/public_html/admin/dashboard.php on line 28
+[13-Nov-2024 06:54:08 UTC] PHP Warning:  Undefined variable $conn in /home/u218412549/domains/tarasdental.in/public_html/admin/dashboard.php on line 28
+[13-Nov-2024 06:54:08 UTC] PHP Fatal error:  Uncaught Error: Call to a member function query() on null in /home/u218412549/domains/tarasdental.in/public_html/admin/dashboard.php:28
+Stack trace:
+#0 {main}
+  thrown in /home/u218412549/domains/tarasdental.in/public_html/admin/dashboard.php on line 28
+[13-Nov-2024 06:54:09 UTC] PHP Warning:  Undefined variable $conn in /home/u218412549/domains/tarasdental.in/public_html/admin/dashboard.php on line 28
+[13-Nov-2024 06:54:09 UTC] PHP Fatal error:  Uncaught Error: Call to a member function query() on null in /home/u218412549/domains/tarasdental.in/public_html/admin/dashboard.php:28
+Stack trace:
+#0 {main}
+  thrown in /home/u218412549/domains/tarasdental.in/public_html/admin/dashboard.php on line 28
+[13-Nov-2024 06:54:09 UTC] PHP Warning:  Undefined variable $conn in /home/u218412549/domains/tarasdental.in/public_html/admin/dashboard.php on line 28
+[13-Nov-2024 06:54:09 UTC] PHP Fatal error:  Uncaught Error: Call to a member function query() on null in /home/u218412549/domains/tarasdental.in/public_html/admin/dashboard.php:28
+Stack trace:
+#0 {main}
+  thrown in /home/u218412549/domains/tarasdental.in/public_html/admin/dashboard.php on line 28
+[13-Nov-2024 06:54:09 UTC] PHP Warning:  Undefined variable $conn in /home/u218412549/domains/tarasdental.in/public_html/admin/dashboard.php on line 28
+[13-Nov-2024 06:54:09 UTC] PHP Fatal error:  Uncaught Error: Call to a member function query() on null in /home/u218412549/domains/tarasdental.in/public_html/admin/dashboard.php:28
+Stack trace:
+#0 {main}
+  thrown in /home/u218412549/domains/tarasdental.in/public_html/admin/dashboard.php on line 28
+[13-Nov-2024 06:54:09 UTC] PHP Warning:  Undefined variable $conn in /home/u218412549/domains/tarasdental.in/public_html/admin/dashboard.php on line 28
+[13-Nov-2024 06:54:09 UTC] PHP Fatal error:  Uncaught Error: Call to a member function query() on null in /home/u218412549/domains/tarasdental.in/public_html/admin/dashboard.php:28
+Stack trace:
+#0 {main}
+  thrown in /home/u218412549/domains/tarasdental.in/public_html/admin/dashboard.php on line 28
+[13-Nov-2024 06:54:09 UTC] PHP Warning:  Undefined variable $conn in /home/u218412549/domains/tarasdental.in/public_html/admin/dashboard.php on line 28
+[13-Nov-2024 06:54:09 UTC] PHP Fatal error:  Uncaught Error: Call to a member function query() on null in /home/u218412549/domains/tarasdental.in/public_html/admin/dashboard.php:28
+Stack trace:
+#0 {main}
+  thrown in /home/u218412549/domains/tarasdental.in/public_html/admin/dashboard.php on line 28
+[13-Nov-2024 06:54:09 UTC] PHP Warning:  Undefined variable $conn in /home/u218412549/domains/tarasdental.in/public_html/admin/dashboard.php on line 28
+[13-Nov-2024 06:54:09 UTC] PHP Fatal error:  Uncaught Error: Call to a member function query() on null in /home/u218412549/domains/tarasdental.in/public_html/admin/dashboard.php:28
+Stack trace:
+#0 {main}
+  thrown in /home/u218412549/domains/tarasdental.in/public_html/admin/dashboard.php on line 28
+[13-Nov-2024 06:54:10 UTC] PHP Warning:  Undefined variable $conn in /home/u218412549/domains/tarasdental.in/public_html/admin/dashboard.php on line 28
+[13-Nov-2024 06:54:10 UTC] PHP Fatal error:  Uncaught Error: Call to a member function query() on null in /home/u218412549/domains/tarasdental.in/public_html/admin/dashboard.php:28
+Stack trace:
+#0 {main}
+  thrown in /home/u218412549/domains/tarasdental.in/public_html/admin/dashboard.php on line 28
+[13-Nov-2024 06:54:10 UTC] PHP Warning:  Undefined variable $conn in /home/u218412549/domains/tarasdental.in/public_html/admin/dashboard.php on line 28
+[13-Nov-2024 06:54:10 UTC] PHP Fatal error:  Uncaught Error: Call to a member function query() on null in /home/u218412549/domains/tarasdental.in/public_html/admin/dashboard.php:28
+Stack trace:
+#0 {main}
+  thrown in /home/u218412549/domains/tarasdental.in/public_html/admin/dashboard.php on line 28
+[13-Nov-2024 06:54:10 UTC] PHP Warning:  Undefined variable $conn in /home/u218412549/domains/tarasdental.in/public_html/admin/dashboard.php on line 28
+[13-Nov-2024 06:54:10 UTC] PHP Fatal error:  Uncaught Error: Call to a member function query() on null in /home/u218412549/domains/tarasdental.in/public_html/admin/dashboard.php:28
+Stack trace:
+#0 {main}
+  thrown in /home/u218412549/domains/tarasdental.in/public_html/admin/dashboard.php on line 28
+[13-Nov-2024 06:54:17 UTC] Admin login successful for user: tarasmdentistry
+[13-Nov-2024 06:54:17 UTC] PHP Warning:  Undefined variable $conn in /home/u218412549/domains/tarasdental.in/public_html/admin/dashboard.php on line 28
+[13-Nov-2024 06:54:17 UTC] PHP Fatal error:  Uncaught Error: Call to a member function query() on null in /home/u218412549/domains/tarasdental.in/public_html/admin/dashboard.php:28
+Stack trace:
+#0 {main}
+  thrown in /home/u218412549/domains/tarasdental.in/public_html/admin/dashboard.php on line 28
+[13-Nov-2024 06:54:35 UTC] PHP Warning:  Undefined variable $conn in /home/u218412549/domains/tarasdental.in/public_html/admin/dashboard.php on line 28
+[13-Nov-2024 06:54:35 UTC] PHP Fatal error:  Uncaught Error: Call to a member function query() on null in /home/u218412549/domains/tarasdental.in/public_html/admin/dashboard.php:28
+Stack trace:
+#0 {main}
+  thrown in /home/u218412549/domains/tarasdental.in/public_html/admin/dashboard.php on line 28
+[13-Nov-2024 07:02:19 UTC] Admin login successful for user: tarasmdentistry
+[13-Nov-2024 07:04:01 UTC] Connection failed: SQLSTATE[HY000] [1045] Access denied for user 'u218412549_tarablog'@'localhost' (using password: YES)
+[13-Nov-2024 07:04:01 UTC] Error in dashboard: Database connection failed. Please check configuration.
+[13-Nov-2024 07:04:09 UTC] Admin login successful for user: tarasmdentistry
+[13-Nov-2024 07:04:09 UTC] Connection failed: SQLSTATE[HY000] [1045] Access denied for user 'u218412549_tarablog'@'localhost' (using password: YES)
+[13-Nov-2024 07:04:09 UTC] Error in dashboard: Database connection failed. Please check configuration.
+[13-Nov-2024 07:04:21 UTC] Connection failed: SQLSTATE[HY000] [1045] Access denied for user 'u218412549_tarablog'@'localhost' (using password: YES)
+[13-Nov-2024 07:04:21 UTC] Error in dashboard: Database connection failed. Please check configuration.
+[13-Nov-2024 07:07:54 UTC] Starting dashboard.php
+[13-Nov-2024 07:07:54 UTC] Connection failed: SQLSTATE[HY000] [1045] Access denied for user 'u218412549_tarablog'@'localhost' (using password: YES)
+[13-Nov-2024 07:07:54 UTC] Database error: Database connection failed. Please check configuration.
+[13-Nov-2024 07:07:56 UTC] Starting dashboard.php
+[13-Nov-2024 07:07:56 UTC] Connection failed: SQLSTATE[HY000] [1045] Access denied for user 'u218412549_tarablog'@'localhost' (using password: YES)
+[13-Nov-2024 07:07:56 UTC] Database error: Database connection failed. Please check configuration.
+[13-Nov-2024 07:12:03 UTC] Starting dashboard.php
+[13-Nov-2024 07:12:03 UTC] Connection failed: SQLSTATE[HY000] [1045] Access denied for user 'u218412549_tarablog'@'localhost' (using password: YES)
+[13-Nov-2024 07:12:03 UTC] Database error: Database connection failed. Please check configuration.
+[13-Nov-2024 07:12:46 UTC] Connection failed: SQLSTATE[HY000] [1045] Access denied for user 'u218412549_tarablog'@'localhost' (using password: YES)
+[13-Nov-2024 07:13:00 UTC] Admin login successful for user: tarasmdentistry
+[13-Nov-2024 07:13:00 UTC] Starting dashboard.php
+[13-Nov-2024 07:13:00 UTC] Connection failed: SQLSTATE[HY000] [1045] Access denied for user 'u218412549_tarablog'@'localhost' (using password: YES)
+[13-Nov-2024 07:13:00 UTC] Database error: Database connection failed. Please check configuration.
+[13-Nov-2024 07:13:55 UTC] Starting dashboard.php
+[13-Nov-2024 07:13:55 UTC] Connection failed: SQLSTATE[HY000] [1045] Access denied for user 'u218412549_tarablog'@'localhost' (using password: YES)
+[13-Nov-2024 07:13:55 UTC] Database error: Database connection failed. Please check configuration.
+[13-Nov-2024 12:12:58 UTC] PHP Fatal error:  Uncaught Error: Undefined constant "SITE_URL" in /home/u218412549/domains/tarasdental.in/public_html/admin/index.php:49
+Stack trace:
+#0 {main}
+  thrown in /home/u218412549/domains/tarasdental.in/public_html/admin/index.php on line 49
+[13-Nov-2024 12:17:05 UTC] Starting dashboard.php
+[13-Nov-2024 12:17:05 UTC] Database connection successful
+[13-Nov-2024 12:17:05 UTC] Test query successful
+[13-Nov-2024 12:17:05 UTC] PHP Fatal error:  Uncaught Error: Undefined constant "SITE_URL" in /home/u218412549/domains/tarasdental.in/public_html/admin/index.php:49
+Stack trace:
+#0 {main}
+  thrown in /home/u218412549/domains/tarasdental.in/public_html/admin/index.php on line 49
+[13-Nov-2024 12:17:09 UTC] PHP Fatal error:  Uncaught Error: Undefined constant "SITE_URL" in /home/u218412549/domains/tarasdental.in/public_html/admin/index.php:49
+Stack trace:
+#0 {main}
+  thrown in /home/u218412549/domains/tarasdental.in/public_html/admin/index.php on line 49
+[13-Nov-2024 12:17:15 UTC] PHP Fatal error:  Uncaught Error: Undefined constant "SITE_URL" in /home/u218412549/domains/tarasdental.in/public_html/admin/index.php:49
+Stack trace:
+#0 {main}
+  thrown in /home/u218412549/domains/tarasdental.in/public_html/admin/index.php on line 49
+[13-Nov-2024 12:17:17 UTC] PHP Fatal error:  Uncaught Error: Undefined constant "SITE_URL" in /home/u218412549/domains/tarasdental.in/public_html/admin/index.php:49
+Stack trace:
+#0 {main}
+  thrown in /home/u218412549/domains/tarasdental.in/public_html/admin/index.php on line 49
+[13-Nov-2024 12:19:10 UTC] PHP Fatal error:  Uncaught Error: Undefined constant "SITE_URL" in /home/u218412549/domains/tarasdental.in/public_html/admin/index.php:53
+Stack trace:
+#0 {main}
+  thrown in /home/u218412549/domains/tarasdental.in/public_html/admin/index.php on line 53
+[13-Nov-2024 12:19:16 UTC] PHP Fatal error:  Uncaught Error: Undefined constant "SITE_URL" in /home/u218412549/domains/tarasdental.in/public_html/admin/index.php:53
+Stack trace:
+#0 {main}
+  thrown in /home/u218412549/domains/tarasdental.in/public_html/admin/index.php on line 53
+[13-Nov-2024 12:20:30 UTC] PHP Fatal error:  Uncaught Error: Undefined constant "SITE_URL" in /home/u218412549/domains/tarasdental.in/public_html/admin/index.php:53
+Stack trace:
+#0 {main}
+  thrown in /home/u218412549/domains/tarasdental.in/public_html/admin/index.php on line 53
+[13-Nov-2024 12:23:32 UTC] Admin login successful for user: tarasmdentistry
+[13-Nov-2024 12:23:32 UTC] Starting dashboard.php
+[13-Nov-2024 12:23:32 UTC] Database connection successful
+[13-Nov-2024 12:23:32 UTC] Test query successful
+[13-Nov-2024 12:23:37 UTC] Starting dashboard.php
+[13-Nov-2024 12:23:37 UTC] Database connection successful
+[13-Nov-2024 12:23:37 UTC] Test query successful
+[13-Nov-2024 12:23:39 UTC] Starting dashboard.php
+[13-Nov-2024 12:23:39 UTC] Database connection successful
+[13-Nov-2024 12:23:39 UTC] Test query successful
+[13-Nov-2024 12:23:43 UTC] Starting dashboard.php
+[13-Nov-2024 12:23:43 UTC] Database connection successful
+[13-Nov-2024 12:23:43 UTC] Test query successful
+[13-Nov-2024 12:23:43 UTC] Starting dashboard.php
+[13-Nov-2024 12:23:43 UTC] Database connection successful
+[13-Nov-2024 12:23:43 UTC] Test query successful
+[13-Nov-2024 12:23:46 UTC] Starting dashboard.php
+[13-Nov-2024 12:23:46 UTC] Database connection successful
+[13-Nov-2024 12:23:46 UTC] Test query successful
+[13-Nov-2024 12:23:46 UTC] Starting dashboard.php
+[13-Nov-2024 12:23:46 UTC] Database connection successful
+[13-Nov-2024 12:23:46 UTC] Test query successful
+[13-Nov-2024 12:23:47 UTC] Starting dashboard.php
+[13-Nov-2024 12:23:47 UTC] Database connection successful
+[13-Nov-2024 12:23:47 UTC] Test query successful
+[13-Nov-2024 12:23:49 UTC] Starting dashboard.php
+[13-Nov-2024 12:23:49 UTC] Database connection successful
+[13-Nov-2024 12:23:49 UTC] Test query successful
+[13-Nov-2024 12:28:35 UTC] Admin login successful for user: tarasmdentistry
+[13-Nov-2024 12:28:35 UTC] Starting dashboard.php
+[13-Nov-2024 12:28:35 UTC] Database connection successful
+[13-Nov-2024 12:28:35 UTC] Test query successful
+[13-Nov-2024 12:29:10 UTC] Starting dashboard.php
+[13-Nov-2024 12:29:10 UTC] Database connection successful
+[13-Nov-2024 12:29:10 UTC] Test query successful
+[13-Nov-2024 12:29:28 UTC] Starting dashboard.php
+[13-Nov-2024 12:29:28 UTC] Database connection successful
+[13-Nov-2024 12:29:28 UTC] Test query successful
+[13-Nov-2024 12:35:08 UTC] Starting dashboard.php
+[13-Nov-2024 12:35:08 UTC] Database connection successful
+[13-Nov-2024 12:35:08 UTC] Test query successful
+[13-Nov-2024 12:35:10 UTC] Admin login successful for user: tarasmdentistry
+[13-Nov-2024 12:35:10 UTC] Starting dashboard.php
+[13-Nov-2024 12:35:10 UTC] Database connection successful
+[13-Nov-2024 12:35:10 UTC] Test query successful
+[13-Nov-2024 12:35:17 UTC] Starting dashboard.php
+[13-Nov-2024 12:35:17 UTC] Database connection successful
+[13-Nov-2024 12:35:17 UTC] Test query successful
+[13-Nov-2024 12:35:50 UTC] Starting dashboard.php
+[13-Nov-2024 12:35:50 UTC] Database connection successful
+[13-Nov-2024 12:35:50 UTC] Test query successful
+[13-Nov-2024 12:36:00 UTC] Starting dashboard.php
+[13-Nov-2024 12:36:00 UTC] Database connection successful
+[13-Nov-2024 12:36:00 UTC] Test query successful
+[13-Nov-2024 12:36:31 UTC] Starting dashboard.php
+[13-Nov-2024 12:36:31 UTC] Database connection successful
+[13-Nov-2024 12:36:31 UTC] Test query successful
+[13-Nov-2024 12:52:30 UTC] Starting dashboard.php
+[13-Nov-2024 12:52:30 UTC] Database connection successful
+[13-Nov-2024 12:52:30 UTC] Test query successful
+[13-Nov-2024 12:52:57 UTC] Starting dashboard.php
+[13-Nov-2024 12:52:57 UTC] Database connection successful
+[13-Nov-2024 12:52:57 UTC] Test query successful
+[13-Nov-2024 12:57:34 UTC] Starting dashboard.php
+[13-Nov-2024 12:57:34 UTC] Database connection successful
+[13-Nov-2024 12:57:34 UTC] Test query successful
+[13-Nov-2024 12:58:30 UTC] Admin login successful for user: tarasmdentistry
+[13-Nov-2024 12:58:30 UTC] Starting dashboard.php
+[13-Nov-2024 12:58:30 UTC] Database connection successful
+[13-Nov-2024 12:58:30 UTC] Test query successful
+[13-Nov-2024 12:58:47 UTC] Admin login successful for user: tarasmdentistry
+[13-Nov-2024 12:58:47 UTC] Starting dashboard.php
+[13-Nov-2024 12:58:47 UTC] Database connection successful
+[13-Nov-2024 12:58:47 UTC] Test query successful
+[13-Nov-2024 12:58:52 UTC] Starting dashboard.php
+[13-Nov-2024 12:58:52 UTC] Database connection successful
+[13-Nov-2024 12:58:52 UTC] Test query successful
+[13-Nov-2024 12:58:55 UTC] Starting dashboard.php
+[13-Nov-2024 12:58:55 UTC] Database connection successful
+[13-Nov-2024 12:58:55 UTC] Test query successful
+[13-Nov-2024 12:59:02 UTC] Starting dashboard.php
+[13-Nov-2024 12:59:02 UTC] Database connection successful
+[13-Nov-2024 12:59:02 UTC] Test query successful
+[13-Nov-2024 13:20:12 UTC] PHP Warning:  include(../includes/footer.php): Failed to open stream: No such file or directory in /home/u218412549/domains/tarasdental.in/public_html/blog/index.php on line 234
+[13-Nov-2024 13:20:12 UTC] PHP Warning:  include(): Failed opening '../includes/footer.php' for inclusion (include_path='.:/opt/alt/php82/usr/share/pear:/opt/alt/php82/usr/share/php:/usr/share/pear:/usr/share/php') in /home/u218412549/domains/tarasdental.in/public_html/blog/index.php on line 234
+[13-Nov-2024 13:20:37 UTC] PHP Warning:  include(../includes/footer.php): Failed to open stream: No such file or directory in /home/u218412549/domains/tarasdental.in/public_html/blog/index.php on line 234
+[13-Nov-2024 13:20:37 UTC] PHP Warning:  include(): Failed opening '../includes/footer.php' for inclusion (include_path='.:/opt/alt/php82/usr/share/pear:/opt/alt/php82/usr/share/php:/usr/share/pear:/usr/share/php') in /home/u218412549/domains/tarasdental.in/public_html/blog/index.php on line 234
+[13-Nov-2024 13:20:51 UTC] PHP Warning:  include(../includes/footer.php): Failed to open stream: No such file or directory in /home/u218412549/domains/tarasdental.in/public_html/blog/post.php on line 225
+[13-Nov-2024 13:20:51 UTC] PHP Warning:  include(): Failed opening '../includes/footer.php' for inclusion (include_path='.:/opt/alt/php82/usr/share/pear:/opt/alt/php82/usr/share/php:/usr/share/pear:/usr/share/php') in /home/u218412549/domains/tarasdental.in/public_html/blog/post.php on line 225
+[13-Nov-2024 13:21:20 UTC] PHP Warning:  include(../includes/footer.php): Failed to open stream: No such file or directory in /home/u218412549/domains/tarasdental.in/public_html/blog/index.php on line 234
+[13-Nov-2024 13:21:20 UTC] PHP Warning:  include(): Failed opening '../includes/footer.php' for inclusion (include_path='.:/opt/alt/php82/usr/share/pear:/opt/alt/php82/usr/share/php:/usr/share/pear:/usr/share/php') in /home/u218412549/domains/tarasdental.in/public_html/blog/index.php on line 234
+[13-Nov-2024 13:21:23 UTC] PHP Warning:  include(../includes/footer.php): Failed to open stream: No such file or directory in /home/u218412549/domains/tarasdental.in/public_html/blog/post.php on line 225
+[13-Nov-2024 13:21:23 UTC] PHP Warning:  include(): Failed opening '../includes/footer.php' for inclusion (include_path='.:/opt/alt/php82/usr/share/pear:/opt/alt/php82/usr/share/php:/usr/share/pear:/usr/share/php') in /home/u218412549/domains/tarasdental.in/public_html/blog/post.php on line 225
+[13-Nov-2024 13:22:41 UTC] PHP Warning:  include(../includes/footer.php): Failed to open stream: No such file or directory in /home/u218412549/domains/tarasdental.in/public_html/blog/index.php on line 234
+[13-Nov-2024 13:22:41 UTC] PHP Warning:  include(): Failed opening '../includes/footer.php' for inclusion (include_path='.:/opt/alt/php82/usr/share/pear:/opt/alt/php82/usr/share/php:/usr/share/pear:/usr/share/php') in /home/u218412549/domains/tarasdental.in/public_html/blog/index.php on line 234
+[13-Nov-2024 13:22:46 UTC] PHP Warning:  include(../includes/footer.php): Failed to open stream: No such file or directory in /home/u218412549/domains/tarasdental.in/public_html/blog/post.php on line 225
+[13-Nov-2024 13:22:46 UTC] PHP Warning:  include(): Failed opening '../includes/footer.php' for inclusion (include_path='.:/opt/alt/php82/usr/share/pear:/opt/alt/php82/usr/share/php:/usr/share/pear:/usr/share/php') in /home/u218412549/domains/tarasdental.in/public_html/blog/post.php on line 225
+[13-Nov-2024 13:22:55 UTC] PHP Warning:  include(../includes/footer.php): Failed to open stream: No such file or directory in /home/u218412549/domains/tarasdental.in/public_html/blog/index.php on line 234
+[13-Nov-2024 13:22:55 UTC] PHP Warning:  include(): Failed opening '../includes/footer.php' for inclusion (include_path='.:/opt/alt/php82/usr/share/pear:/opt/alt/php82/usr/share/php:/usr/share/pear:/usr/share/php') in /home/u218412549/domains/tarasdental.in/public_html/blog/index.php on line 234
+[13-Nov-2024 13:22:57 UTC] PHP Warning:  include(../includes/footer.php): Failed to open stream: No such file or directory in /home/u218412549/domains/tarasdental.in/public_html/blog/post.php on line 225
+[13-Nov-2024 13:22:57 UTC] PHP Warning:  include(): Failed opening '../includes/footer.php' for inclusion (include_path='.:/opt/alt/php82/usr/share/pear:/opt/alt/php82/usr/share/php:/usr/share/pear:/usr/share/php') in /home/u218412549/domains/tarasdental.in/public_html/blog/post.php on line 225
+[13-Nov-2024 13:23:00 UTC] PHP Warning:  include(../includes/footer.php): Failed to open stream: No such file or directory in /home/u218412549/domains/tarasdental.in/public_html/blog/index.php on line 234
+[13-Nov-2024 13:23:00 UTC] PHP Warning:  include(): Failed opening '../includes/footer.php' for inclusion (include_path='.:/opt/alt/php82/usr/share/pear:/opt/alt/php82/usr/share/php:/usr/share/pear:/usr/share/php') in /home/u218412549/domains/tarasdental.in/public_html/blog/index.php on line 234
+[13-Nov-2024 13:24:44 UTC] PHP Warning:  include(../includes/footer.php): Failed to open stream: No such file or directory in /home/u218412549/domains/tarasdental.in/public_html/blog/index.php on line 234
+[13-Nov-2024 13:24:44 UTC] PHP Warning:  include(): Failed opening '../includes/footer.php' for inclusion (include_path='.:/opt/alt/php82/usr/share/pear:/opt/alt/php82/usr/share/php:/usr/share/pear:/usr/share/php') in /home/u218412549/domains/tarasdental.in/public_html/blog/index.php on line 234
+[13-Nov-2024 13:29:43 UTC] PHP Warning:  include(../includes/footer.php): Failed to open stream: No such file or directory in /home/u218412549/domains/tarasdental.in/public_html/blog/index.php on line 234
+[13-Nov-2024 13:29:43 UTC] PHP Warning:  include(): Failed opening '../includes/footer.php' for inclusion (include_path='.:/opt/alt/php82/usr/share/pear:/opt/alt/php82/usr/share/php:/usr/share/pear:/usr/share/php') in /home/u218412549/domains/tarasdental.in/public_html/blog/index.php on line 234
+[13-Nov-2024 13:29:46 UTC] PHP Warning:  include(../includes/footer.php): Failed to open stream: No such file or directory in /home/u218412549/domains/tarasdental.in/public_html/blog/post.php on line 225
+[13-Nov-2024 13:29:46 UTC] PHP Warning:  include(): Failed opening '../includes/footer.php' for inclusion (include_path='.:/opt/alt/php82/usr/share/pear:/opt/alt/php82/usr/share/php:/usr/share/pear:/usr/share/php') in /home/u218412549/domains/tarasdental.in/public_html/blog/post.php on line 225
+[13-Nov-2024 13:34:22 UTC] PHP Warning:  include(../includes/footer.php): Failed to open stream: No such file or directory in /home/u218412549/domains/tarasdental.in/public_html/blog/index.php on line 234
+[13-Nov-2024 13:34:22 UTC] PHP Warning:  include(): Failed opening '../includes/footer.php' for inclusion (include_path='.:/opt/alt/php82/usr/share/pear:/opt/alt/php82/usr/share/php:/usr/share/pear:/usr/share/php') in /home/u218412549/domains/tarasdental.in/public_html/blog/index.php on line 234
+[13-Nov-2024 13:34:49 UTC] PHP Warning:  include(../includes/footer.php): Failed to open stream: No such file or directory in /home/u218412549/domains/tarasdental.in/public_html/blog/index.php on line 234
+[13-Nov-2024 13:34:49 UTC] PHP Warning:  include(): Failed opening '../includes/footer.php' for inclusion (include_path='.:/opt/alt/php82/usr/share/pear:/opt/alt/php82/usr/share/php:/usr/share/pear:/usr/share/php') in /home/u218412549/domains/tarasdental.in/public_html/blog/index.php on line 234
+[13-Nov-2024 13:34:52 UTC] PHP Warning:  include(../includes/footer.php): Failed to open stream: No such file or directory in /home/u218412549/domains/tarasdental.in/public_html/blog/post.php on line 225
+[13-Nov-2024 13:34:52 UTC] PHP Warning:  include(): Failed opening '../includes/footer.php' for inclusion (include_path='.:/opt/alt/php82/usr/share/pear:/opt/alt/php82/usr/share/php:/usr/share/pear:/usr/share/php') in /home/u218412549/domains/tarasdental.in/public_html/blog/post.php on line 225
+[13-Nov-2024 13:34:55 UTC] PHP Warning:  include(../includes/footer.php): Failed to open stream: No such file or directory in /home/u218412549/domains/tarasdental.in/public_html/blog/index.php on line 234
+[13-Nov-2024 13:34:55 UTC] PHP Warning:  include(): Failed opening '../includes/footer.php' for inclusion (include_path='.:/opt/alt/php82/usr/share/pear:/opt/alt/php82/usr/share/php:/usr/share/pear:/usr/share/php') in /home/u218412549/domains/tarasdental.in/public_html/blog/index.php on line 234
+[13-Nov-2024 13:35:20 UTC] PHP Warning:  include(../includes/footer.php): Failed to open stream: No such file or directory in /home/u218412549/domains/tarasdental.in/public_html/blog/index.php on line 234
+[13-Nov-2024 13:35:20 UTC] PHP Warning:  include(): Failed opening '../includes/footer.php' for inclusion (include_path='.:/opt/alt/php82/usr/share/pear:/opt/alt/php82/usr/share/php:/usr/share/pear:/usr/share/php') in /home/u218412549/domains/tarasdental.in/public_html/blog/index.php on line 234
+[13-Nov-2024 13:37:47 UTC] PHP Warning:  include(../includes/footer.php): Failed to open stream: No such file or directory in /home/u218412549/domains/tarasdental.in/public_html/blog/index.php on line 234
+[13-Nov-2024 13:37:47 UTC] PHP Warning:  include(): Failed opening '../includes/footer.php' for inclusion (include_path='.:/opt/alt/php82/usr/share/pear:/opt/alt/php82/usr/share/php:/usr/share/pear:/usr/share/php') in /home/u218412549/domains/tarasdental.in/public_html/blog/index.php on line 234
+[13-Nov-2024 13:38:00 UTC] PHP Warning:  include(../includes/footer.php): Failed to open stream: No such file or directory in /home/u218412549/domains/tarasdental.in/public_html/blog/index.php on line 234
+[13-Nov-2024 13:38:00 UTC] PHP Warning:  include(): Failed opening '../includes/footer.php' for inclusion (include_path='.:/opt/alt/php82/usr/share/pear:/opt/alt/php82/usr/share/php:/usr/share/pear:/usr/share/php') in /home/u218412549/domains/tarasdental.in/public_html/blog/index.php on line 234
+[13-Nov-2024 13:38:06 UTC] PHP Warning:  include(../includes/footer.php): Failed to open stream: No such file or directory in /home/u218412549/domains/tarasdental.in/public_html/blog/index.php on line 234
+[13-Nov-2024 13:38:06 UTC] PHP Warning:  include(): Failed opening '../includes/footer.php' for inclusion (include_path='.:/opt/alt/php82/usr/share/pear:/opt/alt/php82/usr/share/php:/usr/share/pear:/usr/share/php') in /home/u218412549/domains/tarasdental.in/public_html/blog/index.php on line 234
+[13-Nov-2024 13:38:36 UTC] PHP Warning:  include(../includes/footer.php): Failed to open stream: No such file or directory in /home/u218412549/domains/tarasdental.in/public_html/blog/index.php on line 234
+[13-Nov-2024 13:38:36 UTC] PHP Warning:  include(): Failed opening '../includes/footer.php' for inclusion (include_path='.:/opt/alt/php82/usr/share/pear:/opt/alt/php82/usr/share/php:/usr/share/pear:/usr/share/php') in /home/u218412549/domains/tarasdental.in/public_html/blog/index.php on line 234
+[13-Nov-2024 13:46:38 UTC] PHP Warning:  include(../includes/footer.php): Failed to open stream: No such file or directory in /home/u218412549/domains/tarasdental.in/public_html/blog/index.php on line 234
+[13-Nov-2024 13:46:38 UTC] PHP Warning:  include(): Failed opening '../includes/footer.php' for inclusion (include_path='.:/opt/alt/php82/usr/share/pear:/opt/alt/php82/usr/share/php:/usr/share/pear:/usr/share/php') in /home/u218412549/domains/tarasdental.in/public_html/blog/index.php on line 234
+[13-Nov-2024 14:03:36 UTC] PHP Warning:  include(../includes/footer.php): Failed to open stream: No such file or directory in /home/u218412549/domains/tarasdental.in/public_html/blog/index.php on line 234
+[13-Nov-2024 14:03:36 UTC] PHP Warning:  include(): Failed opening '../includes/footer.php' for inclusion (include_path='.:/opt/alt/php82/usr/share/pear:/opt/alt/php82/usr/share/php:/usr/share/pear:/usr/share/php') in /home/u218412549/domains/tarasdental.in/public_html/blog/index.php on line 234
+[13-Nov-2024 14:08:17 UTC] Database error: SQLSTATE[42S02]: Base table or view not found: 1146 Table 'u218412549_Tarablog.post_images' doesn't exist
+[13-Nov-2024 14:08:17 UTC] PHP Warning:  Undefined variable $total_posts in /home/u218412549/domains/tarasdental.in/public_html/blog/index.php on line 215
+[13-Nov-2024 14:08:18 UTC] Database error: SQLSTATE[42S02]: Base table or view not found: 1146 Table 'u218412549_Tarablog.post_images' doesn't exist
+[13-Nov-2024 14:08:18 UTC] PHP Warning:  Undefined variable $total_posts in /home/u218412549/domains/tarasdental.in/public_html/blog/index.php on line 215
+[13-Nov-2024 15:58:24 UTC] Database error: SQLSTATE[42S02]: Base table or view not found: 1146 Table 'u218412549_Tarablog.post_images' doesn't exist
+[13-Nov-2024 15:58:24 UTC] PHP Warning:  Undefined variable $total_posts in /home/u218412549/domains/tarasdental.in/public_html/blog/index.php on line 215
+[13-Nov-2024 16:35:33 UTC] Database error: SQLSTATE[42S02]: Base table or view not found: 1146 Table 'u218412549_Tarablog.post_images' doesn't exist
+[13-Nov-2024 16:35:33 UTC] PHP Warning:  Undefined variable $total_posts in /home/u218412549/domains/tarasdental.in/public_html/blog/index.php on line 215
+[13-Nov-2024 16:41:07 UTC] Database error: SQLSTATE[42S02]: Base table or view not found: 1146 Table 'u218412549_Tarablog.post_images' doesn't exist
+[13-Nov-2024 16:41:07 UTC] PHP Warning:  Undefined variable $total_posts in /home/u218412549/domains/tarasdental.in/public_html/blog/index.php on line 215
+[13-Nov-2024 16:45:20 UTC] PHP Warning:  include(../includes/footer.php): Failed to open stream: No such file or directory in /home/u218412549/domains/tarasdental.in/public_html/blog/index.php on line 234
+[13-Nov-2024 16:45:20 UTC] PHP Warning:  include(): Failed opening '../includes/footer.php' for inclusion (include_path='.:/opt/alt/php82/usr/share/pear:/opt/alt/php82/usr/share/php:/usr/share/pear:/usr/share/php') in /home/u218412549/domains/tarasdental.in/public_html/blog/index.php on line 234
+[13-Nov-2024 16:47:13 UTC] PHP Warning:  include(../includes/footer.php): Failed to open stream: No such file or directory in /home/u218412549/domains/tarasdental.in/public_html/blog/index.php on line 772
+[13-Nov-2024 16:47:13 UTC] PHP Warning:  include(): Failed opening '../includes/footer.php' for inclusion (include_path='.:/opt/alt/php82/usr/share/pear:/opt/alt/php82/usr/share/php:/usr/share/pear:/usr/share/php') in /home/u218412549/domains/tarasdental.in/public_html/blog/index.php on line 772
+[13-Nov-2024 16:47:14 UTC] PHP Warning:  include(../includes/footer.php): Failed to open stream: No such file or directory in /home/u218412549/domains/tarasdental.in/public_html/blog/index.php on line 772
+[13-Nov-2024 16:47:14 UTC] PHP Warning:  include(): Failed opening '../includes/footer.php' for inclusion (include_path='.:/opt/alt/php82/usr/share/pear:/opt/alt/php82/usr/share/php:/usr/share/pear:/usr/share/php') in /home/u218412549/domains/tarasdental.in/public_html/blog/index.php on line 772
+[13-Nov-2024 16:55:03 UTC] PHP Warning:  include(../includes/footer.php): Failed to open stream: No such file or directory in /home/u218412549/domains/tarasdental.in/public_html/blog/index.php on line 772
+[13-Nov-2024 16:55:03 UTC] PHP Warning:  include(): Failed opening '../includes/footer.php' for inclusion (include_path='.:/opt/alt/php82/usr/share/pear:/opt/alt/php82/usr/share/php:/usr/share/pear:/usr/share/php') in /home/u218412549/domains/tarasdental.in/public_html/blog/index.php on line 772
+[13-Nov-2024 16:55:03 UTC] PHP Warning:  include(../includes/footer.php): Failed to open stream: No such file or directory in /home/u218412549/domains/tarasdental.in/public_html/blog/index.php on line 772
+[13-Nov-2024 16:55:03 UTC] PHP Warning:  include(): Failed opening '../includes/footer.php' for inclusion (include_path='.:/opt/alt/php82/usr/share/pear:/opt/alt/php82/usr/share/php:/usr/share/pear:/usr/share/php') in /home/u218412549/domains/tarasdental.in/public_html/blog/index.php on line 772
+[13-Nov-2024 16:55:04 UTC] PHP Warning:  include(../includes/footer.php): Failed to open stream: No such file or directory in /home/u218412549/domains/tarasdental.in/public_html/blog/index.php on line 772
+[13-Nov-2024 16:55:04 UTC] PHP Warning:  include(): Failed opening '../includes/footer.php' for inclusion (include_path='.:/opt/alt/php82/usr/share/pear:/opt/alt/php82/usr/share/php:/usr/share/pear:/usr/share/php') in /home/u218412549/domains/tarasdental.in/public_html/blog/index.php on line 772
+[13-Nov-2024 16:55:04 UTC] PHP Warning:  include(../includes/footer.php): Failed to open stream: No such file or directory in /home/u218412549/domains/tarasdental.in/public_html/blog/index.php on line 772
+[13-Nov-2024 16:55:04 UTC] PHP Warning:  include(): Failed opening '../includes/footer.php' for inclusion (include_path='.:/opt/alt/php82/usr/share/pear:/opt/alt/php82/usr/share/php:/usr/share/pear:/usr/share/php') in /home/u218412549/domains/tarasdental.in/public_html/blog/index.php on line 772
+[13-Nov-2024 16:55:55 UTC] PHP Warning:  include(../includes/footer.php): Failed to open stream: No such file or directory in /home/u218412549/domains/tarasdental.in/public_html/blog/index.php on line 235
+[13-Nov-2024 16:55:55 UTC] PHP Warning:  include(): Failed opening '../includes/footer.php' for inclusion (include_path='.:/opt/alt/php82/usr/share/pear:/opt/alt/php82/usr/share/php:/usr/share/pear:/usr/share/php') in /home/u218412549/domains/tarasdental.in/public_html/blog/index.php on line 235
+[13-Nov-2024 16:59:45 UTC] PHP Warning:  include_once(../includes/footer.php): Failed to open stream: No such file or directory in /home/u218412549/domains/tarasdental.in/public_html/blog/index.php on line 236
+[13-Nov-2024 16:59:45 UTC] PHP Warning:  include_once(): Failed opening '../includes/footer.php' for inclusion (include_path='.:/opt/alt/php82/usr/share/pear:/opt/alt/php82/usr/share/php:/usr/share/pear:/usr/share/php') in /home/u218412549/domains/tarasdental.in/public_html/blog/index.php on line 236
+[13-Nov-2024 17:14:18 UTC] PHP Warning:  Undefined variable $posts in /home/u218412549/domains/tarasdental.in/public_html/blog/index.php on line 110
+[13-Nov-2024 17:14:18 UTC] PHP Warning:  foreach() argument must be of type array|object, null given in /home/u218412549/domains/tarasdental.in/public_html/blog/index.php on line 110
+[13-Nov-2024 17:14:18 UTC] PHP Warning:  Undefined variable $total_pages in /home/u218412549/domains/tarasdental.in/public_html/blog/index.php on line 153
+[13-Nov-2024 17:14:18 UTC] PHP Warning:  Undefined variable $total_pages in /home/u218412549/domains/tarasdental.in/public_html/blog/index.php on line 161
+[13-Nov-2024 17:14:18 UTC] PHP Warning:  Undefined variable $categories in /home/u218412549/domains/tarasdental.in/public_html/blog/index.php on line 177
+[13-Nov-2024 17:14:18 UTC] PHP Warning:  foreach() argument must be of type array|object, null given in /home/u218412549/domains/tarasdental.in/public_html/blog/index.php on line 177
+[13-Nov-2024 17:57:25 UTC] PHP Warning:  include(../includes/nav.php): Failed to open stream: No such file or directory in /home/u218412549/domains/tarasdental.in/public_html/blog/index.php on line 96
+[13-Nov-2024 17:57:25 UTC] PHP Warning:  include(): Failed opening '../includes/nav.php' for inclusion (include_path='.:/opt/alt/php82/usr/share/pear:/opt/alt/php82/usr/share/php:/usr/share/pear:/usr/share/php') in /home/u218412549/domains/tarasdental.in/public_html/blog/index.php on line 96
+[13-Nov-2024 17:57:25 UTC] PHP Warning:  include(../includes/footer.php): Failed to open stream: No such file or directory in /home/u218412549/domains/tarasdental.in/public_html/blog/index.php on line 215
+[13-Nov-2024 17:57:25 UTC] PHP Warning:  include(): Failed opening '../includes/footer.php' for inclusion (include_path='.:/opt/alt/php82/usr/share/pear:/opt/alt/php82/usr/share/php:/usr/share/pear:/usr/share/php') in /home/u218412549/domains/tarasdental.in/public_html/blog/index.php on line 215
+[13-Nov-2024 17:57:26 UTC] PHP Warning:  include(../includes/nav.php): Failed to open stream: No such file or directory in /home/u218412549/domains/tarasdental.in/public_html/blog/index.php on line 96
+[13-Nov-2024 17:57:26 UTC] PHP Warning:  include(): Failed opening '../includes/nav.php' for inclusion (include_path='.:/opt/alt/php82/usr/share/pear:/opt/alt/php82/usr/share/php:/usr/share/pear:/usr/share/php') in /home/u218412549/domains/tarasdental.in/public_html/blog/index.php on line 96
+[13-Nov-2024 17:57:26 UTC] PHP Warning:  include(../includes/footer.php): Failed to open stream: No such file or directory in /home/u218412549/domains/tarasdental.in/public_html/blog/index.php on line 215
+[13-Nov-2024 17:57:26 UTC] PHP Warning:  include(): Failed opening '../includes/footer.php' for inclusion (include_path='.:/opt/alt/php82/usr/share/pear:/opt/alt/php82/usr/share/php:/usr/share/pear:/usr/share/php') in /home/u218412549/domains/tarasdental.in/public_html/blog/index.php on line 215
+[13-Nov-2024 18:13:42 UTC] Admin login successful for user: tarasmdentistry
+[13-Nov-2024 18:13:42 UTC] Starting dashboard.php
+[13-Nov-2024 18:13:42 UTC] Database connection successful
+[13-Nov-2024 18:13:42 UTC] Test query successful
+[13-Nov-2024 18:13:46 UTC] Starting dashboard.php
+[13-Nov-2024 18:13:46 UTC] Database connection successful
+[13-Nov-2024 18:13:46 UTC] Test query successful
+[13-Nov-2024 18:13:46 UTC] Starting dashboard.php
+[13-Nov-2024 18:13:46 UTC] Database connection successful
+[13-Nov-2024 18:13:46 UTC] Test query successful
+[13-Nov-2024 18:13:49 UTC] Starting dashboard.php
+[13-Nov-2024 18:13:49 UTC] Database connection successful
+[13-Nov-2024 18:13:49 UTC] Test query successful
+[13-Nov-2024 18:13:49 UTC] Starting dashboard.php
+[13-Nov-2024 18:13:49 UTC] Database connection successful
+[13-Nov-2024 18:13:49 UTC] Test query successful
+[13-Nov-2024 18:13:55 UTC] Starting dashboard.php
+[13-Nov-2024 18:13:55 UTC] Database connection successful
+[13-Nov-2024 18:13:55 UTC] Test query successful
+[13-Nov-2024 18:31:29 UTC] Admin login successful for user: tarasmdentistry
+[13-Nov-2024 18:31:29 UTC] Starting dashboard.php
+[13-Nov-2024 18:31:29 UTC] Database connection successful
+[13-Nov-2024 18:31:29 UTC] Test query successful
+[13-Nov-2024 18:33:23 UTC] Starting dashboard.php
+[13-Nov-2024 18:33:23 UTC] Database connection successful
+[13-Nov-2024 18:33:23 UTC] Test query successful
+[13-Nov-2024 18:33:28 UTC] Starting dashboard.php
+[13-Nov-2024 18:33:28 UTC] Database connection successful
+[13-Nov-2024 18:33:28 UTC] Test query successful
+[13-Nov-2024 18:36:31 UTC] Starting dashboard.php
+[13-Nov-2024 18:36:31 UTC] Database connection successful
+[13-Nov-2024 18:36:31 UTC] Test query successful
+[14-Nov-2024 04:52:52 UTC] PHP Warning:  include(../includes/footer.php): Failed to open stream: No such file or directory in /home/u218412549/domains/tarasdental.in/public_html/blog/index.php on line 286
+[14-Nov-2024 04:52:52 UTC] PHP Warning:  include(): Failed opening '../includes/footer.php' for inclusion (include_path='.:/opt/alt/php82/usr/share/pear:/opt/alt/php82/usr/share/php:/usr/share/pear:/usr/share/php') in /home/u218412549/domains/tarasdental.in/public_html/blog/index.php on line 286
+[14-Nov-2024 04:53:59 UTC] PHP Warning:  include(/home/u218412549/domains/tarasdental.in/public_html/blog/../includes/footer.php): Failed to open stream: No such file or directory in /home/u218412549/domains/tarasdental.in/public_html/blog/index.php on line 286
+[14-Nov-2024 04:53:59 UTC] PHP Warning:  include(): Failed opening '/home/u218412549/domains/tarasdental.in/public_html/blog/../includes/footer.php' for inclusion (include_path='.:/opt/alt/php82/usr/share/pear:/opt/alt/php82/usr/share/php:/usr/share/pear:/usr/share/php') in /home/u218412549/domains/tarasdental.in/public_html/blog/index.php on line 286
+[14-Nov-2024 04:55:16 UTC] PHP Warning:  include(/home/u218412549/domains/tarasdental.in/public_html/blog/../includes/footer.php): Failed to open stream: No such file or directory in /home/u218412549/domains/tarasdental.in/public_html/blog/index.php on line 285
+[14-Nov-2024 04:55:16 UTC] PHP Warning:  include(): Failed opening '/home/u218412549/domains/tarasdental.in/public_html/blog/../includes/footer.php' for inclusion (include_path='.:/opt/alt/php82/usr/share/pear:/opt/alt/php82/usr/share/php:/usr/share/pear:/usr/share/php') in /home/u218412549/domains/tarasdental.in/public_html/blog/index.php on line 285
+[14-Nov-2024 04:56:21 UTC] PHP Warning:  include(/home/u218412549/domains/tarasdental.in/public_html/includes/footer.php): Failed to open stream: No such file or directory in /home/u218412549/domains/tarasdental.in/public_html/blog/index.php on line 285
+[14-Nov-2024 04:56:21 UTC] PHP Warning:  include(): Failed opening '/home/u218412549/domains/tarasdental.in/public_html/includes/footer.php' for inclusion (include_path='.:/opt/alt/php82/usr/share/pear:/opt/alt/php82/usr/share/php:/usr/share/pear:/usr/share/php') in /home/u218412549/domains/tarasdental.in/public_html/blog/index.php on line 285

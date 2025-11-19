@@ -1,0 +1,309 @@
+/* Contact Page Styles */
+:root {
+    --contact-primary-color: rgb(181, 142, 97); /* Gold/Bronze tone */
+    --contact-secondary-color: rgb(218, 165, 32); /* Gold */
+    --contact-background-color: var(--color-background);
+    --contact-text-color: var(--color-text-primary);
+    --contact-text-secondary-color: var(--color-text-dark);
+}
+
+.contact-page {
+    background-color: var(--contact-background-color);
+    color: var(--contact-text-color);
+    min-height: 100vh;
+}
+
+.contact-hero {
+    position: relative;
+    height: 50vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: white;
+    text-align: center;
+    background: linear-gradient(
+        -45deg, 
+        rgba(181, 142, 97, 0.9), 
+        rgba(218, 165, 32, 0.7), 
+        rgba(74, 55, 40, 0.8), 
+        rgba(181, 142, 97, 0.6)
+    );
+    background-size: 400% 400%;
+    animation: gradientBG 15s ease infinite;
+    overflow: hidden;
+}
+
+@keyframes gradientBG {
+    0% { background-position: 0% 50%; }
+    50% { background-position: 100% 50%; }
+    100% { background-position: 0% 50%; }
+}
+
+.contact-hero-overlay {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: radial-gradient(
+        circle at center, 
+        rgba(0,0,0,0.1), 
+        rgba(0,0,0,0.4)
+    );
+    z-index: 1;
+}
+
+.contact-hero-content {
+    position: relative;
+    z-index: 2;
+    width: 100%;
+    max-width: 800px;
+    padding: 0 20px;
+    margin: 0 auto;
+}
+
+.page-title {
+    font-size: 3.5rem;
+    font-weight: 700;
+    margin-bottom: 15px;
+    text-shadow: 0 4px 15px rgba(0,0,0,0.3);
+    font-family: 'Playfair Display', serif;
+    color: #4a3728;
+}
+
+.hero-subtitle {
+    font-size: 1.5rem;
+    opacity: 0.9;
+    letter-spacing: 1px;
+    font-family: 'Roboto', sans-serif;
+}
+
+.contact-container {
+    display: flex;
+    max-width: 1200px;
+    margin: 4rem auto;
+    gap: 40px;
+    padding: 0 20px;
+    box-sizing: border-box;
+}
+
+.contact-info {
+    flex: 1;
+    background-color: white;
+    border-radius: 15px;
+    padding: 40px;
+    box-shadow: 0 15px 35px rgba(0,0,0,0.1);
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.contact-info:hover {
+    transform: translateY(-10px);
+    box-shadow: 0 20px 45px rgba(0,0,0,0.15);
+}
+
+.contact-header h2 {
+    color: var(--contact-primary-color);
+    font-size: 2.5rem;
+    margin-bottom: 10px;
+}
+
+.contact-header p {
+    color: var(--contact-text-secondary-color);
+    margin-bottom: 30px;
+}
+
+.contact-details-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    gap: 20px;
+}
+
+.contact-details-card {
+    background-color: #f7f7f7;
+    padding: 20px;
+    border-radius: 10px;
+    box-shadow: 0 10px 20px rgba(0,0,0,0.1);
+    transition: transform 0.3s ease;
+}
+
+.contact-details-card:hover {
+    transform: translateY(-5px);
+}
+
+.contact-card-icon {
+    font-size: 2rem;
+    color: var(--contact-secondary-color);
+    margin-bottom: 10px;
+}
+
+.contact-card-content h4 {
+    margin: 0 0 5px 0;
+    color: var(--contact-primary-color);
+    font-size: 1.1rem;
+}
+
+.contact-card-content p {
+    margin: 0;
+    color: var(--contact-text-secondary-color);
+}
+
+.map-container {
+    width: 100%;
+    max-width: 100%;
+    overflow: hidden;
+    margin: 2rem 0;
+}
+
+.map-container iframe {
+    width: 100%;
+    max-width: 100%;
+    border: none;
+    border-radius: 10px;
+}
+
+.whatsapp-chat-btn {
+    background-color: #25D366;
+    color: white;
+    border: none;
+    padding: 10px 15px;
+    border-radius: 5px;
+    cursor: pointer;
+    font-weight: bold;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 10px;
+    margin-top: 10px;
+    transition: background-color 0.3s ease;
+}
+
+.whatsapp-chat-btn:hover {
+    background-color: #128C7E;
+}
+
+.whatsapp-chat-btn i {
+    font-size: 1.2em;
+}
+
+@media (max-width: 768px) {
+    .contact-hero {
+        height: 40vh;
+        min-height: 250px;
+    }
+
+    .page-title {
+        font-size: 2.5rem;
+    }
+
+    .hero-subtitle {
+        font-size: 1.2rem;
+    }
+
+    .contact-container {
+        flex-direction: column;
+        margin: 2rem auto;
+        gap: 20px;
+        padding: 0 15px;
+    }
+
+    .contact-info {
+        padding: 20px;
+    }
+
+    .contact-header h2 {
+        font-size: 2rem;
+    }
+
+    .contact-details-grid {
+        grid-template-columns: 1fr;
+        gap: 15px;
+    }
+
+    .map-container {
+        margin: 1rem 0;
+        padding: 0 15px;
+    }
+
+    .map-container iframe {
+        height: 300px;
+    }
+}
+
+@media (max-width: 480px) {
+    .contact-hero {
+        height: 30vh;
+        min-height: 200px;
+    }
+
+    .page-title {
+        font-size: 2rem;
+    }
+
+    .hero-subtitle {
+        font-size: 1rem;
+    }
+
+    .contact-info {
+        padding: 15px;
+    }
+
+    .contact-header h2 {
+        font-size: 1.8rem;
+    }
+
+    .map-container iframe {
+        height: 250px;
+    }
+}
+
+@media screen and (max-width: 768px) {
+    .contact-hero {
+        height: 60vh; /* Increase height on mobile */
+    }
+
+    .contact-hero-overlay {
+        top: 20%; /* Push overlay down */
+    }
+
+    .contact-hero-content {
+        padding-top: 80px; /* Add padding to push content down */
+    }
+
+    .page-title {
+        font-size: 2.8rem;
+        margin-top: 2rem; /* Add space above title */
+    }
+
+    .hero-subtitle {
+        font-size: 1.2rem;
+        margin-top: 1rem;
+    }
+
+    .contact-container {
+        margin-top: 6rem; /* Push content further down */
+        padding: 0 15px;
+        flex-direction: column;
+    }
+
+    .contact-header {
+        margin-bottom: 2rem; /* Add more space below header */
+        padding: 0 15px; /* Add some horizontal padding */
+    }
+
+    .contact-header h2 {
+        font-size: 2rem; /* Slightly smaller on mobile */
+    }
+
+    .contact-subheader {
+        font-size: 1rem; /* Adjust subheader size */
+        margin-top: 0.5rem;
+        line-height: 1.5;
+    }
+
+    .contact-details-grid {
+        display: flex;
+        flex-direction: column;
+        gap: 1.5rem;
+        padding: 0 15px;
+    }
+}

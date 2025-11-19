@@ -1,0 +1,36 @@
+/* Import all component styles */
+@import 'components/header.css';
+@import 'components/navigation.css';
+@import 'components/hero.css';
+@import 'components/amenities.css';
+@import 'components/about.css';
+@import 'components/contact.css';
+@import 'booking.css';
+
+/* Global Styles */
+body {
+    font-family: 'Roboto', sans-serif;
+    line-height: 1.6;
+    color: var(--text-dark);
+    background-color: var(--background-light);
+}
+
+/* Utility Classes */
+.container {
+    width: 90%;
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 0 15px;
+}
+
+/* Responsive Typography */
+@media (max-width: 768px) {
+    body {
+        font-size: 14px;
+    }
+}
+
+/* Smooth Scroll */
+html {
+    scroll-behavior: smooth;
+}

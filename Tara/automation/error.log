@@ -1,0 +1,268 @@
+[24-Nov-2024 05:18:13 UTC] Database Host: localhost
+[24-Nov-2024 05:18:13 UTC] Database Name: u218412549_Tarablog
+[24-Nov-2024 05:18:13 UTC] Database User: u218412549_admin
+[24-Nov-2024 05:18:13 UTC] Setting up database connection...
+[24-Nov-2024 05:18:13 UTC] DSN: mysql:host=localhost;dbname=u218412549_Tarablog;charset=utf8mb4
+[24-Nov-2024 05:18:13 UTC] Database connection successful!
+[24-Nov-2024 05:18:13 UTC] Selected topics: Array
+(
+    [0] => patient_education
+)
+
+[24-Nov-2024 05:18:13 UTC] Available topics: Array
+(
+    [0] => bds
+    [1] => mds
+    [2] => patient_education
+)
+
+[24-Nov-2024 05:20:57 UTC] Database Host: localhost
+[24-Nov-2024 05:20:57 UTC] Database Name: u218412549_Tarablog
+[24-Nov-2024 05:20:57 UTC] Database User: u218412549_admin
+[24-Nov-2024 05:20:57 UTC] Setting up database connection...
+[24-Nov-2024 05:20:57 UTC] DSN: mysql:host=localhost;dbname=u218412549_Tarablog;charset=utf8mb4
+[24-Nov-2024 05:20:57 UTC] Database connection successful!
+[24-Nov-2024 05:20:57 UTC] Selected topics: Array
+(
+    [0] => patient_education
+)
+
+[24-Nov-2024 05:20:57 UTC] Available topics: Array
+(
+    [0] => bds
+    [1] => mds
+    [2] => patient_education
+)
+
+[24-Nov-2024 05:20:57 UTC] Starting post generation...
+[24-Nov-2024 05:20:57 UTC] OpenAI Key exists: Yes
+[24-Nov-2024 05:20:57 UTC] Generating post for topic: patient_education
+[24-Nov-2024 05:20:57 UTC] Generating content...
+[24-Nov-2024 05:20:57 UTC] Making OpenAI API call for content...
+[24-Nov-2024 05:20:57 UTC] Making request to OpenAI: https://api.openai.com/v1/chat/completions
+[24-Nov-2024 05:21:29 UTC] Database Host: localhost
+[24-Nov-2024 05:21:29 UTC] Database Name: u218412549_Tarablog
+[24-Nov-2024 05:21:29 UTC] Database User: u218412549_admin
+[24-Nov-2024 05:21:29 UTC] Setting up database connection...
+[24-Nov-2024 05:21:29 UTC] DSN: mysql:host=localhost;dbname=u218412549_Tarablog;charset=utf8mb4
+[24-Nov-2024 05:21:29 UTC] Database connection successful!
+[24-Nov-2024 05:21:29 UTC] Selected topics: Array
+(
+    [0] => mds
+)
+
+[24-Nov-2024 05:21:29 UTC] Available topics: Array
+(
+    [0] => bds
+    [1] => mds
+    [2] => patient_education
+)
+
+[24-Nov-2024 05:21:29 UTC] Starting post generation...
+[24-Nov-2024 05:21:29 UTC] OpenAI Key exists: Yes
+[24-Nov-2024 05:21:29 UTC] Generating post for topic: mds
+[24-Nov-2024 05:21:29 UTC] Generating content...
+[24-Nov-2024 05:21:29 UTC] Making OpenAI API call for content...
+[24-Nov-2024 05:21:29 UTC] Making request to OpenAI: https://api.openai.com/v1/chat/completions
+[24-Nov-2024 05:22:06 UTC] Successfully made OpenAI request
+[24-Nov-2024 05:22:06 UTC] Successfully received content from OpenAI
+[24-Nov-2024 05:22:06 UTC] Content generated successfully
+[24-Nov-2024 05:22:06 UTC] Generating image...
+[24-Nov-2024 05:22:06 UTC] Making OpenAI API call for image...
+[24-Nov-2024 05:22:06 UTC] Making request to OpenAI: https://api.openai.com/v1/images/generations
+[24-Nov-2024 05:22:17 UTC] Successfully made OpenAI request
+[24-Nov-2024 05:22:17 UTC] Successfully received image URL from OpenAI
+[24-Nov-2024 05:22:17 UTC] Image generated successfully: https://oaidalleapiprodscus.blob.core.windows.net/private/org-1G5bLg1nR25ZjIsEuktsOOw4/user-XdDQJBANbiomaQViGt76RCZ7/img-kPU1sH8LCj3eZuKTJCxQlHgC.png?st=2024-11-24T04%3A22%3A16Z&se=2024-11-24T06%3A22%3A16Z&sp=r&sv=2024-08-04&sr=b&rscd=inline&rsct=image/png&skoid=d505667d-d6c1-4a0a-bac7-5c84a87759f8&sktid=a48cca56-e6da-484e-a814-9c849652bcb3&skt=2024-11-24T00%3A33%3A00Z&ske=2024-11-25T00%3A33%3A00Z&sks=b&skv=2024-08-04&sig=kkInxtcmK4H/xshUypSegLcqLl9Ud3yFjg65da3jVi4%3D
+[24-Nov-2024 05:22:17 UTC] Saving to database...
+[24-Nov-2024 05:22:17 UTC] Saving image for topic: mds
+[24-Nov-2024 05:22:17 UTC] Downloading image from: https://oaidalleapiprodscus.blob.core.windows.net/private/org-1G5bLg1nR25ZjIsEuktsOOw4/user-XdDQJBANbiomaQViGt76RCZ7/img-kPU1sH8LCj3eZuKTJCxQlHgC.png?st=2024-11-24T04%3A22%3A16Z&se=2024-11-24T06%3A22%3A16Z&sp=r&sv=2024-08-04&sr=b&rscd=inline&rsct=image/png&skoid=d505667d-d6c1-4a0a-bac7-5c84a87759f8&sktid=a48cca56-e6da-484e-a814-9c849652bcb3&skt=2024-11-24T00%3A33%3A00Z&ske=2024-11-25T00%3A33%3A00Z&sks=b&skv=2024-08-04&sig=kkInxtcmK4H/xshUypSegLcqLl9Ud3yFjg65da3jVi4%3D
+[24-Nov-2024 05:22:17 UTC] Saving to: /home/u218412549/domains/tarasdental.in/public_html/images/blog/mds_1732425737.png
+[24-Nov-2024 05:22:20 UTC] Image saved successfully
+[24-Nov-2024 05:22:20 UTC] Creating blog post: MDS Specializations: Advanced Dental Education Guide
+[24-Nov-2024 05:22:20 UTC] Starting database transaction
+[24-Nov-2024 05:22:20 UTC] Error in createPost: SQLSTATE[HY000]: General error: 2006 MySQL server has gone away
+[24-Nov-2024 05:22:20 UTC] Error generating post for mds: Failed to create blog post: SQLSTATE[HY000]: General error: 2006 MySQL server has gone away
+[24-Nov-2024 05:22:34 UTC] Database Host: localhost
+[24-Nov-2024 05:22:34 UTC] Database Name: u218412549_Tarablog
+[24-Nov-2024 05:22:34 UTC] Database User: u218412549_admin
+[24-Nov-2024 05:22:34 UTC] Setting up database connection...
+[24-Nov-2024 05:22:34 UTC] DSN: mysql:host=localhost;dbname=u218412549_Tarablog;charset=utf8mb4
+[24-Nov-2024 05:22:34 UTC] Database connection successful!
+[24-Nov-2024 05:22:34 UTC] Selected topics: Array
+(
+    [0] => patient_education
+)
+
+[24-Nov-2024 05:22:34 UTC] Available topics: Array
+(
+    [0] => bds
+    [1] => mds
+    [2] => patient_education
+)
+
+[24-Nov-2024 05:22:34 UTC] Starting post generation...
+[24-Nov-2024 05:22:34 UTC] OpenAI Key exists: Yes
+[24-Nov-2024 05:22:34 UTC] Generating post for topic: patient_education
+[24-Nov-2024 05:22:34 UTC] Generating content...
+[24-Nov-2024 05:22:34 UTC] Making OpenAI API call for content...
+[24-Nov-2024 05:22:34 UTC] Making request to OpenAI: https://api.openai.com/v1/chat/completions
+[24-Nov-2024 05:23:18 UTC] Successfully made OpenAI request
+[24-Nov-2024 05:23:18 UTC] Successfully received content from OpenAI
+[24-Nov-2024 05:23:18 UTC] Content generated successfully
+[24-Nov-2024 05:23:18 UTC] Generating image...
+[24-Nov-2024 05:23:18 UTC] Making OpenAI API call for image...
+[24-Nov-2024 05:23:18 UTC] Making request to OpenAI: https://api.openai.com/v1/images/generations
+[24-Nov-2024 05:23:30 UTC] Successfully made OpenAI request
+[24-Nov-2024 05:23:30 UTC] Successfully received image URL from OpenAI
+[24-Nov-2024 05:23:30 UTC] Image generated successfully: https://oaidalleapiprodscus.blob.core.windows.net/private/org-1G5bLg1nR25ZjIsEuktsOOw4/user-XdDQJBANbiomaQViGt76RCZ7/img-ecBhpVQdcxq2my1uebCrW8xp.png?st=2024-11-24T04%3A23%3A30Z&se=2024-11-24T06%3A23%3A30Z&sp=r&sv=2024-08-04&sr=b&rscd=inline&rsct=image/png&skoid=d505667d-d6c1-4a0a-bac7-5c84a87759f8&sktid=a48cca56-e6da-484e-a814-9c849652bcb3&skt=2024-11-24T00%3A52%3A43Z&ske=2024-11-25T00%3A52%3A43Z&sks=b&skv=2024-08-04&sig=PIIg%2BpXdavJnMoYJG3OHOpkh8JozBQTalEe4I1VyVKA%3D
+[24-Nov-2024 05:23:30 UTC] Saving to database...
+[24-Nov-2024 05:23:30 UTC] Saving image for topic: patient_education
+[24-Nov-2024 05:23:30 UTC] Downloading image from: https://oaidalleapiprodscus.blob.core.windows.net/private/org-1G5bLg1nR25ZjIsEuktsOOw4/user-XdDQJBANbiomaQViGt76RCZ7/img-ecBhpVQdcxq2my1uebCrW8xp.png?st=2024-11-24T04%3A23%3A30Z&se=2024-11-24T06%3A23%3A30Z&sp=r&sv=2024-08-04&sr=b&rscd=inline&rsct=image/png&skoid=d505667d-d6c1-4a0a-bac7-5c84a87759f8&sktid=a48cca56-e6da-484e-a814-9c849652bcb3&skt=2024-11-24T00%3A52%3A43Z&ske=2024-11-25T00%3A52%3A43Z&sks=b&skv=2024-08-04&sig=PIIg%2BpXdavJnMoYJG3OHOpkh8JozBQTalEe4I1VyVKA%3D
+[24-Nov-2024 05:23:30 UTC] Saving to: /home/u218412549/domains/tarasdental.in/public_html/images/blog/patient_education_1732425810.png
+[24-Nov-2024 05:23:34 UTC] Image saved successfully
+[24-Nov-2024 05:23:34 UTC] Creating blog post: Your Complete Guide to Dental Treatment Procedures
+[24-Nov-2024 05:23:34 UTC] Starting database transaction
+[24-Nov-2024 05:23:34 UTC] Error in createPost: SQLSTATE[HY000]: General error: 2006 MySQL server has gone away
+[24-Nov-2024 05:23:34 UTC] Error generating post for patient_education: Failed to create blog post: SQLSTATE[HY000]: General error: 2006 MySQL server has gone away
+[24-Nov-2024 05:24:49 UTC] Database Host: localhost
+[24-Nov-2024 05:24:49 UTC] Database Name: u218412549_Tarablog
+[24-Nov-2024 05:24:49 UTC] Database User: u218412549_admin
+[24-Nov-2024 05:24:49 UTC] Setting up database connection...
+[24-Nov-2024 05:24:49 UTC] DSN: mysql:host=localhost;dbname=u218412549_Tarablog;charset=utf8mb4
+[24-Nov-2024 05:24:49 UTC] Database connection successful!
+[24-Nov-2024 05:24:49 UTC] Selected topics: Array
+(
+    [0] => patient_education
+)
+
+[24-Nov-2024 05:24:49 UTC] Available topics: Array
+(
+    [0] => bds
+    [1] => mds
+    [2] => patient_education
+)
+
+[24-Nov-2024 05:24:49 UTC] Starting post generation...
+[24-Nov-2024 05:24:49 UTC] OpenAI Key exists: Yes
+[24-Nov-2024 05:24:49 UTC] Generating post for topic: patient_education
+[24-Nov-2024 05:24:49 UTC] Generating content...
+[24-Nov-2024 05:24:49 UTC] Making OpenAI API call for content...
+[24-Nov-2024 05:24:49 UTC] Making request to OpenAI: https://api.openai.com/v1/chat/completions
+[24-Nov-2024 05:25:10 UTC] Successfully made OpenAI request
+[24-Nov-2024 05:25:10 UTC] Successfully received content from OpenAI
+[24-Nov-2024 05:25:10 UTC] Content generated successfully
+[24-Nov-2024 05:25:10 UTC] Generating image...
+[24-Nov-2024 05:25:10 UTC] Making OpenAI API call for image...
+[24-Nov-2024 05:25:10 UTC] Making request to OpenAI: https://api.openai.com/v1/images/generations
+[24-Nov-2024 05:25:22 UTC] Successfully made OpenAI request
+[24-Nov-2024 05:25:22 UTC] Successfully received image URL from OpenAI
+[24-Nov-2024 05:25:22 UTC] Image generated successfully: https://oaidalleapiprodscus.blob.core.windows.net/private/org-1G5bLg1nR25ZjIsEuktsOOw4/user-XdDQJBANbiomaQViGt76RCZ7/img-9y3fgtSX7fFnDkt3oSoXIViT.png?st=2024-11-24T04%3A25%3A22Z&se=2024-11-24T06%3A25%3A22Z&sp=r&sv=2024-08-04&sr=b&rscd=inline&rsct=image/png&skoid=d505667d-d6c1-4a0a-bac7-5c84a87759f8&sktid=a48cca56-e6da-484e-a814-9c849652bcb3&skt=2024-11-24T00%3A28%3A42Z&ske=2024-11-25T00%3A28%3A42Z&sks=b&skv=2024-08-04&sig=5CTPswUXD3FzvAUTqNENaj4GL8NL/L1GMG1ksSQ2qxo%3D
+[24-Nov-2024 05:25:22 UTC] Saving to database...
+[24-Nov-2024 05:25:22 UTC] Saving image for topic: patient_education
+[24-Nov-2024 05:25:22 UTC] Downloading image from: https://oaidalleapiprodscus.blob.core.windows.net/private/org-1G5bLg1nR25ZjIsEuktsOOw4/user-XdDQJBANbiomaQViGt76RCZ7/img-9y3fgtSX7fFnDkt3oSoXIViT.png?st=2024-11-24T04%3A25%3A22Z&se=2024-11-24T06%3A25%3A22Z&sp=r&sv=2024-08-04&sr=b&rscd=inline&rsct=image/png&skoid=d505667d-d6c1-4a0a-bac7-5c84a87759f8&sktid=a48cca56-e6da-484e-a814-9c849652bcb3&skt=2024-11-24T00%3A28%3A42Z&ske=2024-11-25T00%3A28%3A42Z&sks=b&skv=2024-08-04&sig=5CTPswUXD3FzvAUTqNENaj4GL8NL/L1GMG1ksSQ2qxo%3D
+[24-Nov-2024 05:25:22 UTC] Saving to: /home/u218412549/domains/tarasdental.in/public_html/images/blog/patient_education_1732425922.png
+[24-Nov-2024 05:25:26 UTC] Image saved successfully
+[24-Nov-2024 05:25:26 UTC] Creating blog post: Your Complete Guide to Dental Treatment Procedures
+[24-Nov-2024 05:25:26 UTC] Reconnecting to database...
+[24-Nov-2024 05:25:26 UTC] Database reconnection successful!
+[24-Nov-2024 05:25:26 UTC] Starting database transaction
+[24-Nov-2024 05:25:26 UTC] Error in createPost: SQLSTATE[42S22]: Column not found: 1054 Unknown column 'category' in 'INSERT INTO'
+[24-Nov-2024 05:25:26 UTC] Rolling back transaction
+[24-Nov-2024 05:25:26 UTC] Error generating post for patient_education: Failed to create blog post: SQLSTATE[42S22]: Column not found: 1054 Unknown column 'category' in 'INSERT INTO'
+[24-Nov-2024 05:27:33 UTC] Database Host: localhost
+[24-Nov-2024 05:27:33 UTC] Database Name: u218412549_Tarablog
+[24-Nov-2024 05:27:33 UTC] Database User: u218412549_admin
+[24-Nov-2024 05:27:33 UTC] Setting up database connection...
+[24-Nov-2024 05:27:33 UTC] DSN: mysql:host=localhost;dbname=u218412549_Tarablog;charset=utf8mb4
+[24-Nov-2024 05:27:33 UTC] Database connection successful!
+[24-Nov-2024 05:27:33 UTC] Selected topics: Array
+(
+    [0] => patient_education
+)
+
+[24-Nov-2024 05:27:33 UTC] Available topics: Array
+(
+    [0] => bds
+    [1] => mds
+    [2] => patient_education
+)
+
+[24-Nov-2024 05:27:33 UTC] Starting post generation...
+[24-Nov-2024 05:27:33 UTC] OpenAI Key exists: Yes
+[24-Nov-2024 05:27:33 UTC] Generating post for topic: patient_education
+[24-Nov-2024 05:27:33 UTC] Generating content...
+[24-Nov-2024 05:27:33 UTC] Making OpenAI API call for content...
+[24-Nov-2024 05:27:33 UTC] Making request to OpenAI: https://api.openai.com/v1/chat/completions
+[24-Nov-2024 05:28:24 UTC] Successfully made OpenAI request
+[24-Nov-2024 05:28:24 UTC] Successfully received content from OpenAI
+[24-Nov-2024 05:28:24 UTC] Content generated successfully
+[24-Nov-2024 05:28:24 UTC] Generating image...
+[24-Nov-2024 05:28:24 UTC] Making OpenAI API call for image...
+[24-Nov-2024 05:28:24 UTC] Making request to OpenAI: https://api.openai.com/v1/images/generations
+[24-Nov-2024 05:28:36 UTC] Successfully made OpenAI request
+[24-Nov-2024 05:28:36 UTC] Successfully received image URL from OpenAI
+[24-Nov-2024 05:28:36 UTC] Image generated successfully: https://oaidalleapiprodscus.blob.core.windows.net/private/org-1G5bLg1nR25ZjIsEuktsOOw4/user-XdDQJBANbiomaQViGt76RCZ7/img-GR2azlOYadel7kupqNlmIdyp.png?st=2024-11-24T04%3A28%3A36Z&se=2024-11-24T06%3A28%3A36Z&sp=r&sv=2024-08-04&sr=b&rscd=inline&rsct=image/png&skoid=d505667d-d6c1-4a0a-bac7-5c84a87759f8&sktid=a48cca56-e6da-484e-a814-9c849652bcb3&skt=2024-11-24T00%3A23%3A48Z&ske=2024-11-25T00%3A23%3A48Z&sks=b&skv=2024-08-04&sig=uD/wq/gM79M28RSWNus41DtYvZDU89atYSNTerizDZ0%3D
+[24-Nov-2024 05:28:36 UTC] Saving to database...
+[24-Nov-2024 05:28:36 UTC] Saving image for topic: patient_education
+[24-Nov-2024 05:28:36 UTC] Downloading image from: https://oaidalleapiprodscus.blob.core.windows.net/private/org-1G5bLg1nR25ZjIsEuktsOOw4/user-XdDQJBANbiomaQViGt76RCZ7/img-GR2azlOYadel7kupqNlmIdyp.png?st=2024-11-24T04%3A28%3A36Z&se=2024-11-24T06%3A28%3A36Z&sp=r&sv=2024-08-04&sr=b&rscd=inline&rsct=image/png&skoid=d505667d-d6c1-4a0a-bac7-5c84a87759f8&sktid=a48cca56-e6da-484e-a814-9c849652bcb3&skt=2024-11-24T00%3A23%3A48Z&ske=2024-11-25T00%3A23%3A48Z&sks=b&skv=2024-08-04&sig=uD/wq/gM79M28RSWNus41DtYvZDU89atYSNTerizDZ0%3D
+[24-Nov-2024 05:28:36 UTC] Saving to: /home/u218412549/domains/tarasdental.in/public_html/images/blog/patient_education_1732426116.png
+[24-Nov-2024 05:28:39 UTC] Image saved successfully
+[24-Nov-2024 05:28:39 UTC] Creating blog post: Your Complete Guide to Dental Treatment Procedures
+[24-Nov-2024 05:28:39 UTC] Reconnecting to database...
+[24-Nov-2024 05:28:39 UTC] Database reconnection successful!
+[24-Nov-2024 05:28:39 UTC] Starting database transaction
+[24-Nov-2024 05:28:39 UTC] Executing insert query: INSERT INTO blog_posts (title, content, author, created_at, updated_at) 
+                   VALUES (:title, :content, 'AI Generated', NOW(), NOW())
+[24-Nov-2024 05:28:39 UTC] Post inserted with ID: 10
+[24-Nov-2024 05:28:39 UTC] Created new category: Patient_education (ID: 7)
+[24-Nov-2024 05:28:39 UTC] Linked post to category: Patient_education
+[24-Nov-2024 05:28:39 UTC] Committing transaction
+[24-Nov-2024 05:28:39 UTC] Post saved with ID: 10
+[24-Nov-2024 05:31:26 UTC] Database Host: localhost
+[24-Nov-2024 05:31:26 UTC] Database Name: u218412549_Tarablog
+[24-Nov-2024 05:31:26 UTC] Database User: u218412549_admin
+[24-Nov-2024 05:31:26 UTC] Setting up database connection...
+[24-Nov-2024 05:31:26 UTC] DSN: mysql:host=localhost;dbname=u218412549_Tarablog;charset=utf8mb4
+[24-Nov-2024 05:31:26 UTC] Database connection successful!
+[24-Nov-2024 05:31:26 UTC] Selected topics: Array
+(
+    [0] => patient_education
+)
+
+[24-Nov-2024 05:31:26 UTC] Available topics: Array
+(
+    [0] => bds
+    [1] => mds
+    [2] => patient_education
+)
+
+[24-Nov-2024 05:31:26 UTC] Starting post generation...
+[24-Nov-2024 05:31:26 UTC] OpenAI Key exists: Yes
+[24-Nov-2024 05:31:26 UTC] Generating post for topic: patient_education
+[24-Nov-2024 05:31:26 UTC] Generating content...
+[24-Nov-2024 05:31:26 UTC] Making OpenAI API call for content...
+[24-Nov-2024 05:31:26 UTC] Making request to OpenAI: https://api.openai.com/v1/chat/completions
+[24-Nov-2024 05:32:02 UTC] Successfully made OpenAI request
+[24-Nov-2024 05:32:02 UTC] Successfully received content from OpenAI
+[24-Nov-2024 05:32:02 UTC] Content generated successfully
+[24-Nov-2024 05:32:02 UTC] Generating image...
+[24-Nov-2024 05:32:02 UTC] Making OpenAI API call for image...
+[24-Nov-2024 05:32:02 UTC] Making request to OpenAI: https://api.openai.com/v1/images/generations
+[24-Nov-2024 05:32:13 UTC] Successfully made OpenAI request
+[24-Nov-2024 05:32:13 UTC] Successfully received image URL from OpenAI
+[24-Nov-2024 05:32:13 UTC] Image generated successfully: https://oaidalleapiprodscus.blob.core.windows.net/private/org-1G5bLg1nR25ZjIsEuktsOOw4/user-XdDQJBANbiomaQViGt76RCZ7/img-g8hEmRsGAPwaDD2a8CgddMHX.png?st=2024-11-24T04%3A32%3A13Z&se=2024-11-24T06%3A32%3A13Z&sp=r&sv=2024-08-04&sr=b&rscd=inline&rsct=image/png&skoid=d505667d-d6c1-4a0a-bac7-5c84a87759f8&sktid=a48cca56-e6da-484e-a814-9c849652bcb3&skt=2024-11-24T04%3A35%3A57Z&ske=2024-11-25T04%3A35%3A57Z&sks=b&skv=2024-08-04&sig=c5UKzdSBGAjwF/n93leLkK8B4hG%2B9pJY4RNPJtLB8zs%3D
+[24-Nov-2024 05:32:13 UTC] Saving to database...
+[24-Nov-2024 05:32:13 UTC] Saving image for topic: patient_education
+[24-Nov-2024 05:32:13 UTC] Downloading image from: https://oaidalleapiprodscus.blob.core.windows.net/private/org-1G5bLg1nR25ZjIsEuktsOOw4/user-XdDQJBANbiomaQViGt76RCZ7/img-g8hEmRsGAPwaDD2a8CgddMHX.png?st=2024-11-24T04%3A32%3A13Z&se=2024-11-24T06%3A32%3A13Z&sp=r&sv=2024-08-04&sr=b&rscd=inline&rsct=image/png&skoid=d505667d-d6c1-4a0a-bac7-5c84a87759f8&sktid=a48cca56-e6da-484e-a814-9c849652bcb3&skt=2024-11-24T04%3A35%3A57Z&ske=2024-11-25T04%3A35%3A57Z&sks=b&skv=2024-08-04&sig=c5UKzdSBGAjwF/n93leLkK8B4hG%2B9pJY4RNPJtLB8zs%3D
+[24-Nov-2024 05:32:13 UTC] Saving to: /home/u218412549/domains/tarasdental.in/public_html/images/blog/patient_education_1732426333.png
+[24-Nov-2024 05:32:16 UTC] Image saved successfully
+[24-Nov-2024 05:32:16 UTC] Creating blog post: Your Complete Guide to Dental Treatment Procedures
+[24-Nov-2024 05:32:16 UTC] Reconnecting to database...
+[24-Nov-2024 05:32:16 UTC] Database reconnection successful!
+[24-Nov-2024 05:32:16 UTC] Starting database transaction
+[24-Nov-2024 05:32:16 UTC] Executing insert query: INSERT INTO blog_posts (title, content, author, image_url, created_at, updated_at) 
+                   VALUES (:title, :content, 'AI Generated', :image_url, NOW(), NOW())
+[24-Nov-2024 05:32:16 UTC] Post inserted with ID: 11
+[24-Nov-2024 05:32:16 UTC] Linked post to category: Patient_education
+[24-Nov-2024 05:32:16 UTC] Committing transaction
+[24-Nov-2024 05:32:16 UTC] Post saved with ID: 11

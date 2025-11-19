@@ -1,0 +1,372 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <!-- Favicon -->
+    <link rel="icon" type="image/svg+xml" href="assets/favicon/favicon.svg">
+    <link rel="alternate icon" type="image/x-icon" href="assets/favicon/favicon.ico">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Jay Mahal - About Us</title>
+    
+    <!-- Fonts -->
+    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;700&family=Roboto:wght@300;400;700&display=swap" rel="stylesheet">
+    
+    <!-- CSS -->
+    <link rel="stylesheet" href="css/reset.css">
+    <link rel="stylesheet" href="css/variables.css">
+    <link rel="stylesheet" href="css/components/header.css">
+    <link rel="stylesheet" href="css/components/hero.css">
+    <link rel="stylesheet" href="css/components/navigation.css">
+    <link rel="stylesheet" href="css/about.css">
+    <link rel="stylesheet" href="css/main.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+</head>
+<body>
+    <header class="header">
+        <div class="header-container">
+            <div class="logo">
+                <a href="index.html" class="logo-link">
+                    <h1 class="logo-text">JAY MAHAL</h1>
+                </a>
+            </div>
+            <nav class="navigation">
+                <ul>
+                    <li><a href="index.html" data-translate="nav-home">Home</a></li>
+                    <li><a href="about.html#about" class="active" data-translate="nav-about">About Us</a></li>
+                    <li><a href="amenities.html" data-translate="nav-amenities">Amenities</a></li>
+                    <li><a href="book-event.html" data-translate="nav-book-event">Book an Event</a></li>
+                    <li><a href="contact.html" data-translate="nav-contact">Contact</a></li>
+                </ul>
+            </nav>
+            <div class="language-switcher">
+                <button class="lang-btn active" data-lang="en">EN</button>
+                <button class="lang-btn" data-lang="ta">தமிழ்</button>
+            </div>
+            <div class="mobile-menu-toggle">
+                <span></span>
+                <span></span>
+                <span></span>
+            </div>
+        </div>
+    </header>
+
+    <main class="about-page">
+        <style>
+            .about-page {
+                background-color: var(--color-background);
+                min-height: 100vh;
+            }
+        </style>
+        <section class="hero about-hero">
+            <div class="hero-background">
+                <img src="assets/images/Jay1.jpg" alt="Jay Mahal Background" class="hero-background-image">
+            </div>
+            <div class="hero-overlay"></div>
+            <div class="hero-content">
+            </div>
+        </section>
+
+        <section id="about" class="about-content container">
+            <div class="about-story">
+                <div class="section-header">
+                    <h2 data-translate="our-story-title">Our Story</h2>
+                </div>
+                <div class="story-content">
+                    <p data-translate="story-welcome">Welcome to Jay Mahal, a premier wedding and event venue in Thoothukudi, Tamil Nadu. Established in 2018, Jay Mahal is an elegant and spacious event space designed to make your special occasions truly memorable.</p>
+                    <p data-translate="story-experience">With over two decades of experience in running esteemed educational institutions in Salem, we ventured into the hospitality sector, bringing our commitment to excellence to the world of celebrations. Our beautifully designed venue spans 21,750 sq. ft., featuring a grand banquet hall, a dedicated dining area, and ample parking space for 50 cars and 100 bikes.</p>
+                    <p data-translate="story-venue">Whether you're planning an intimate gathering or a grand celebration, Jay Mahal is one of the finest venues in Semmarikulam and its surroundings, offering the perfect blend of tradition, elegance, and modern amenities.</p>
+                </div>
+            </div>
+
+            <div class="events-section">
+                <div class="section-header">
+                    <h2 data-translate="events-we-host-title">Events We Host</h2>
+                </div>
+                <div class="events-grid">
+                    <div class="event-card">
+                        <i class="fas fa-ring"></i>
+                        <h3 data-translate="wedding-reception">Weddings & Receptions</h3>
+                    </div>
+                    <div class="event-card">
+                        <i class="fas fa-heart"></i>
+                        <h3 data-translate="engagement-ceremonies">Engagement Ceremonies</h3>
+                    </div>
+                    <div class="event-card">
+                        <i class="fas fa-birthday-cake"></i>
+                        <h3 data-translate="birthday-celebrations">Birthday Celebrations</h3>
+                    </div>
+                    <div class="event-card">
+                        <i class="fas fa-briefcase"></i>
+                        <h3 data-translate="corporate-events">Corporate Events</h3>
+                    </div>
+                    <div class="event-card">
+                        <i class="fas fa-theater-masks"></i>
+                        <h3 data-translate="cultural-functions">Cultural Functions</h3>
+                    </div>
+                    <div class="event-card">
+                        <i class="fas fa-users"></i>
+                        <h3 data-translate="conferences">Conferences</h3>
+                    </div>
+                </div>
+                <style>
+                    .events-grid {
+                        display: flex;
+                        flex-wrap: nowrap;
+                        overflow-x: auto;
+                    }
+                    .event-card {
+                        margin-right: 20px;
+                    }
+                </style>
+            </div>
+
+            <div class="venue-capacity-section">
+                <div class="section-header">
+                    <h2 data-translate="venue-capacity-title">Our Venue Capacity</h2>
+                </div>
+                <div class="capacity-grid">
+                    <div class="capacity-card">
+                        <div class="capacity-icon">
+                            <i class="fas fa-chair"></i>
+                        </div>
+                        <div class="capacity-details">
+                            <h3>500</h3>
+                            <p data-translate="seated-guests">Seated Guests</p>
+                        </div>
+                    </div>
+                    <div class="capacity-card">
+                        <div class="capacity-icon">
+                            <i class="fas fa-users"></i>
+                        </div>
+                        <div class="capacity-details">
+                            <h3>750</h3>
+                            <p data-translate="floating-guests">Floating Guests</p>
+                        </div>
+                    </div>
+                    <div class="capacity-card">
+                        <div class="capacity-icon">
+                            <i class="fas fa-utensils"></i>
+                        </div>
+                        <div class="capacity-details">
+                            <h3>300</h3>
+                            <p data-translate="dining-space">Dining Space</p>
+                        </div>
+                    </div>
+                    <div class="capacity-card">
+                        <div class="capacity-icon">
+                            <i class="fas fa-parking"></i>
+                        </div>
+                        <div class="capacity-details">
+                            <h3>50</h3>
+                            <p data-translate="car-parking">Car Parking</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section class="google-reviews container">
+            <div class="reviews-header">
+                <h2 data-translate="reviews-title">What People Think About Us</h2>
+                <div class="overall-rating">
+                    <div class="rating-score">
+                        <span class="score">4.4</span>
+                        <div class="stars">
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star-half-alt"></i>
+                        </div>
+                    </div>
+                    <p class="review-count">Based on 150+ Google Reviews</p>
+                </div>
+            </div>
+
+            <div class="reviews-carousel">
+                <div class="reviews-container">
+                    <div class="review-card">
+                        <div class="reviewer-info">
+                            <img src="assets/images/r1.png" alt="Nissanth" loading="lazy">
+                            <div class="reviewer-details">
+                                <h4>Nissanth</h4>
+                                <div class="review-stars">
+                                    <i class="fas fa-star"></i>
+                                    <i class="fas fa-star"></i>
+                                    <i class="fas fa-star"></i>
+                                    <i class="fas fa-star"></i>
+                                    <i class="fas fa-star"></i>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="review-content">
+                            <p>"If you Looking for a luxurious and beautiful mandabam near Trichendure Jay Mahal Located at Megnanapuram the interior design that will take your breath away? Look no further! The stunning and elegant design of this space is sure to leave you mesmerized. From the moment you step into the Jay Mahal, you will be surrounded by an atmosphere of class and sophistication."</p>
+                        </div>
+                        <div class="review-source">
+                            <i class="fab fa-google"></i>
+                            <span>Google Review</span>
+                        </div>
+                    </div>
+
+                    <div class="review-card">
+                        <div class="reviewer-info">
+                            <img src="assets/images/r2.png" alt="Praveen Starguise" loading="lazy">
+                            <div class="reviewer-details">
+                                <h4>Praveen Starguise</h4>
+                                <div class="review-stars">
+                                    <i class="fas fa-star"></i>
+                                    <i class="fas fa-star"></i>
+                                    <i class="fas fa-star"></i>
+                                    <i class="fas fa-star"></i>
+                                    <i class="fas fa-star-half-alt"></i>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="review-content">
+                            <p>"Madabam tower-like structure with high class fashion and colourful look with shades of different colours at Jay Mahal, Megnapuram (Semmarikulam) The place is easily reachable from Megnapuram Bus stop. The place consists of the 1. Open Hall (around 500 people can sit), 2 . Bride and bridegroom with AC separate rooms 3. Ten Separate rooms available for guests inside the premises 4. Sperate Rest of Rooms for men and women."</p>
+                        </div>
+                        <div class="review-source">
+                            <i class="fab fa-google"></i>
+                            <span>Google Review</span>
+                        </div>
+                    </div>
+
+                    <div class="review-card">
+                        <div class="reviewer-info">
+                            <img src="assets/images/r3.png" alt="K. R. Justin Thomas" loading="lazy">
+                            <div class="reviewer-details">
+                                <h4>K. R. Justin Thomas</h4>
+                                <div class="review-stars">
+                                    <i class="fas fa-star"></i>
+                                    <i class="fas fa-star"></i>
+                                    <i class="fas fa-star"></i>
+                                    <i class="fas fa-star"></i>
+                                    <i class="fas fa-star"></i>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="review-content">
+                            <p>"This place is 13 km away from Trichendur at megnanapuram. Trichendur is well connected by road from this stay house. It has a marriage hall and a kitchen. It can house around 500 people on a big gathering such as marriage or family functions. Hygienically maintained and a clean environment. Megnanapuram is a house of Asia's one of the tallest Christian worship tower St. Paul's church"</p>
+                        </div>
+                        <div class="review-source">
+                            <i class="fab fa-google"></i>
+                            <span>Google Review</span>
+                        </div>
+                    </div>
+
+                    <div class="review-card">
+                        <div class="reviewer-info">
+                            <img src="assets/images/r4.png" alt="Manjari SJM" loading="lazy">
+                            <div class="reviewer-details">
+                                <h4>Manjari SJM</h4>
+                                <div class="review-stars">
+                                    <i class="fas fa-star"></i>
+                                    <i class="fas fa-star"></i>
+                                    <i class="fas fa-star"></i>
+                                    <i class="fas fa-star"></i>
+                                    <i class="fas fa-star-half-alt"></i>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="review-content">
+                            <p>"The Mahal is so spacious and neat! Lovely place to conduct events. I would always recommend this place as first in my opinion!"</p>
+                        </div>
+                        <div class="review-source">
+                            <i class="fab fa-google"></i>
+                            <span>Google Review</span>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="reviews-navigation">
+                    <button class="nav-btn prev-btn" aria-label="Previous reviews">
+                        <i class="fas fa-chevron-left"></i>
+                    </button>
+                    <button class="nav-btn next-btn" aria-label="Next reviews">
+                        <i class="fas fa-chevron-right"></i>
+                    </button>
+                </div>
+            </div>
+
+            <div class="view-all-reviews">
+                <a href="https://www.google.com/search?q=jay+mahal+semmarikulam+review" target="_blank" class="view-all-reviews-link">
+                    View All Google Reviews <i class="fas fa-external-link-alt"></i>
+                </a>
+            </div>
+        </section>
+    </main>
+
+    <footer class="site-footer">
+        <div class="footer-content">
+            <div class="footer-text">
+                <p class="copyright"> 2025 Jay Mahal. All Rights Reserved.</p>
+                <p class="developer">Developed by <a href="https://ashwinai.in" target="_blank" rel="noopener noreferrer">Ashwin AI</a></p>
+            </div>
+        </div>
+        <style>
+            .site-footer {
+                background-color: var(--color-background);
+                color: var(--color-primary);
+                padding: 1rem 0;
+                text-align: center;
+                border-top: 1px solid rgba(74, 55, 40, 0.1);
+            }
+            .footer-content {
+                max-width: 1200px;
+                margin: 0 auto;
+                padding: 0 15px;
+            }
+            .footer-text {
+                display: flex;
+                flex-direction: column;
+                align-items: center;
+            }
+            .copyright, 
+            .developer {
+                margin: 0.25rem 0;
+                font-size: 0.9rem;
+                opacity: 0.8;
+            }
+            .developer a {
+                color: var(--color-primary);
+                text-decoration: none;
+                transition: color 0.3s ease;
+            }
+            .developer a:hover {
+                color: var(--color-secondary);
+                text-decoration: underline;
+            }
+            .developer {
+                font-style: italic;
+            }
+        </style>
+    </footer>
+
+    <script src="js/language.js"></script>
+    <script src="js/header.js"></script>
+    <script src="js/about.js"></script>
+    <script>
+        document.addEventListener('DOMContentLoaded', function() {
+            // Mobile menu toggle functionality
+            const mobileMenuToggle = document.querySelector('.mobile-menu-toggle');
+            const navigation = document.querySelector('.navigation');
+            const header = document.querySelector('.header');
+
+            mobileMenuToggle.addEventListener('click', function() {
+                navigation.classList.toggle('active');
+                mobileMenuToggle.classList.toggle('active');
+                header.classList.toggle('menu-open');
+            });
+
+            // Close menu when clicking outside
+            document.addEventListener('click', function(event) {
+                if (!header.contains(event.target) && navigation.classList.contains('active')) {
+                    navigation.classList.remove('active');
+                    mobileMenuToggle.classList.remove('active');
+                    header.classList.remove('menu-open');
+                }
+            });
+        });
+    </script>
+</body>
+</html>

@@ -1,0 +1,201 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <!-- Favicon -->
+    <link rel="icon" type="image/svg+xml" href="assets/favicon/favicon.svg">
+    <link rel="alternate icon" type="image/x-icon" href="assets/favicon/favicon.ico">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Jay Mahal - Contact</title>
+    
+    <!-- Fonts -->
+    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;700&family=Roboto:wght@300;400;700&display=swap" rel="stylesheet">
+    
+    <!-- CSS -->
+    <link rel="stylesheet" href="css/reset.css">
+    <link rel="stylesheet" href="css/variables.css">
+    <link rel="stylesheet" href="css/components/header.css">
+    <link rel="stylesheet" href="css/components/navigation.css">
+    <link rel="stylesheet" href="css/components/contact.css">
+    <link rel="stylesheet" href="css/main.css">
+    
+    <!-- Font Awesome -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+</head>
+<body>
+    <header class="header">
+        <div class="header-container">
+            <div class="logo">
+                <a href="index.html" class="logo-link">
+                    <h1 class="logo-text" data-translate="brand-name">JAY MAHAL</h1>
+                </a>
+            </div>
+            <nav class="navigation">
+                <ul>
+                    <li><a href="index.html" data-translate="nav-home">Home</a></li>
+                    <li><a href="about.html#about" data-translate="nav-about">About Us</a></li>
+                    <li><a href="amenities.html" data-translate="nav-amenities">Amenities</a></li>
+                    <li><a href="book-event.html" data-translate="nav-book-event">Book an Event</a></li>
+                    <li><a href="contact.html" data-translate="nav-contact">Contact</a></li>
+                </ul>
+            </nav>
+            <div class="language-switcher">
+                <button class="lang-btn active" data-lang="en">EN</button>
+                <button class="lang-btn" data-lang="ta">தமிழ்</button>
+            </div>
+            <div class="mobile-menu-toggle">
+                <span></span>
+                <span></span>
+                <span></span>
+            </div>
+        </div>
+    </header>
+
+    <main class="contact-page">
+        <section class="contact-hero">
+            <div class="contact-hero-overlay"></div>
+            <div class="contact-hero-content">
+                <div class="hero-text-wrapper">
+                    <h1 class="page-title" data-translate="contact-title"> Jay Mahal </h1>
+                    <p class="hero-subtitle" data-translate="contact-subtitle">"WHERE TRADITIONS MEETS LUXURY!"</p>
+                </div>
+            </div>
+        </section>
+
+        <section class="contact-container">
+            <div class="contact-info">
+                <div class="contact-header" style="text-align: center;">
+                    <h2 data-translate="contact-header">Get In Touch</h2>
+                    <p class="contact-subheader" data-translate="contact-subheader">We're here to help you create unforgettable moments</p>
+                </div>
+                <div class="contact-details-grid">
+                    <div class="contact-details-card">
+                        <div class="contact-card-icon">
+                            <i class="fas fa-map-marker-alt"></i>
+                        </div>
+                        <div class="contact-card-content">
+                            <h4 data-translate="location-title">Location</h4>
+                            <p data-translate="location-address">FXGW+PGP, Semmarikulam, Tamil Nadu 628210</p>
+                        </div>
+                    </div>
+
+                    <div class="contact-details-card">
+                        <div class="contact-card-icon">
+                            <i class="fas fa-phone-alt"></i>
+                        </div>
+                        <div class="contact-card-content">
+                            <h4 data-translate="booking-calls">Booking Calls</h4>
+                            <p>+91 94889 42010</p>
+                            <p>+91 63822 37902</p>
+                        </div>
+                    </div>
+
+                    <div class="contact-details-card">
+                        <div class="contact-card-icon">
+                            <i class="fab fa-whatsapp"></i>
+                        </div>
+                        <div class="contact-card-content">
+                            <h4 data-translate="whatsapp-title">WhatsApp</h4>
+                            <p>+91 63822 37902</p>
+                            <button class="whatsapp-chat-btn" onclick="openWhatsAppChat()">
+                                <i class="fab fa-whatsapp"></i> Click here to Chat
+                            </button>
+                        </div>
+                    </div>
+
+                    <div class="contact-details-card">
+                        <div class="contact-card-icon">
+                            <i class="fas fa-envelope"></i>
+                        </div>
+                        <div class="contact-card-content">
+                            <h4 data-translate="email-title">Email</h4>
+                            <p data-translate="email-value">events@jaymahal.com</p>
+                        </div>
+                    </div>
+
+                    <div class="contact-details-card">
+                        <div class="contact-card-icon">
+                            <i class="fas fa-clock"></i>
+                        </div>
+                        <div class="contact-card-content">
+                            <h4 data-translate="hours-title">Hours</h4>
+                            <p data-translate="hours-value">Monday - Sunday: 10 AM - 7 PM</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section class="contact-map">
+            <div class="map-container">
+                <iframe 
+                    src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3946.231603484508!2d77.99375317501246!3d8.47684639156408!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3b038898c36cb511%3A0x264eb7cf71583014!2sJay%20Mahal!5e0!3m2!1sen!2sin!4v1739037259604!5m2!1sen!2sin" 
+                    width="100%" 
+                    height="450" 
+                    style="border:0;" 
+                    allowfullscreen="" 
+                    loading="lazy" 
+                    referrerpolicy="no-referrer-when-downgrade">
+                </iframe>
+            </div>
+        </section>
+    </main>
+
+    <footer class="site-footer">
+        <div class="footer-content">
+            <div class="footer-text">
+                <p class="copyright"> 2025 Jay Mahal. All Rights Reserved.</p>
+                <p class="developer">Developed by <a href="https://ashwinai.in" target="_blank" rel="noopener noreferrer">Ashwin AI</a></p>
+            </div>
+        </div>
+        <style>
+            .site-footer {
+                background-color: var(--color-background);
+                color: var(--color-primary);
+                padding: 1rem 0;
+                text-align: center;
+                border-top: 1px solid rgba(74, 55, 40, 0.1);
+            }
+            .footer-content {
+                max-width: 1200px;
+                margin: 0 auto;
+                padding: 0 15px;
+            }
+            .footer-text {
+                display: flex;
+                flex-direction: column;
+                align-items: center;
+            }
+            .copyright, 
+            .developer {
+                margin: 0.25rem 0;
+                font-size: 0.9rem;
+                opacity: 0.8;
+            }
+            .developer a {
+                color: var(--color-primary);
+                text-decoration: none;
+                transition: color 0.3s ease;
+            }
+            .developer a:hover {
+                color: var(--color-secondary);
+                text-decoration: underline;
+            }
+            .developer {
+                font-style: italic;
+            }
+        </style>
+    </footer>
+
+    <script src="js/language.js"></script>
+    <script src="js/main.js"></script>
+    <script>
+        function openWhatsAppChat() {
+            var whatsappNumber = "+916382237902";
+            var whatsappMessage = "Hello, I'm interested in Jay Mahal.";
+            var whatsappUrl = "https://wa.me/" + whatsappNumber + "?text=" + encodeURIComponent(whatsappMessage);
+            window.open(whatsappUrl, '_blank');
+        }
+    </script>
+</body>
+</html>
